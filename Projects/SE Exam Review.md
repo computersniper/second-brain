@@ -28,10 +28,18 @@ Source index: [[SE Source Index]]
 - [x] Create Git repository and vault structure.
 - [x] Index source resources without copying large files.
 - [x] Create exam map and drawing guide.
-- [ ] Convert review-photo scope into lecture-by-lecture checklists.
-- [ ] Add worked drawing examples from class exercise PPTX files.
-- [ ] Add multiple-choice traps and bilingual glossary.
+- [x] Convert review-photo scope into lecture-by-lecture checklists.
+- [x] Add worked drawing examples from class exercise PPTX files.
+- [x] Add multiple-choice traps and bilingual glossary.
 - [ ] Build one-page final cram sheet.
+
+## Practice Order
+
+1. Lecture 4 diagrams: use case + state transition + DFD.
+2. Lecture 5/6 UML diagrams: class + activity + sequence.
+3. Lecture 12 structured design: DFD -> structured tree.
+4. Lecture 13/14 testing: equivalence classes + control-flow coverage.
+5. Lecture 16 cost estimation concepts and model differences.
 
 ## Daily Review Loop
 
@@ -40,4 +48,3 @@ Source index: [[SE Source Index]]
 3. Draw the diagram from memory.
 4. Compare against the class exercise/PPT.
 5. Write one "trap" for multiple choice.
-
