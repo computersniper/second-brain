@@ -1,0 +1,27 @@
+# Obsidian local workspace state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+.obsidian/.trash/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.temp
+~$*
+
+# Large generated exports should stay outside Git unless intentionally curated
+*.pdf
+*.ppt
+*.pptx
+*.doc
+*.docx
+*.zip
+*.7z
+*.rar
+
+# Keep source resources indexed by Markdown links instead of duplicating binaries
+Resources/**/raw/
+Attachments/
