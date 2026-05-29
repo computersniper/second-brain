@@ -34,6 +34,7 @@ Source index: [[SE Source Index]]
 - [x] Build one-page final cram sheet.
 - [x] Build drawing drill pack for diagram-heavy questions.
 - [x] Add multimodal explanations for all PPTX class exercise decks.
+- [x] Add focused include/extend explanation for use case diagrams.
 
 ## Practice Order
 
@@ -48,8 +49,9 @@ Source index: [[SE Source Index]]
 1. Read [[07 Final Cram Sheet]] once.
 2. Redraw all prompts in [[08 Drawing Drill Pack]] without looking.
 3. Use [[09 All PPT Explanations]] to understand every class exercise PPT.
-4. Check every uncertain term in [[06 SE Bilingual Glossary and MCQ Traps]].
-5. Revisit class exercise PPTX only for diagrams you still cannot reproduce.
+4. Re-read [[10 Include vs Extend]] before any use case diagram practice.
+5. Check every uncertain term in [[06 SE Bilingual Glossary and MCQ Traps]].
+6. Revisit class exercise PPTX only for diagrams you still cannot reproduce.
 
 ## Daily Review Loop
 

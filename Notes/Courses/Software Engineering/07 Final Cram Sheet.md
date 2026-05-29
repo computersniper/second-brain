@@ -110,6 +110,7 @@ Configuration and cost:
 - DFD vs Structured tree: DFD shows data transformation; structured tree shows module/call structure.
 - Context model vs Use case diagram: context model shows boundary and external systems; use case diagram shows actor goals.
 - Include vs Extend: include is mandatory reused behavior; extend is optional/conditional behavior.
+- Arrow direction: `include` points from base use case to included use case; `extend` points from extension use case to base use case.
 - Refactoring vs Refinement: refactoring improves internal structure without changing behavior; refinement adds detail toward implementation.
 - Price to win vs Cost estimate: price to win targets contract success; cost estimate targets actual effort/cost.
 
@@ -241,4 +242,3 @@ Good memory cases:
 - High cohesion and low coupling are desirable.
 - Use case diagram is not a flowchart.
 - DFD is not a UML sequence diagram.
-
