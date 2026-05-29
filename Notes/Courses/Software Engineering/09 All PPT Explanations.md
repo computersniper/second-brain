@@ -70,6 +70,7 @@ Exam explanation:
 - 如果两个变体是 Transfer 的可选扩展行为，可以考虑 `extend`。
 - 如果某个 use case 必定调用另一个公共步骤，才用 `include`。
 - 老师让比较三种图，说明考点不是“乱加 include/extend”，而是判断关系是否合理。
+- Full judgment rules: [[10 Include vs Extend]].
 
 English to remember:
 
@@ -429,4 +430,3 @@ MCQ trap:
 3. Compare with the "Visual understanding" section.
 4. Say the "English to remember" terms aloud.
 5. Write one MCQ trap for that PPT.
-

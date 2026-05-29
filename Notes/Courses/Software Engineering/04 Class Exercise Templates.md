@@ -62,6 +62,7 @@ flowchart LR
 Exam warning:
 
 - The PPT asks you to compare "no include/extend", "extend", and "include" versions. This means the exam may test when a relationship is justified, not just whether you can draw arrows.
+- For the exact judgment rules, see [[10 Include vs Extend]].
 
 ## Lecture 4 State Transition Diagram: Email System
 
@@ -343,4 +344,3 @@ White-box minimum from PPT:
 - Branch testing: 3 cases.
 - Path testing: 3 cases.
 - Cases: `(-1, -2, 3)`, `(1, 2, 3)`, `(4, 5, 6)`.
-

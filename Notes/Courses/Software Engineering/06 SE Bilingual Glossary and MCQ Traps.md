@@ -18,6 +18,10 @@ Context model: shows the system boundary and external entities.
 
 Use case diagram: shows actors and user-visible services.
 
+Include relationship: mandatory reuse of another use case.
+
+Extend relationship: optional or conditional behavior added to a base use case.
+
 State transition diagram: shows states and event-triggered transitions.
 
 Data flow diagram: shows how data moves and is transformed.
@@ -25,6 +29,7 @@ Data flow diagram: shows how data moves and is transformed.
 Trap:
 
 - DFD does not show time order as its main purpose. Sequence/activity/state diagrams are better for behavior over time.
+- Include is not "more important than extend"; the difference is mandatory reuse vs optional condition.
 
 ## OO Basics
 
@@ -172,4 +177,3 @@ Trap:
 - LOC is language-dependent.
 - Adding people late does not linearly reduce calendar time.
 - Price to win can under-estimate actual effort.
-

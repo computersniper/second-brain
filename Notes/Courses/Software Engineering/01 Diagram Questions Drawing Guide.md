@@ -25,6 +25,7 @@ Drawing checklist:
 Common trap:
 
 - Do not make every sub-function an include/extend. In class exercise, the teacher highlighted comparing solutions and avoiding unnecessary include/extend.
+- For detailed rules, see [[10 Include vs Extend]].
 
 ## State Transition Diagram
 
@@ -145,4 +146,3 @@ Drawing checklist:
 3. Add first-level modules: input, transform, output.
 4. Add lower-level modules according to detailed processes.
 5. Restructure to improve cohesion and reduce coupling.
-
