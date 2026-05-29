@@ -55,3 +55,5 @@ Source folder: `D:\study\se`
 - [[04 Class Exercise Templates]]
 - [[05 Lecture Review Checklists]]
 - [[06 SE Bilingual Glossary and MCQ Traps]]
+- [[07 Final Cram Sheet]]
+- [[08 Drawing Drill Pack]]

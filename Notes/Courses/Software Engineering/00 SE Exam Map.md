@@ -103,3 +103,5 @@ This is the control page for Software Engineering exam review.
 - [[04 Class Exercise Templates]]
 - [[05 Lecture Review Checklists]]
 - [[06 SE Bilingual Glossary and MCQ Traps]]
+- [[07 Final Cram Sheet]]
+- [[08 Drawing Drill Pack]]
