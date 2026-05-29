@@ -31,7 +31,8 @@ Source index: [[SE Source Index]]
 - [x] Convert review-photo scope into lecture-by-lecture checklists.
 - [x] Add worked drawing examples from class exercise PPTX files.
 - [x] Add multiple-choice traps and bilingual glossary.
-- [ ] Build one-page final cram sheet.
+- [x] Build one-page final cram sheet.
+- [x] Build drawing drill pack for diagram-heavy questions.
 
 ## Practice Order
 
@@ -40,6 +41,13 @@ Source index: [[SE Source Index]]
 3. Lecture 12 structured design: DFD -> structured tree.
 4. Lecture 13/14 testing: equivalence classes + control-flow coverage.
 5. Lecture 16 cost estimation concepts and model differences.
+
+## Final-Day Route
+
+1. Read [[07 Final Cram Sheet]] once.
+2. Redraw all prompts in [[08 Drawing Drill Pack]] without looking.
+3. Check every uncertain term in [[06 SE Bilingual Glossary and MCQ Traps]].
+4. Revisit class exercise PPTX only for diagrams you still cannot reproduce.
 
 ## Daily Review Loop
 
