@@ -100,4 +100,6 @@ This is the control page for Software Engineering exam review.
 - [[01 Diagram Questions Drawing Guide]]
 - [[02 Testing Quick Notes]]
 - [[03 Cost Estimation Quick Notes]]
-
+- [[04 Class Exercise Templates]]
+- [[05 Lecture Review Checklists]]
+- [[06 SE Bilingual Glossary and MCQ Traps]]
