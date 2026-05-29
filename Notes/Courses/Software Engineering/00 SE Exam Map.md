@@ -105,3 +105,4 @@ This is the control page for Software Engineering exam review.
 - [[06 SE Bilingual Glossary and MCQ Traps]]
 - [[07 Final Cram Sheet]]
 - [[08 Drawing Drill Pack]]
+- [[09 All PPT Explanations]]
