@@ -55,6 +55,7 @@ Source folder: `D:\study\se`
 
 ## Related Notes
 
+- [[00 My SE Notes Index]]
 - [[00 SE Exam Map]]
 - [[01 Diagram Questions Drawing Guide]]
 - [[02 Testing Quick Notes]]
