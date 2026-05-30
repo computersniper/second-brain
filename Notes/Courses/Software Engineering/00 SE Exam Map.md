@@ -104,6 +104,7 @@ This is the control page for Software Engineering exam review.
 
 ## Active Notes
 
+- [[00 My SE Notes Index]]
 - [[01 Diagram Questions Drawing Guide]]
 - [[02 Testing Quick Notes]]
 - [[03 Cost Estimation Quick Notes]]
