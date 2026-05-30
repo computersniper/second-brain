@@ -1,4 +1,11 @@
-# Class Exercise Templates
+---
+tags:
+  - course/se
+  - se/class-exercise
+  - exam/drawing
+---
+
+# 04 Class Exercise Templates
 
 Source: class exercise PPTX files in `D:\study\se`.
 
@@ -63,6 +70,7 @@ Exam warning:
 
 - The PPT asks you to compare "no include/extend", "extend", and "include" versions. This means the exam may test when a relationship is justified, not just whether you can draw arrows.
 - For the exact judgment rules, see [[10 Include vs Extend]].
+- For all use case relationship symbols, see [[11 Use Case Diagram Relationships]].
 
 ## Lecture 4 State Transition Diagram: Email System
 

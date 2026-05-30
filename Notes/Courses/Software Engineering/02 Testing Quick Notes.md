@@ -1,3 +1,10 @@
+---
+tags:
+  - course/se
+  - se/testing
+  - exam/mcq
+---
+
 # Testing Quick Notes
 
 ## Big Picture
@@ -80,4 +87,3 @@ Teacher-highlighted minimum set example from PPTX:
 - Boundary value testing is a black-box technique.
 - Statement coverage does not imply branch coverage.
 - Branch coverage does not necessarily imply full path coverage.
-

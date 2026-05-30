@@ -1,3 +1,9 @@
+---
+tags:
+  - course/se
+  - exam/checklist
+---
+
 # Lecture Review Checklists
 
 Use this page to decide whether a lecture is "exam-ready".
@@ -249,4 +255,3 @@ Key English:
 - function point
 - object point
 - COCOMO II
-

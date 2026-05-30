@@ -1,3 +1,10 @@
+---
+tags:
+  - course/se
+  - exam/drawing
+  - se/drill
+---
+
 # Drawing Drill Pack
 
 Use this as active recall. Draw first, then check [[04 Class Exercise Templates]].
@@ -195,4 +202,3 @@ Self-check:
 English sentence:
 
 Cost estimation predicts effort, time, and cost before or during development.
-

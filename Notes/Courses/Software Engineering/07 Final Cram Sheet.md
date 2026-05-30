@@ -1,3 +1,11 @@
+---
+tags:
+  - course/se
+  - exam/cram
+  - exam/drawing
+  - exam/mcq
+---
+
 # Final Cram Sheet
 
 Use this on the last day and the morning before the exam.

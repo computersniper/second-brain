@@ -1,4 +1,11 @@
-# SE Exam Map
+---
+tags:
+  - course/se
+  - se/index
+  - exam/map
+---
+
+# 00 SE Exam Map
 
 This is the control page for Software Engineering exam review.
 
@@ -107,3 +114,4 @@ This is the control page for Software Engineering exam review.
 - [[08 Drawing Drill Pack]]
 - [[09 All PPT Explanations]]
 - [[10 Include vs Extend]]
+- [[11 Use Case Diagram Relationships]]
