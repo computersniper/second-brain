@@ -11,6 +11,8 @@ tags:
 
 Source: user-provided slide image "Relationships in Use Case Diagrams".
 
+![[use-case-diagram-relationships.png]]
+
 ## What This Slide Is About
 
 这张表是在总结 Use Case Diagram 里几种常见 relationship：
@@ -28,13 +30,13 @@ Source: user-provided slide image "Relationships in Use Case Diagrams".
 
 ## Relationship Table
 
-| Relationship | Between | Symbol / notation | 中文理解 |
-|---|---|---|---|
-| generalization | between actors | solid line + hollow triangle arrow | actor 之间的泛化/继承，子 actor 是父 actor 的一种 |
-| communication | actors and use cases | solid line | actor 与 use case 之间有交互 |
-| include | between use cases | dashed arrow labeled `<<include>>` | 必做的公共子功能 |
-| extend | between use cases | dashed arrow labeled `<<extend>>` | 条件触发的可选扩展功能 |
-| inheritance | between use cases | line + hollow triangle arrow | use case 之间的泛化/特殊化 |
+| Relationship   | Between              | Symbol / notation                  | 中文理解                                |
+| -------------- | -------------------- | ---------------------------------- | ----------------------------------- |
+| generalization | between actors       | solid line + hollow triangle arrow | actor 之间的泛化/继承，子 actor 是父 actor 的一种 |
+| communication  | actors and use cases | solid line                         | actor 与 use case 之间有交互              |
+| include        | between use cases    | dashed arrow labeled `<<include>>` | 必做的公共子功能                            |
+| extend         | between use cases    | dashed arrow labeled `<<extend>>`  | 条件触发的可选扩展功能                         |
+| inheritance    | between use cases    | line + hollow triangle arrow       | use case 之间的泛化/特殊化                  |
 
 ## Communication
 
