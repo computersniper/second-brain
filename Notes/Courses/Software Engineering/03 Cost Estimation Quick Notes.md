@@ -1,3 +1,10 @@
+---
+tags:
+  - course/se
+  - se/cost-estimation
+  - exam/mcq
+---
+
 # Cost Estimation Quick Notes
 
 ## Why Cost Estimation Matters
@@ -46,4 +53,3 @@ Teacher review photo scope:
 - LOC is language-dependent.
 - Function points focus on functionality, not exact code lines.
 - Price to win can be risky because it may ignore real project cost.
-

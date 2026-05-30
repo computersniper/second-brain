@@ -1,3 +1,10 @@
+---
+tags:
+  - course/se
+  - resource/index
+  - se/ppt
+---
+
 # SE Source Index
 
 Purpose: this page indexes the original Software Engineering resources without copying heavy PPT/PDF files into this vault.
@@ -59,3 +66,4 @@ Source folder: `D:\study\se`
 - [[08 Drawing Drill Pack]]
 - [[09 All PPT Explanations]]
 - [[10 Include vs Extend]]
+- [[11 Use Case Diagram Relationships]]

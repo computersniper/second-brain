@@ -1,3 +1,10 @@
+---
+tags:
+  - course/se
+  - project/active
+  - exam/review
+---
+
 # SE Exam Review
 
 Status: active
@@ -35,6 +42,8 @@ Source index: [[SE Source Index]]
 - [x] Build drawing drill pack for diagram-heavy questions.
 - [x] Add multimodal explanations for all PPTX class exercise decks.
 - [x] Add focused include/extend explanation for use case diagrams.
+- [x] Add use case relationship table from slide image.
+- [x] Add Obsidian tag management guide and SE note tags.
 
 ## Practice Order
 

@@ -1,4 +1,13 @@
-# Include vs Extend
+---
+tags:
+  - course/se
+  - se/use-case
+  - se/diagram
+  - exam/mcq
+  - exam/drawing
+---
+
+# 10 Include vs Extend
 
 Use this page for Lecture 4 use case diagram questions.
 
@@ -183,3 +192,4 @@ Memory trick:
 
 In a use case diagram, `include` represents mandatory reuse of another use case, while `extend` represents optional or conditional behavior that extends a base use case.
 
+Related symbol table: [[11 Use Case Diagram Relationships]]

@@ -1,4 +1,11 @@
-# Diagram Questions Drawing Guide
+---
+tags:
+  - course/se
+  - se/diagram
+  - exam/drawing
+---
+
+# 01 Diagram Questions Drawing Guide
 
 Goal: turn "I understand it" into "I can draw it under exam pressure".
 
@@ -26,6 +33,7 @@ Common trap:
 
 - Do not make every sub-function an include/extend. In class exercise, the teacher highlighted comparing solutions and avoiding unnecessary include/extend.
 - For detailed rules, see [[10 Include vs Extend]].
+- For the full relationship table, see [[11 Use Case Diagram Relationships]].
 
 ## State Transition Diagram
 

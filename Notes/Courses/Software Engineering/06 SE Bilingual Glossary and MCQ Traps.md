@@ -1,3 +1,10 @@
+---
+tags:
+  - course/se
+  - exam/mcq
+  - se/glossary
+---
+
 # SE Bilingual Glossary and MCQ Traps
 
 Purpose: prepare for multiple-choice questions by making concept boundaries sharp.

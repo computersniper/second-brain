@@ -1,4 +1,12 @@
-# All PPT Explanations
+---
+tags:
+  - course/se
+  - se/ppt
+  - se/class-exercise
+  - exam/drawing
+---
+
+# 09 All PPT Explanations
 
 Purpose: explain every PPTX in `D:\study\se` using both slide text and visual diagram structure.
 
@@ -80,6 +88,10 @@ English to remember:
 - include
 - extend
 - base use case
+- communication
+- generalization
+
+Related note: [[11 Use Case Diagram Relationships]]
 
 Drawing checklist:
 
