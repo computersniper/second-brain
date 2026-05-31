@@ -91,3 +91,16 @@ A link （链接）is – a connection between two objects
 An association 
 – a relationship between classes and represents a group of links 
 – bidirectional （双向）or unidirectional （单向）
+
+Example:
+```mermaid
+classDiagram
+    class Student {
+        -name
+    }
+	class Book{
+		-name
+	}
+	
+	Company---Person
+```
