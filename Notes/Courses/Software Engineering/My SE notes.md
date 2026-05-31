@@ -96,11 +96,14 @@ Example:
 ```mermaid
 classDiagram
     class Student {
-        -name
+        -name: String
+        -studentID: String
     }
 	class Book{
-		-name
+		-title: String
+		-authors: List String
 	}
 	
-	Company---Person
+	Student  -->  Book : Borrow
 ```
+Unidirectional: A student can query the books he/she borrowed but it is not possible to find which student is this book lent to
