@@ -715,3 +715,13 @@ Ask:
    - No -> association is not needed.
 
 # OOA simplified iSpace system
+
+Source:
+
+- Lecture 7 OOA example: [PDF](<file:///D:/study/se/Lecture%207%20-%20OOA%20-%20An%20example.pdf>) / [TXT](<file:///D:/study/se/Lecture%207%20-%20OOA%20-%20An%20example.txt>)
+- Assignment / iSpace document: [A Simplified iSpace System.docx](<file:///D:/study/se/A%20Simplified%20iSpace%20System.docx>)
+- Images: [[sis-activity.png]], [[sis-usecase.png]]
+
+![[sis-activity.png]]
+
+![[sis-usecase.png]]
