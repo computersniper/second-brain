@@ -9,7 +9,44 @@ tags:
 ---
 
 
-# Include vs Extend vs  inheritance/generalization [[10 Include vs Extend]]
+# My SE Notes
+
+## Sources / Related Notes
+
+Main source folder:
+
+- [[SE Source Index]]
+
+Lecture sources:
+
+- Lecture 4 System Models: [PDF](<file:///D:/study/se/Lecture%204%20System%20models.pdf>) / [TXT](<file:///D:/study/se/Lecture%204%20System%20models.txt>)
+- Lecture 5 OO Object / Classes: [PDF](<file:///D:/study/se/Lecture%205%20-%20OO%20object.pdf>) / [TXT](<file:///D:/study/se/Lecture%205%20-%20OO%20object.txt>)
+- Lecture 6 OOA / UML introduction: [PDF](<file:///D:/study/se/Lecture%206%20-%20OOA%20%20UML%20introduction.pdf>) / [TXT](<file:///D:/study/se/Lecture%206%20-%20OOA%20%20UML%20introduction.txt>)
+
+Class exercise sources:
+
+- Lecture 4 use case diagram PPT: [PPTX](<file:///D:/study/se/class%20exercise%20lecture%204%20use%20case%20diagram.pptx>)
+- Lecture 4 state transition diagram PPT: [PPTX](<file:///D:/study/se/class%20exercise%20lecture%204%20state%20transition%20diagram.pptx>)
+- Lecture 5 class diagram PPT: [PPTX](<file:///D:/study/se/Class%20exercise%20lecture%205%20Class.pptx>)
+- Lecture 6 class diagram PPT: [PPTX](<file:///D:/study/se/class%20exercise%20lecture%206%20class%20diagram.pptx>)
+
+Detailed notes:
+
+- [[10 Include vs Extend]]
+- [[11 Use Case Diagram Relationships]]
+- [[01 Diagram Questions Drawing Guide]]
+- [[04 Class Exercise Templates]]
+- [[09 All PPT Explanations]]
+
+---
+
+# Include vs Extend vs inheritance/generalization
+
+Source:
+
+- [[10 Include vs Extend]]
+- [[11 Use Case Diagram Relationships]]
+- Image: [[use-case-diagram-relationships.png]]
 
 Include:  A (Base case) ---include---> B    必做的公共步骤。`include` 表示“每次执行 A，都一定会执行 B”。B 通常是多个 use case 共享的公共子流程。
 
@@ -26,12 +63,31 @@ For two use cases A and B, if A the generalization of B, and B is a specializati
 
 
 # State Machine Model
+
+Source:
+
+- Lecture 4 System Models: [PDF](<file:///D:/study/se/Lecture%204%20System%20models.pdf>)
+- Class exercise: [state transition diagram PPTX](<file:///D:/study/se/class%20exercise%20lecture%204%20state%20transition%20diagram.pptx>)
+- Image: [[state-transition-machine.png.png]]
+
 ![[state-transition-machine.png.png]]
 
 Data-Flow Model
+
+Source:
+
+- Lecture 4 System Models: [PDF](<file:///D:/study/se/Lecture%204%20System%20models.pdf>)
+- Image: [[notation.png.png]]
+
 ![[notation.png.png]]
 
 # Features of A Class
+
+Source:
+
+- Lecture 5 OO Object / Classes: [PDF](<file:///D:/study/se/Lecture%205%20-%20OO%20object.pdf>) / [TXT](<file:///D:/study/se/Lecture%205%20-%20OO%20object.txt>)
+- Related: [[05 Lecture Review Checklists]]
+
 ## Abstraction 抽象
 抽象就是只保留当前问题里重要的属性和行为，忽略不重要的细节。
 Class: File
@@ -61,6 +117,11 @@ add(char *str1, char *str2)
 Object + Classification + Inheritance + Communication
 
 # Object-Oriented Software Development
+
+Source:
+
+- Lecture 6 OOA / UML introduction: [PDF](<file:///D:/study/se/Lecture%206%20-%20OOA%20%20UML%20introduction.pdf>) / [TXT](<file:///D:/study/se/Lecture%206%20-%20OOA%20%20UML%20introduction.txt>)
+
 Develop the software which is a collection of objects that incorporate both data structure （数据）and behavior （行为）
 ## 四个阶段：
 - Object-Oriented Analysis (Requirements specification) 
@@ -69,6 +130,12 @@ Develop the software which is a collection of objects that incorporate both data
 - Object-Oriented Programming (Implementation)
 
 # UML
+
+Source:
+
+- Lecture 6 OOA / UML introduction: [PDF](<file:///D:/study/se/Lecture%206%20-%20OOA%20%20UML%20introduction.pdf>)
+- Image: [[uml.png.png]]
+
 ![[uml.png.png]]
 
 ## Class Diagram
@@ -86,6 +153,12 @@ classDiagram
 ```
 
 ### Associations and links
+
+Source:
+
+- Lecture 6 OOA / UML introduction: [PDF](<file:///D:/study/se/Lecture%206%20-%20OOA%20%20UML%20introduction.pdf>)
+- Lecture 6 class diagram exercise: [PPTX](<file:///D:/study/se/class%20exercise%20lecture%206%20class%20diagram.pptx>)
+
 A link （链接）is – a connection between two objects
 
 An association 
@@ -128,6 +201,12 @@ Bidirectional A student can query the books he/she borrowed and It is possible t
 
 
 ![[asspcoatopm-classes.png.png]]
+
+Source:
+
+- Image: [[asspcoatopm-classes.png.png]]
+- Related: association class explanation from class diagram lecture/exercise.
+
 关联关系本身可以有属性和操作。
 关联类不能脱离它连接的类单独存在。
 ```mermaid
@@ -151,6 +230,11 @@ classDiagram
     Borrow "0..*" --> "1" Book : book
 ```
 ### Multiplicity
+
+Source:
+
+- Lecture 6 OOA / UML introduction: [PDF](<file:///D:/study/se/Lecture%206%20-%20OOA%20%20UML%20introduction.pdf>)
+
 **常见 multiplicity**
 
 1 exactly one / 正好一个 
@@ -178,9 +262,19 @@ classDiagram
 One student can borrow 0 or many books
 
 ### Qualifier
+
+Source:
+
+- Image: [[qualifier.png.png]]
+
 ![[qualifier.png.png]]
 
 ### Inheritance vs Aggregation
+
+Source:
+
+- Lecture 5 OO Object / Classes: [PDF](<file:///D:/study/se/Lecture%205%20-%20OO%20object.pdf>)
+- Lecture 6 UML relationships: [PDF](<file:///D:/study/se/Lecture%206%20-%20OOA%20%20UML%20introduction.pdf>)
 
 Inheritance: **is-a** relationship / 是一种
 
@@ -416,6 +510,12 @@ Book <|-- Library     wrong, because Library is not a kind of Book
 
 ![[operations-in-a-class.png]]
 
+Source:
+
+- Image: [[operations-in-a-class.png]]
+- Lecture 5 OO Object / Classes: [PDF](<file:///D:/study/se/Lecture%205%20-%20OO%20object.pdf>)
+- Related concept: class operations should work on attributes of the same class.
+
 Operation in a class must work on the attributes of this class.
 
 中文：
@@ -500,6 +600,12 @@ User 发出 draw 的命令，但 Line 根据自己的两个点来画线。
 ## Association between Classes
 
 ![[association-between-classes.png]]
+
+Source:
+
+- Image: [[association-between-classes.png]]
+- Lecture 5 / class modeling slides.
+- Related section: [[#Operation]]
 
 Association between classes is created because two participating classes have information dependency.
 
@@ -607,3 +713,5 @@ Ask:
 2. Do we need to record which `User` edited which `Document`?
    - Yes -> draw association.
    - No -> association is not needed.
+
+# OOA simplified iSpace system
