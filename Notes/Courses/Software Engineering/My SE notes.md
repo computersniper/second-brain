@@ -186,7 +186,7 @@ Inheritance: **is-a** relationship / 是一种
 
 Aggregation: **has-a / part-of** relationship / 拥有、包含、整体-部分
 
-## Inheritance 继承
+### Inheritance 继承
 
 B（子类 / subclass） is a kind of A（父类 / superclass）.
 
@@ -237,7 +237,7 @@ Meaning:
 继承表示“子类是父类的一种”。  
 子类可以复用父类已有的 attributes 和 operations，并且可以增加自己的特殊 features。
 
-## Aggregation 聚合
+### Aggregation 聚合
 
 A has B, but B can still exist without A.
 
@@ -290,7 +290,7 @@ Meaning:
 | Composition | Is B a part of A and cannot exist independently? | B 是 A 的强组成部分 | `A *-- B` |
 
 
-## Aggregation vs Composition
+### Aggregation vs Composition
 
 Aggregation is weak whole-part:
 
@@ -396,7 +396,7 @@ classDiagram
 
 House has Rooms, and Room normally cannot exist independently without the House.
 
-## Quick Memory
+### Quick Memory
 
 ```text
 Inheritance = is-a
@@ -411,3 +411,199 @@ Library o-- Book      correct for aggregation
 House *-- Room        correct for composition
 Book <|-- Library     wrong, because Library is not a kind of Book
 ```
+
+## Operation
+
+![[operations-in-a-class.png]]
+
+Operation in a class must work on the attributes of this class.
+
+中文：
+
+一个 class 里面的 operation，应该主要操作这个 class 自己的 attributes。  
+不要因为“某个 user 做了这个动作”，就把 operation 放到 User 里面。
+
+## Where should an operation belong?
+
+Rule:
+
+```text
+Operation belongs to the class whose attributes it works on.
+操作谁的数据，就放到谁的类里。
+```
+
+Example 1:
+
+```text
+User can edit Document.
+Edit() belongs to Document, not User.
+```
+
+Why:
+
+```text
+Edit() changes Document.Content.
+```
+
+Mermaid:
+
+```mermaid
+classDiagram
+    class User {
+        Name
+    }
+
+    class Document {
+        Content
+        Edit()
+    }
+```
+
+中文理解：
+
+User 只是触发 edit 的 actor/object。  
+真正被修改的是 Document 的 Content，所以 `Edit()` 应该放在 `Document`。
+
+Example 2:
+
+```text
+User can draw a Line.
+Draw() belongs to Line, not User.
+```
+
+Why:
+
+```text
+Draw() works on Line.Point1 and Line.Point2.
+```
+
+Mermaid:
+
+```mermaid
+classDiagram
+    class User {
+        Name
+    }
+
+    class Line {
+        Point1
+        Point2
+        Draw()
+    }
+```
+
+中文理解：
+
+User 发出 draw 的命令，但 Line 根据自己的两个点来画线。  
+所以 `Draw()` 属于 `Line`。
+
+## Association between Classes
+
+![[association-between-classes.png]]
+
+Association between classes is created because two participating classes have information dependency.
+
+中文：
+
+两个 class 之间是否需要 association，不是看句子里有没有 verb，而是看它们之间有没有信息依赖 / 静态关系。
+
+Important sentence:
+
+```text
+Not every verb is an association.
+Only when two classes have some static relationship, there is an association.
+```
+
+中文：
+
+不是每个动词都是 association。  
+只有两个类之间需要保存某种状态关系 / 信息依赖时，才需要 association。
+
+## Is Edit an association?
+
+Question:
+
+```text
+If a user can edit the document, is edit an association?
+```
+
+Answer:
+
+It depends on whether user information needs to be recorded.
+
+Case 1:
+
+```text
+If the edit work needs to be tracked according to user's information,
+then edit is an association.
+```
+
+中文：
+
+如果系统需要记录“哪个 user 编辑了哪个 document”，那么 User 和 Document 之间有信息依赖，需要 association。
+
+Mermaid:
+
+```mermaid
+classDiagram
+    class User {
+        Name
+    }
+
+    class Document {
+        Content
+        Edit()
+    }
+
+    User --> Document : edits
+```
+
+Case 2:
+
+```text
+If the edit work will not record any user information,
+the association is not needed.
+```
+
+中文：
+
+如果系统只需要修改 Document.Content，不需要记录 user 信息，那么 User 和 Document 不一定需要 association。
+
+## Operation vs Association
+
+| Question | Look at | Result |
+|---|---|---|
+| Where does `Edit()` belong? | Which class's attributes are changed? | `Document`, because it changes `Content` |
+| Is `edit` an association? | Do we need to remember relationship/info between User and Document? | only if user edit info must be tracked |
+
+## Quick Memory
+
+```text
+Operation = behavior inside a class, working on its own attributes.
+Association = static information dependency between classes.
+```
+
+中文口诀：
+
+```text
+操作谁的数据，operation 放谁那里。
+需要记住谁和谁的关系，才画 association。
+有动词不一定有关联。
+```
+
+Exam trap:
+
+```text
+User edits Document
+```
+
+Do not automatically put `Edit()` in `User`.  
+Do not automatically draw `User -- Document`.
+
+Ask:
+
+1. Does `Edit()` change `Document.Content`?
+   - Yes -> `Edit()` belongs to `Document`.
+2. Do we need to record which `User` edited which `Document`?
+   - Yes -> draw association.
+   - No -> association is not needed.
