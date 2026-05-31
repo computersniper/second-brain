@@ -122,4 +122,227 @@ classDiagram
 ```
 
 Unidirectional: A student can query the books he/she borrowed but it is not possible to find which student is this book lent to
+
+Associations are inherently bidirectional.
 Bidirectional A student can query the books he/she borrowed and It is possible to find which student is this book lent to
+
+
+![[asspcoatopm-classes.png.png]]
+关联关系本身可以有属性和操作。
+关联类不能脱离它连接的类单独存在。
+```mermaid
+classDiagram
+    class Student {
+        name: String
+        studentID: String
+    }
+
+    class Book {
+        title: String
+        authors: StringList
+    }
+
+    class Borrow {
+        librarian: String
+        time: Time
+    }
+
+    Student "1" --> "0..*" Borrow : borrows
+    Borrow "0..*" --> "1" Book : book
+```
+### Multiplicity
+**常见 multiplicity**
+
+1 exactly one / 正好一个 
+0..1 zero or one / 零个或一个 
+0..* zero or many / 零个或多个 
+1..* one or many / 一个或多个 
+\* many / 多个 
+\* n exactly n / 正好 n 个
+\* m..n from m to n / m 到 n 个
+
+```mermaid
+classDiagram
+    class Student {
+        name: String
+        studentID: String
+    }
+
+    class Book {
+        title: String
+        authors: StringList
+    }
+
+    Student "1" -- "0..*" Book : borrows
+```
+One student can borrow 0 or many books
+
+### Qualifier
+![[qualifier.png.png]]
+
+### Inheritance vs Aggregation
+
+Inheritance: **is-a** relationship / 是一种
+
+Aggregation: **has-a / part-of** relationship / 拥有、包含、整体-部分
+
+## Inheritance 继承
+
+B（子类 / subclass） is a kind of A（父类 / superclass）.
+
+```text
+B --|> A
+子类 --|> 父类
+```
+
+Example:
+
+```text
+Dog is an Animal.
+PPT file is a File.
+Word file is a File.
+```
+
+Mermaid:
+
+```mermaid
+classDiagram
+    class File {
+        size
+        open()
+        close()
+        edit()
+    }
+
+    class PPTFile {
+        slideCount
+    }
+
+    class WordFile {
+        wordCount
+    }
+
+    File <|-- PPTFile
+    File <|-- WordFile
+```
+
+Meaning:
+
+- `PPTFile` inherits attributes and operations from `File`.
+- `WordFile` inherits attributes and operations from `File`.
+- The hollow triangle arrow points to superclass.
+
+中文理解：
+
+继承表示“子类是父类的一种”。  
+子类可以复用父类已有的 attributes 和 operations，并且可以增加自己的特殊 features。
+
+## Aggregation 聚合
+
+A has B, but B can still exist without A.
+
+```text
+A o-- B
+整体 o-- 部分
+```
+
+Example:
+
+```text
+Team has Players.
+Library has Books.
+Department has Teachers.
+```
+
+Mermaid:
+
+```mermaid
+classDiagram
+    class Library {
+        name
+    }
+
+    class Book {
+        title
+        authors
+    }
+
+    Library o-- Book : has
+```
+
+Meaning:
+
+- `Library` has `Book`.
+- But `Book` can still exist if this library is deleted or if the book moves to another library.
+- Empty diamond is on the whole side.
+
+中文理解：
+
+聚合表示“整体-部分”关系，但这个部分不是强依赖。  
+部分对象可以脱离整体继续存在。
+
+## Difference
+
+| Relationship | Question to ask | Meaning | Mermaid / UML |
+|---|---|---|---|
+| Inheritance | Is B a kind of A? | B 是 A 的一种 | `A <|-- B` |
+| Aggregation | Does A have B? | A 拥有/包含 B | `A o-- B` |
+
+## Quick Rule
+
+Ask:
+
+1. Can I say "B is a A"?
+   - Yes -> Inheritance.
+2. Can I say "A has B"?
+   - Yes -> Aggregation.
+
+Example:
+
+```text
+Student is a Person -> inheritance
+Class has Students -> aggregation
+Library has Books -> aggregation
+PPT file is a File -> inheritance
+```
+
+## Exam Trap
+
+Do not use inheritance just because two classes are related.
+
+Wrong:
+
+```text
+Library <|-- Book
+```
+
+This means "Book is a Library", which is false.
+
+Correct:
+
+```text
+Library o-- Book
+```
+
+This means "Library has Books".
+
+## Aggregation vs Composition
+
+Aggregation is weak whole-part:
+
+```text
+Library o-- Book
+```
+
+Composition is strong whole-part:
+
+```text
+House *-- Room
+```
+
+Composition means the part strongly depends on the whole.
+
+中文：
+
+- Aggregation: 部分可以独立存在。
+- Composition: 部分通常不能脱离整体独立存在。
