@@ -106,4 +106,20 @@ classDiagram
 	
 	Student  -->  Book : Borrow
 ```
+
+```mermaid
+classDiagram
+    class Student {
+        -name: String
+        -studentID: String
+    }
+	class Book{
+		-title: String
+		-authors: List String
+	}
+	
+	Student  --  Book : Borrow
+```
+
 Unidirectional: A student can query the books he/she borrowed but it is not possible to find which student is this book lent to
+Bidirectional A student can query the books he/she borrowed and It is possible to find which student is this book lent to
