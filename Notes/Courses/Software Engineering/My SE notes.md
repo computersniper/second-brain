@@ -725,3 +725,85 @@ Source:
 ![[sis-activity.png]]
 
 ![[sis-usecase.png]]
+
+## Objects
+
+Source:
+
+- Lecture 7 OOA example: [PDF](<file:///D:/study/se/Lecture%207%20-%20OOA%20-%20An%20example.pdf>) / [TXT](<file:///D:/study/se/Lecture%207%20-%20OOA%20-%20An%20example.txt>)
+
+Three types of objects:
+
+1. Entity objects
+2. Boundary objects
+3. Control objects
+
+### Entity objects
+
+Entity objects are participating objects in the application domain.
+
+中文：
+
+Entity object 是业务领域里真正要保存信息的对象。  
+一般来自系统描述中的重要名词。
+
+Example:
+
+```text
+Student
+Course
+Assignment
+Document
+Book
+```
+
+### Boundary objects
+
+Boundary objects represent the system interface.
+
+中文：
+
+Boundary object 是系统和外部 actor 交互的边界，比如页面、窗口、表单、API interface。
+
+Example:
+
+```text
+LoginPage
+EditProfilePage
+BorrowBookForm
+```
+
+### Control objects
+
+Control objects coordinate boundary objects and entity objects.
+
+中文：
+
+Control object 负责协调流程。  
+通常一个 use case 可以有一个 control object。
+
+Example:
+
+```text
+BorrowBookControl
+EditProfileControl
+iSpaceSystemControl
+```
+
+Exam memory:
+
+```text
+Entity = domain data
+Boundary = interface
+Control = coordination / workflow
+```
+
+Important rule:
+
+```text
+Entity objects never access boundary or control objects.
+```
+
+中文：
+
+Entity object 不应该反过来依赖界面或控制对象。
