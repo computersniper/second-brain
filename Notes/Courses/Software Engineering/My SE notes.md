@@ -724,8 +724,8 @@ Source:
 
 ![[sis-activity.png]]
 
-![[sis-usecase.png]]
-
+![[sis-usecase.png|697]]
+![[sis-std.png]]
 ## Objects
 
 Source:

@@ -14,9 +14,10 @@ Source folder: `D:\study\qf\ppt`
 ## Current Status
 
 - [x] Chap 1 - Introduction to Quantum Finance
-- [ ] Chap 2 - Quantum Field Theory for Quantum Finance
+- [x] Chap 2 - Quantum Field Theory for Quantum Finance
   - [x] CH2 exam focus: QM basics, Classical vs Quantum Field, Path Integral, Feynman Diagrams, Quantum Oscillators
-- [ ] Chap 3 - An Overview of Quantum Finance Models
+- [x] Chap 3 - An Overview of Quantum Finance Models
+  - [x] CH3 exam focus: history, two major models, Path Integral, QAHO, Path Integral vs QAHO
 - [ ] Chap 4 - Quantum Finance Theory / Quantum Price Model
 - [ ] Chap 5 - Quantum Price Levels in Quantum Finance
 - [ ] Chap 6 - Quantum Trading and Hedging Strategy

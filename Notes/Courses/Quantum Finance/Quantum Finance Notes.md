@@ -1,141 +1,51 @@
 ---
 tags:
   - course/qf
-  - qf/introduction
   - exam/review
+  - qf/notes
 ---
 
-# 01 Introduction to Quantum Finance
+# Quantum Finance Notes
 
-Source PDF: `D:\study\qf\ppt\Chap 1 - Introduction to Quantum Finance.pdf`
+Source folder: `D:\study\qf\ppt`
 
-## One-Sentence Summary
+这篇是量子金融的主笔记，放“大白话理解”和章节逻辑。考试时真正要带的英文公式/答题模板放在 [[QF Open-Book Exam Sheet]]；老师 review 明确点名的考点放在 [[Exam Focus]]。
 
-Quantum Finance tries to use ideas from Quantum Mechanics (QM) and Quantum Field Theory (QFT) to model financial markets, because markets look both measurable at a single price point and uncertain/dynamic as a whole system.
+## 总体抓手
 
-一句话中文理解：量子金融不是说股票真的变成了电子，而是借用量子世界里“离散状态、波粒二象性、不确定性、场、振荡器”等思想，去解释和建模金融市场中价格、趋势、波动和预测的问题。
+量子金融不是说股票真的变成电子，而是借用 Quantum Mechanics / Quantum Field Theory 里的概念来建模金融市场：
 
-## Chapter Structure
-
-| Section | English title | What it wants you to understand |
-|---|---|---|
-| CH1.1 | A Tale of Two Worlds | 经典力学、相对论、量子力学分别适合解释什么世界 |
-| CH1.2 | Two Sides of the Same Coin | 金融市场里也可以类比 wave-particle duality |
-| CH1.3 | Quantum Field Theory and the Birth of Quantum Finance | Quantum Finance 来自 econophysics，并借用 QFT 框架 |
-| CH1.4 | The Philosophy of Quantum Finance | 用 Uncertainty Principle 连接 Fuzzy Logics 和 Chaos Theory |
-| CH1.5 | Basic Components of Quantum Finance | 量子金融的四层模型：Energy Field, Neural, FinTech, Application |
-
-## 1. From Classical World to Quantum World
-
-老师一开始问的问题是：世界到底是由确定规律支配，还是由偶然性支配？
-
-这其实是在为金融市场铺垫。因为传统金融建模经常希望找到确定规律，但真实市场又充满随机性、不确定性、突变和复杂互动。
-
-### Classical Mechanics
-
-Classical Mechanics 是 Newton 的世界，代表公式是 `F = ma`。
-
-它适合解释：
-
-- normal size 的宏观物体；
-- normal speed，即远小于光速的运动；
-- cause-and-effect 很清楚的系统。
-
-中文理解：如果一个系统可以清楚地知道初始状态、受力和运动规律，那么它就比较像经典力学世界。你知道原因，就能推结果。
-
-放到金融里看，传统模型很多时候也希望市场像经典力学：给定信息、风险、收益，就可以算出价格。但金融市场往往没这么听话。
-
-### General Relativity
-
-General Relativity 是 Einstein 的世界，用 spacetime 的几何性质解释 gravity。
-
-它适合解释：
-
-- 接近光速的运动；
-- 极大质量对象；
-- 宇宙尺度现象，例如 expanding universe 和 Big Bang Theory。
-
-这一部分在 Chapter 1 里不是重点计算内容，主要作用是告诉你：不同尺度的世界，需要不同理论。
-
-### Quantum Mechanics
-
-Quantum Mechanics 描述的是 atoms 和 subatomic particles 这样的微观世界。
-
-它有几个关键特征：
-
-- Quantization：能量、动量等不是连续任意值，而是 discrete states。
-- Wave-Particle Duality：对象同时有 particle 和 wave 的性质。
-- Heisenberg's Uncertainty Principle：某些量不能同时被无限精确测量。
-- Measurement / collapse：观察或测量会让多个可能状态 collapse 成一个具体结果。
-
-中文理解：量子世界不是“所有事情都已经确定，只是我们不知道”，而是系统在测量前可能处于多种可能状态。测量发生时，我们看到其中一个结果。
-
-## 2. Wave-Particle Duality in Financial Markets
-
-课件的核心类比是：金融市场也有 wave-particle duality。
-
-### Particle Side
-
-At any particle instance, we can observe the price/index value of a financial product.
-
-也就是说，在某一个具体时刻，你可以测量一个股票、指数或金融产品的价格。这个价格点像一个 particle：
-
-- 它是具体的；
-- 可观测；
-- 可以被记录成时间序列中的一个点。
-
-例子：某一秒钟的 DJI index value、某只股票的成交价。
-
-### Wave Side
-
-As a whole, the market itself acts like waves.
-
-市场作为整体，不只是一个个价格点，还会呈现出波动、趋势、周期、扩散和群体行为。课件举了 Elliott Waves 作为例子。
-
-中文理解：单个价格点像 particle，整个价格走势或市场情绪像 wave。量子金融要处理的就是这两个视角如何统一建模。
-
-考试抓手：
-
-- 问 particle view：回答 price/index at a particular observable instant。
-- 问 wave view：回答 market movement/trend/oscillation as a whole。
-- 问为什么引入 QM/QFT：因为金融市场同时有可观测价格点和整体波动结构。
-
-## 3. Quantum Field Theory and Quantum Finance
-
-Quantum Field Theory (QFT) 是一个 unified theoretical framework，用来描述 fundamental particles 的 motion and dynamics。
-
-课件说 QFT 结合了：
-
-- Maxwell Field Theory
-- Special Relativity
-- Quantum Mechanics
-
-QFT 的重要思想是：fundamental particles 可以看作 underlying fields 的 excited states，也就是 quanta。
-
-中文理解：QFT 不只是看“粒子本身”，而是认为背后有一个 field。粒子像是场中的激发状态。借到金融里，就可以把单个价格看成某种 price field 的表现。
-
-### 大白话理解：先有 Field，再有 Price
-
-普通想法会把世界理解成一个个小粒子；QFT 换了个角度：粒子不是孤立的小球，而是某个 field 里面被激发出来的状态。
-
-可以想象一张看不见的弹性网。平时这张网在那里；某个地方一震，我们看到一个局部波动。QFT 会说：你看到的“粒子”，其实是 field 里面的一次 excited state。
-
-把这个类比放到金融市场：
-
-- 我们平时看到的是一个个价格点，比如 9:00 的价格、9:01 的价格；
-- 但价格点背后有很多力量：买卖双方、市场情绪、新闻、利率、资金流、投资者预期；
-- 所以 Quantum Finance 会尝试假设：单个价格不是孤立出现的，而是某种 underlying price field 的表现。
+- 单个价格、指数、指标值像 particle：具体、可观察、可记录。
+- 整体市场走势、趋势、周期、形态像 wave：连续波动、有结构、有干涉式的复杂行为。
+- 市场未来不是一个确定答案，而是多个 possible states。
+- 价格/收益率不是完美线性运动，更像 nonlinear oscillation。
 
 一句话：
 
+> Quantum Finance 用 QM/QFT 的 field、wave-particle duality、uncertainty、quantization、oscillator 等思想，结合 computational finance 和 AI，去做金融市场预测、QPL 计算和交易系统。
+
+## CH1 Introduction to Quantum Finance
+
+### CH1.3 Quantum Field Theory and the Birth of Quantum Finance
+
+QFT 的大白话是：粒子不是孤立小球，而是 underlying field 里的 excited state。
+
+放到金融里：
+
 ```text
-Single observed price = market field 的一个具体表现
-Underlying price field = 推动价格变化的整体市场状态
+single observed price = 你看到的结果
+Quantum Price Field = 背后推动价格变化的整体市场状态
 ```
 
-所以 Chapter 1 里说 Quantum Finance 的 birth，不是说金融市场真的由物理粒子组成，而是说：传统金融模型不一定能很好解释复杂、不确定、非线性的市场，于是有人借用 QFT / QM / statistical physics 的思想来建立新的金融建模框架。
+所以 Quantum Finance 的出生逻辑是：
 
-例子：如果观察 Bitcoin price：
+```text
+QFT: particle = excited state of field
+QF: observed price = expression/state of price field
+Goal: model, forecast and trade financial markets
+```
+
+例子：看到一串 Bitcoin price：
 
 ```text
 09:00 = 100000
@@ -143,236 +53,360 @@ Underlying price field = 推动价格变化的整体市场状态
 09:02 = 99800
 ```
 
-传统时间序列视角会直接看涨跌、收益率、均线。Quantum Finance 的类比视角会问：这些价格点背后的 market field 发生了什么？市场情绪是否被激发？买方力量是否增强？价格是否进入某种 oscillation？是否有 chaotic dynamics？
+普通时间序列视角看涨跌、收益率、均线。Quantum Finance 会问：背后的 market field 是否被激发？是否进入 oscillation？是否有 chaotic dynamics？
 
-考试可以这样写：
+### CH1.4 Philosophy: Uncertainty + Fuzzy + Chaos
 
-```text
-Quantum Field Theory treats fundamental particles as excited states of underlying quantum fields. Quantum Finance borrows this idea to model financial markets. Instead of only observing individual prices, it assumes that price movements may be generated by an underlying Quantum Price Field.
-```
-
-### Quantum Anharmonic Oscillators
-
-课件提到 atoms absorb and emit electromagnetic radiation as tiny oscillators, and their energies can only take discrete values. 这些被称为 Quantum Anharmonic Oscillators (QAHO)。
-
-这里先不用急着会推导。Chapter 1 只要理解：
-
-- oscillator 强调系统会振荡；
-- quantum 强调状态或能量是离散的；
-- anharmonic 暗示这种振荡不是简单、完美、线性的正弦波。
-
-金融类比：价格不是平滑直线，而是有非线性振荡、跳变、趋势和噪声。
-
-## 4. Birth of Quantum Finance
-
-Quantum Finance (QF) 是一个 interdisciplinary subject，属于 econophysics 的方向。它把 Quantum Mechanics 和 Quantum Field Theory 应用到金融市场建模中。
-
-课件提到 econophysics 的早期代表是 Mantegna and Stanley 在 1999 年的工作：An Introduction to Econophysics - Correlations and Complexity in Finance。
-
-这门课后续会把这些内容结合起来：
-
-- path integrals
-- Hamiltonians
-- wavefunctions
-- quantum oscillators
-- fuzzy logics
-- Genetic Algorithms (GA)
-- chaos and fractals
-- AI tools
-
-这些工具的共同目标是：model and interpret worldwide financial markets for financial forecast and quantum trading。
-
-中文理解：这门课不是单纯讲量子物理，也不是单纯讲金融交易，而是把物理模型、复杂系统、AI 方法放在一起，用来预测金融市场和构建交易模型。
-
-### CH1.3 的复习抓手
-
-这节可以背成一条链：
+这一节标题很吓人，但逻辑很简单：
 
 ```text
-QFT: particle = excited state of field
--> QF analogy: observed price = state/expression of price field
--> Goal: use QM/QFT + AI tools to model, forecast and trade financial markets
+market uncertainty
+-> many possible states before observation
+-> fuzzy states need Fuzzy Logics
+-> chaotic/random-like dynamics need Chaos Theory
 ```
 
-如果考试问 Quantum Finance 为什么从 QFT 发展出来，重点回答：
+Uncertainty Principle 在金融里主要是类比：市场结果出现前，上涨、下跌、横盘、先涨后跌都可能存在；交易和观察发生后，才出现一个 realized state。
 
-- QFT 提供了 field-based modeling 的思想；
-- 金融市场不只是一串 isolated prices，而是复杂 market dynamics 的表现；
-- Quantum Finance 借用 field、oscillator、wavefunction、Hamiltonian 等概念，再结合 AI tools 进行 prediction and trading。
-
-## 5. Uncertainty Principle in Financial Markets
-
-Heisenberg's Uncertainty Principle 原本说：越精确确定粒子的位置，越难精确确定它的动量。
-
-课件公式表达的是：
-
-```text
-Delta x * Delta p >= hbar / 2
-```
-
-其中 `hbar` 是 reduced Planck constant。
-
-### Collapse
-
-量子力学里，一个系统在测量前可以处于 quantum states 的叠加。观察发生后，系统 collapse into a particular reality。
-
-课件用 Schrodinger's Cat 来说明：在打开盒子前，猫可以被理解为 alive-and-dead 的叠加；打开盒子观察后，现实 collapse 成 alive 或 dead。
-
-### Financial Market Analogy
-
-金融市场中的不确定性可以这样理解：
-
-- 没有观察市场之前，很多走势都是可能的；
-- 一旦观察、交易、公布信息或价格形成，市场状态就表现为某一个具体结果；
-- 市场不是简单的随机噪声，也可能存在 deterministic chaos。
-
-注意：这里是类比，不是说金融市场严格遵守物理里的不确定性公式。考试表达时可以说：
-
-Quantum Finance applies the analogy of Uncertainty Principle to model uncertain and multiple possible states in financial markets.
-
-### 大白话理解：市场不是先写好答案
-
-在物理里，Uncertainty Principle 的意思是：有些变量不能同时被无限精确地测量。放到金融里，Chapter 1 更强调它的类比意义：
-
-```text
-Before observation: many market outcomes are possible.
-After observation: one realized market state appears.
-```
-
-比如明天某只股票可能上涨、下跌、横盘，也可能先涨后跌。结果出现之前，这些都是 possible states；等到市场开盘、交易发生、价格形成，我们才看到其中一个 realized state。
-
-所以这里不要理解成“股票严格满足物理里的 Delta x * Delta p 公式”。更准确的考试表述是：
-
-```text
-In Quantum Finance, the Uncertainty Principle is used as an analogy for multiple possible market states before observation and one realized state after measurement.
-```
-
-## 6. Fuzzy Logics and Chaos Theory
-
-课件说，有两个技术可以作为 Uncertainty Principle 的 excellent analog：
-
-这一节标题里的 Unification Theory 可以大白话理解成：
-
-```text
-市场不确定
--> 不能只用简单确定性模型
--> 需要描述多个可能状态
--> 模糊状态用 Fuzzy Logics
--> 复杂随机-like 波动用 Chaos Theory
-```
-
-### Fuzzy Logics (FL)
-
-Fuzzy Logics 用来处理 fuzzy variables，也就是边界不清楚、不能简单用 yes/no 表达的变量。
-
-金融例子：
-
-- 市场是 bullish 还是 bearish，不一定只有 0 和 1；
-- 风险是 high 还是 low，也可能有程度；
-- 趋势强弱、情绪、波动状态都适合 fuzzy 表达。
-
-中文理解：Fuzzy Logics 负责处理“模糊状态”。
-
-例如问市场是不是 bullish。普通二分逻辑只能说 yes/no，但市场常常不是这么干净。Fuzzy Logics 可以表达成：
+Fuzzy Logics 处理“不是 0/1 的状态”。例如：
 
 ```text
 bullish degree = 0.7
 bearish degree = 0.3
 ```
 
-它适合处理：
+Chaos Theory 处理“看起来随机，但可能由复杂确定系统产生”的市场波动。例如新闻、利率信号、大资金卖单都可能引发非线性放大。
 
-- risk high / medium / low 的程度；
-- trend strong / weak 的程度；
-- market sentiment 的模糊状态；
-- volatility 是否 high 的模糊边界。
+### CH1.5 Basic Components of Quantum Finance
 
-### Chaos Theory (CT)
+关键图：
 
-Chaos Theory 提供 framework and mathematical model 去模拟 highly chaotic or random-like phenomena，也就是 deterministic chaos。
+![[ch1-concentric-sphere-model.png]]
 
-中文理解：Chaos Theory 负责处理“看起来随机，但可能由复杂确定系统产生”的行为。
-
-金融市场很适合这个视角，因为价格走势常常：
-
-- 对初始条件敏感；
-- 短期很难预测；
-- 但又可能存在某种结构、周期或吸引子。
-
-Deterministic Chaos 听起来矛盾，但意思是：系统背后可能有确定规则，只是因为太复杂、对初始条件太敏感，所以表现出来像随机。
-
-金融例子：
-
-- 一个新闻可能触发价格大幅跳变；
-- 一个大资金卖单可能改变短期趋势；
-- 一次利率或政策信号可能改变市场情绪；
-- 一点初始差异，最后可能放大成完全不同的走势。
-
-所以 Chaos Theory 负责处理的不是普通线性变化，而是 nonlinear, chaotic, random-like market dynamics。
-
-### CH1.4 的整体逻辑
-
-| Concept | 负责解释什么 | 大白话 |
-|---|---|---|
-| Uncertainty Principle | multiple possible market states before observation | 还没发生前，什么都可能 |
-| Fuzzy Logics | vague and non-binary market variables | 市场状态不是非黑即白，而是有程度 |
-| Chaos Theory | highly chaotic or random-like phenomena | 看起来乱，但可能有复杂内在结构 |
-
-完整理解：
+Concentric Sphere Model 可以记成四层：
 
 ```text
-Financial markets are not purely deterministic systems and not purely random systems. They contain uncertainty, fuzzy states and nonlinear chaotic dynamics. Quantum Finance connects the Uncertainty Principle with Fuzzy Logics and Chaos Theory to model these properties.
+Energy Field Layer -> Neural Layer -> FinTech Layer -> Application Layer
 ```
 
-中文背诵版：CH1.4 的核心是金融市场有不确定性，不是简单确定系统。Uncertainty Principle 说明市场在观察前有多种可能状态；Fuzzy Logics 用来处理模糊变量，比如 bullish/bearish 的程度；Chaos Theory 用来处理看似随机但可能有内在结构的复杂波动。三者合起来构成量子金融理解市场不确定性的哲学基础。
+| Layer | 大白话 |
+|---|---|
+| Energy Field Layer | 最核心，提供 Quantum Price Field (QPF) |
+| Neural Layer | 用 neural dynamics / neural oscillators 描述市场怎么动 |
+| FinTech Layer | 提供 FL, GA, CT, Fractals, SVMs 等工具 |
+| Application Layer | 落到 QPL、短期预测、长期趋势预测、多智能体交易系统 |
 
-## 7. Basic Components of Quantum Finance
+最重要的一句话：
 
-Chapter 1 最后一页给了一个 Concentric Sphere Model，可以理解为四层结构。
+> CH1.5 是在告诉你 Quantum Finance 的整体架构：从 Quantum Price Field 出发，通过 Neural Layer 和 FinTech tools 建模复杂市场，最后应用到 prediction 和 trading systems。
 
-| Tier | Layer | Role |
+## CH2 Quantum Field Theory for Quantum Finance
+
+### CH2.1 Quantum Mechanics - The Basics
+
+CH2.1 是给 QFT 和 Quantum Finance 铺垫的四个 QM 基础特征：
+
+| Concept | 大白话 | QF 类比 |
 |---|---|---|
-| 1st Tier | Energy Field Layer | 核心层，提供 Quantum Price Field (QPF) |
-| 2nd Tier | Neural Layer | 提供 neural dynamics，支持 neural oscillators 和 chaotic neural networks |
-| 3rd Tier | FinTech Layer | 提供 AI-Finance tools，例如 FL, GA, CT, Fractals, SVMs |
-| 4th Tier | Application Layer | 应用层，包括 Quantum Price Levels, price prediction, trend prediction, trading systems |
+| Wave-Particle Duality | 同一个量子对象既像粒子也像波 | price/indicator 是 particle-like，market pattern/trend 是 wave-like |
+| Quantization | 有些量不是连续任意值，而是一档一档的 | Quantum Price Levels (QPL) |
+| Uncertainty Principle | 有些变量不能同时无限精确测量 | 观察市场有天然精度限制 |
+| Quantum Entanglement | 状态不能彼此独立描述 | forex、gold、crude oil 等市场可能联动 |
 
-中文理解：这四层是从理论核心到应用落地。
+最容易考的表达：
 
-- 最里面是 price field 的理论假设；
-- 中间用神经动力学表达市场运动；
-- 再外层加入 AI 和复杂系统工具；
-- 最外层落到预测和交易。
+```text
+Wave-Particle Duality:
+price / indicator = particle-like
+market pattern / trend = wave-like
+```
 
-## Must-Know Terms
+Quantization 不要理解成“价格乱跳”，重点是 discrete levels / allowed states。
 
-| Term | Chinese understanding | Exam expression |
+Uncertainty Principle 重点不是仪器不够好，而是系统本身存在 natural limit of precision。
+
+Entanglement 不等于普通 correlation。它更强调 states cannot be described independently。
+
+### CH2.2 From Quantum Mechanics to Quantum Field Theory
+
+QM 主要研究已有粒子的量子行为；QFT 更进一步研究 field、粒子相互作用、粒子产生和湮灭。
+
+QFT 由三部分组合：
+
+| Component | 提供什么 |
+|---|---|
+| Quantum Mechanics | wavefunction, uncertainty, quantization 等量子规则 |
+| Classical Field Theory | field 的概念：每个时空点都有某种物理量 |
+| Special Relativity | mass-energy relation，解释 creation / annihilation |
+
+最短记忆：
+
+```text
+QM: quantum rules for particles
+CFT: field at each point of space and time
+SR: mass-energy equivalence, E = mc^2
+QFT: quantum fields + particle interaction / creation / annihilation
+QF: uses QFT ideas to model price fields and market dynamics
+```
+
+### CH2.3 Classical Field vs Quantum Field
+
+关键图：
+
+![[ch2-classical-vs-quantum-field.png]]
+
+Field 是一张覆盖 space and time 的“数值地图”：
+
+```text
+field = a physical quantity assigned to each point of space and time
+```
+
+核心区别：
+
+| Classical Field | Quantum Field |
+|---|---|
+| 每个点给 exact value | 每个点给 distribution / probability |
+| 更确定 | 和 uncertainty / wave-particle duality 有关 |
+
+放到金融里：
+
+```text
+Classical thinking: tomorrow price = one exact value
+Quantum-field-like thinking: future prices = possible states with probabilities
+```
+
+QPF 可以理解为：价格背后不是一个确定值机器，而是包含多种可能状态和概率分布的 field。
+
+### CH2.4 Path Integral Formulation
+
+关键图：
+
+![[ch2-path-integral-infinite-slit.png]]
+
+Path Integral 的核心：
+
+```text
+Path Integral = sum over all possible paths
+```
+
+它不是 shortest path，也不是 best path。
+
+Double-slit 的逻辑：
+
+```text
+two slits -> sum of two path amplitudes
+many slits -> sum of many path amplitudes
+infinite slits/layers -> sum over infinite possible paths
+```
+
+金融类比：利率从现在状态到未来状态，不只考虑一条路径，而是考虑很多可能路径。
+
+```text
+r0 -> many possible paths -> rT
+```
+
+### CH2.5 Feynman Diagrams
+
+Feynman Diagram 是 QFT 的图形语言：
+
+```text
+line = particle propagation
+vertex = interaction
+external end = input/output
+diagram = compact visual form of a complex QFT / path-integral expression
+```
+
+重点不是会画复杂粒子图，而是知道它的作用：
+
+> 用 lines 和 vertices 把复杂的粒子相互作用和数学表达可视化。
+
+在 Quantum Finance 里，它目前不一定直接使用，但帮助理解“复杂相互作用可以结构化表达”。
+
+### CH2.6 Quantum Oscillators
+
+关键图：
+
+![[ch2-quantum-harmonic-oscillator.png]]
+
+![[ch2-quantum-anharmonic-oscillator.png]]
+
+Oscillator 就是会振荡的系统。Quantum Oscillator 是带量子规则、能级离散的振荡系统。
+
+重点区别：
+
+| Concept | 大白话 |
+|---|---|
+| Harmonic Oscillator | 理想、规则、简单振荡 |
+| Damped Oscillator | 有阻尼，振荡会衰减 |
+| Quantum Harmonic Oscillator (QHO) | 量子版本，energy levels are discrete |
+| Anharmonic Oscillator (AHO) | 非理想、非线性、更接近真实世界 |
+
+金融类比：
+
+> price return r 的动态不是完美线性振荡，更像 quartic Quantum Anharmonic Oscillation。
+
+## CH3 An Overview of Quantum Finance Models
+
+### CH3.1 An Introduction
+
+第三章回答三个问题：
+
+```text
+What is Quantum Finance?
+What are the major Quantum Finance Models?
+Quantum Finance - Which Way to Go?
+```
+
+QF 的组合：
+
+```text
+Quantum Theory + Computational Finance + Computer Modeling + AI Technology
+```
+
+两条主线：
+
+| Model | 大白话 |
+|---|---|
+| Path Integral Model | 从当前状态到未来状态，考虑所有可能路径 |
+| Quantum Anharmonic Oscillator Model | 用非线性量子振荡描述 price return dynamics |
+
+### CH3.2 A Brief History of Quantum Finance
+
+时间线：
+
+```text
+1900 Bachelier -> Brownian motion, option pricing, mathematical finance
+1990s Quantum Finance -> QM/QFT applied to economics/finance
+1999 Mantegna & Stanley -> Introduction to Econophysics
+2004 Baaquie -> Path Integral for option pricing and interest rate modeling
+```
+
+这节最后落到：
+
+```text
+Two major models = Path Integral Approach + Quantum Anharmonic Oscillator Approach
+```
+
+### CH3.3 Path Integral Approach of Quantum Finance
+
+关键图：
+
+![[ch3-forward-interest-rate-field.png]]
+
+这节是把 CH2 的 Path Integral 放到 forward interest rate modeling。
+
+Forward interest rate：
+
+```text
+f(t, x) = rate fixed at current time t for an instantaneous loan at future time x
+```
+
+大白话：在某个当前时间 `t`，你看未来不同 maturity `x` 的 forward rates，会得到一条 forward rate curve。
+
+为什么要用 field？
+
+- 不同 maturity 的利率随机变化；
+- 但它们 highly correlated；
+- 所以不适合只当一个单点变量；
+- 更适合看成 `calendar time t` 和 `future maturity x` 上的 field。
+
+QFT 模型引入：
+
+```text
+A(t,x) = two-dimensional quantum field
+```
+
+Path Integral 在这里变成：
+
+```text
+integrate over all possible functions A(t,x)
+```
+
+最短记忆：
+
+```text
+Forward rate f(t,x) is a curve over maturity x.
+QFT introduces A(t,x) as a 2D quantum field.
+Path Integral integrates over all possible A(t,x).
+```
+
+### CH3.4 Quantum Anharmonic Oscillator Approach
+
+关键图：
+
+![[ch3-qfse-characteristics.png]]
+
+这一节是第三章最重要的模型之一。
+
+它的动机：
+
+```text
+Instead of integrating all possible paths, solve the Schrodinger Equation directly using numerical methods.
+```
+
+为什么选 `price return r`，不是 price？
+
+| Item | Role |
+|---|---|
+| price | observed market level / later used for QPL |
+| price return r | relative change, analogous to displacement x |
+
+所以：
+
+```text
+price return r = Quantum Financial Particle (QFP)
+r <-> displacement x from equilibrium
+```
+
+Hamiltonian 的金融含义：
+
+| Physics term | Finance meaning |
+|---|---|
+| Kinetic Energy | quantum motion of QFP / return movement |
+| Potential Energy | Quantum Energy Field / Quantum Price Energy Levels |
+| hbar | uncertainty of irrational transaction |
+| m | intrinsic market properties, e.g. market capital |
+
+PDF：
+
+```text
+Q(r,t) = |Psi(r,t)|^2
+```
+
+意思是 return 的观测分布可以看成 wavefunction 的概率密度。
+
+Excess Demand：
+
+```text
+z = demand - supply
+```
+
+它把市场供需和 return dynamics 接起来。
+
+QFSE 的三条主特征：
+
+1. contains both K.E. and P.E. terms;
+2. is an anharmonic oscillator with high-order potential terms;
+3. quantum dynamics are controlled by price return `r`, although market is observed as price.
+
+最终目的：
+
+```text
+solve QFSE -> evaluate Quantum Price Levels (QPL)
+```
+
+### CH3.5 Path Integral vs QAHO
+
+关键图：
+
+![[ch3-path-integral-vs-qaho.png]]
+
+目前先记框架：
+
+| Approach | Core idea | Typical target |
 |---|---|---|
-| Quantum Finance (QF) | 用 QM/QFT 和 AI 工具建模金融市场的交叉学科 | An interdisciplinary subject applying Quantum Mechanics and Quantum Field Theory to financial markets |
-| Econophysics | 用物理学方法研究经济金融复杂系统 | Application of statistical physics and physical models to economics and finance |
-| Quantization | 某些物理量只能取离散状态 | Energy/momentum can take discrete states |
-| Wave-Particle Duality | 同一对象具有波和粒子的双重性质 | Objects have both particle-like and wave-like characteristics |
-| Quantum Field Theory (QFT) | 用 field 和 quanta 描述基本粒子运动和相互作用 | A unified framework describing fundamental particles as excited states of underlying fields |
-| Quantum Price Field (QPF) | 金融市场中类比 quantum field 的价格场 | A quantum-field-like layer for modeling price dynamics |
-| Uncertainty Principle | 无法同时无限精确确定某些变量 | Certain pairs of quantities cannot both be measured with arbitrary precision |
-| Collapse | 测量让多个可能状态变成一个具体结果 | Quantum states collapse into a particular reality after observation |
-| Fuzzy Logics (FL) | 处理模糊变量和程度判断 | A tool to model fuzzy variables with multiple attributes |
-| Chaos Theory (CT) | 处理看似随机但可能由确定系统产生的复杂行为 | A framework for deterministic chaos and random-like phenomena |
+| Path Integral | all possible paths/functions | forward interest rate, option pricing |
+| QAHO | solve Schrodinger Equation as nonlinear oscillator | price return dynamics, QPL |
 
-## Quick Review Questions
+考试如果问 “which way to go”，可以回答：Path Integral is theoretically powerful but computationally heavy; QAHO is more direct for numerical implementation and QPL computation.
 
-1. Why does the course compare financial markets with quantum systems?
-2. What is the particle side of a financial market?
-3. What is the wave side of a financial market?
-4. What does QFT add beyond ordinary Quantum Mechanics?
-5. How does Uncertainty Principle become a financial-market analogy?
-6. What problems do Fuzzy Logics and Chaos Theory solve in QF?
-7. What are the four tiers in the Concentric Sphere Model?
-
-## My Plain-English Answer Template
-
-If the exam asks "What is Quantum Finance?", answer like this:
-
-Quantum Finance is an interdisciplinary subject that applies Quantum Mechanics and Quantum Field Theory to financial markets. It treats financial prices as observable particle-like states, while market movements behave like waves. By using ideas such as quantization, uncertainty, quantum fields, fuzzy logics and chaos theory, Quantum Finance aims to model price dynamics, forecast financial markets and support quantum trading strategies.
-
-中文背诵辅助：量子金融用量子力学和量子场论理解金融市场；单个价格点像粒子，整体市场走势像波；再结合不确定性、模糊逻辑、混沌理论和 AI 工具，服务于价格预测和交易策略。
