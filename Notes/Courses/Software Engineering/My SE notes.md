@@ -287,44 +287,8 @@ Meaning:
 |---|---|---|---|
 | Inheritance | Is B a kind of A? | B 是 A 的一种 | `A <|-- B` |
 | Aggregation | Does A have B? | A 拥有/包含 B | `A o-- B` |
+| Composition | Is B a part of A and cannot exist independently? | B 是 A 的强组成部分 | `A *-- B` |
 
-## Quick Rule
-
-Ask:
-
-1. Can I say "B is a A"?
-   - Yes -> Inheritance.
-2. Can I say "A has B"?
-   - Yes -> Aggregation.
-
-Example:
-
-```text
-Student is a Person -> inheritance
-Class has Students -> aggregation
-Library has Books -> aggregation
-PPT file is a File -> inheritance
-```
-
-## Exam Trap
-
-Do not use inheritance just because two classes are related.
-
-Wrong:
-
-```text
-Library <|-- Book
-```
-
-This means "Book is a Library", which is false.
-
-Correct:
-
-```text
-Library o-- Book
-```
-
-This means "Library has Books".
 
 ## Aggregation vs Composition
 
@@ -346,3 +310,104 @@ Composition means the part strongly depends on the whole.
 
 - Aggregation: 部分可以独立存在。
 - Composition: 部分通常不能脱离整体独立存在。
+
+## Composition 组合
+
+A owns B strongly. If A is destroyed, B usually cannot exist independently.
+
+```text
+A *-- B
+整体 *-- 部分
+```
+
+Example:
+
+```text
+House has Rooms.
+Order has OrderItems.
+HumanBody has Heart.
+```
+
+Mermaid:
+
+```mermaid
+classDiagram
+    class House {
+        address
+    }
+
+    class Room {
+        roomNo
+        area
+    }
+
+    House *-- Room : contains
+```
+
+Meaning:
+
+- `House` is the whole.
+- `Room` is a part of `House`.
+- If the house does not exist, the room as part of that house does not exist.
+- Filled diamond is on the whole side.
+
+中文理解：
+
+组合也是“整体-部分”，但是比 aggregation 更强。  
+部分对象强依赖整体对象，生命周期通常和整体绑定。
+
+## Aggregation vs Composition Example
+
+Aggregation:
+
+```mermaid
+classDiagram
+    class Library {
+        name
+    }
+
+    class Book {
+        title
+    }
+
+    Library o-- Book : has
+```
+
+中文：
+
+Library has Books, but Book can still exist without this Library.
+
+Composition:
+
+```mermaid
+classDiagram
+    class House {
+        address
+    }
+
+    class Room {
+        roomNo
+    }
+
+    House *-- Room : contains
+```
+
+中文：
+
+House has Rooms, and Room normally cannot exist independently without the House.
+
+## Quick Memory
+
+```text
+Inheritance = is-a
+Aggregation = has-a, weak ownership
+Composition = part-of, strong ownership
+```
+
+Exam trap:
+
+```text
+Library o-- Book      correct for aggregation
+House *-- Room        correct for composition
+Book <|-- Library     wrong, because Library is not a kind of Book
+```
