@@ -17,6 +17,15 @@ tags:
 - Quantum Finance：把开放卷资料整理成可快速检索、可直接引用、可解释的答题材料。
 - 长期目标：保留你对大模型、NLP、读研、实习、科研、找工作的持续思考线索。
 
+## Exam Sprint Mode - 2026-06-01
+
+Until the 2026-06-06 QF exam, this vault should behave like an exam-output machine:
+
+- QF first priority: CH4-5 QFSE / QPL / FDM / Cardano / numerical algorithm, because the exam has a 40% long calculation question.
+- QF second priority: CH6-9 short-answer templates from [[Exam Focus]].
+- SE priority: timed diagram recall and MCQ boundary practice, not more broad note expansion.
+- Knowledge-base cleanup is useful only when it makes review faster or prevents confusion.
+
 ## Folder Rules
 
 - `/Inbox`：所有新输入的默认入口。只收集，不精修。
@@ -40,7 +49,7 @@ tags:
 
 - Obsidian Web Clipper 的 Note location 设置为 `Inbox`。
 - Note name 使用 `{{date|date:"YYYY-MM-DD"}} - {{title}}`。
-- 剪藏时不手动分类、不手动打复杂标签。
+- 剪藏时不手动分类、不手动打复杂标签；需要标记时用 `source/clipping` + `status/inbox`。
 
 临时想法：
 
@@ -65,6 +74,16 @@ tags:
 3. 为课程材料补充 YAML tags。
 4. 找出与 SE / QF 期末复习有关的关联。
 5. 输出今天最值得继续复习的 3 个问题。
+```
+
+期末冲刺时，对 Codex 说：
+
+```text
+只基于我的 vault，按考试收益排序今天的复习：
+1. QF CH4-5/QPL 长题还缺什么。
+2. QF A4 sheet 应该加入或删掉什么。
+3. SE 今天最该限时重画哪 2 张图。
+4. 给出 90 分钟内能完成的任务清单。
 ```
 
 每天早上可以让 Codex 生成简报：
@@ -116,6 +135,15 @@ QF 复习时，优先维护开放卷检索能力：
 - 3-7 条核心结论。
 - 至少 1 个和现有笔记的 `[[internal link]]`。
 - 如果用于考试，必须有“考场怎么用”。
+
+## Read-Only Rule For Finished Notes
+
+已做好的课程正文、用户亲手整理过的笔记、已经能直接用于复习的内容页，默认只读。
+
+- 可以读取、引用、总结、提出改进建议。
+- 不做无关的格式、标签、标题、措辞优化。
+- 如果确实需要改，先把建议写到项目页、复盘页或 Inbox 处理记录。
+- 只有在用户明确要求“修改这篇笔记”时，才直接编辑正文。
 
 ## Current Maintenance Rules
 

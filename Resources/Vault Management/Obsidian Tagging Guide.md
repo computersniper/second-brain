@@ -83,11 +83,17 @@ QF topic tags:
 - `qf/index`: course control page.
 - `qf/open-book`: open-book exam sheet and quick lookup material.
 - `qf/model`: models, formulas, assumptions, or derivations.
+- `qf/notes`: general Quantum Finance explanation notes.
+- `qf/qfse`: Quantum Finance Schrodinger Equation.
+- `qf/qpl`: Quantum Price Levels and calculation.
 - `qf/trap`: confusing points and exam traps.
 
 Exam tags:
 
 - `exam/map`: exam overview.
+- `exam/review`: general exam review material.
+- `exam/focus`: teacher-confirmed exam focus.
+- `exam/checklist`: review checklist.
 - `exam/drawing`: drawing question preparation.
 - `exam/mcq`: multiple-choice traps.
 - `exam/cram`: final review material.
@@ -97,9 +103,12 @@ Workflow tags:
 
 - `status/inbox`: not fully processed yet.
 - `status/processed`: already organized into a stable note.
+- `status/done-by-me`: user-curated or user-written note.
 - `source/clipping`: captured from web clipping.
 - `review/daily`: daily brief or daily review.
 - `review/weekly`: weekly review.
+- `project/active`: active project page.
+- `resource/index`: index page for external resources.
 
 Vault tags:
 
@@ -147,6 +156,16 @@ tags:
 ```
 
 This creates noise.
+
+Do not use capitalized one-off status tags:
+
+- Bad: `Done-by-me`
+- Good: `status/done-by-me`
+
+Exception:
+
+- Existing finished notes may keep their old tags if changing the tag would only be cosmetic.
+- During exam sprint, do not edit completed notes just to normalize tags.
 
 Do not use both singular and plural:
 

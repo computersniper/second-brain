@@ -7,7 +7,10 @@ published: 2026-05-18
 created: 2026-05-31
 description: "最近，一套关于 AI 第二大脑的教程在全网刷屏，播放量冲到 282 万。 但问题是：很多看起来很高级的第二大脑方案，对普通人并不友好。 要么要折腾自动化工具，要么要订阅付费服务，要么搭完之后根本坚持不最近，一套关于 AI 第二大脑的教程在全网刷屏，播放量冲到 282 万。image-Cr54biR5foGIUix4"
 tags:
-  - "clippings"
+  - source/clipping
+  - status/inbox
+  - codex/second-brain
+  - vault/management
 ---
 最近，一套关于 AI 第二大脑的教程在全网刷屏，播放量冲到 282 万。
 
