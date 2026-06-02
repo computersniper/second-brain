@@ -14,8 +14,10 @@ Use folders for stable places:
 
 - `Inbox`: 未整理输入
 - `Notes`: 已整理知识
+- `Ideas`: 原创思考、复盘、观点变化
 - `Projects`: 正在推进的任务
 - `Resources`: 外部资源索引
+- `Clippings`: 历史网页剪藏暂存区；新剪藏优先进入 `Inbox`
 
 Use links for concept relationships:
 
@@ -66,6 +68,7 @@ Sources:
 Course tags:
 
 - `course/se`: Software Engineering notes.
+- `course/qf`: Quantum Finance notes.
 
 SE topic tags:
 
@@ -75,17 +78,44 @@ SE topic tags:
 - `se/class-exercise`: class exercise explanations.
 - `se/ppt`: PPT explanations.
 
+QF topic tags:
+
+- `qf/index`: course control page.
+- `qf/open-book`: open-book exam sheet and quick lookup material.
+- `qf/model`: models, formulas, assumptions, or derivations.
+- `qf/notes`: general Quantum Finance explanation notes.
+- `qf/qfse`: Quantum Finance Schrodinger Equation.
+- `qf/qpl`: Quantum Price Levels and calculation.
+- `qf/trap`: confusing points and exam traps.
+
 Exam tags:
 
 - `exam/map`: exam overview.
+- `exam/review`: general exam review material.
+- `exam/focus`: teacher-confirmed exam focus.
+- `exam/checklist`: review checklist.
 - `exam/drawing`: drawing question preparation.
 - `exam/mcq`: multiple-choice traps.
 - `exam/cram`: final review material.
+- `exam/open-book`: open-book exam material.
+
+Workflow tags:
+
+- `status/inbox`: not fully processed yet.
+- `status/processed`: already organized into a stable note.
+- `status/done-by-me`: user-curated or user-written note.
+- `source/clipping`: captured from web clipping.
+- `review/daily`: daily brief or daily review.
+- `review/weekly`: weekly review.
+- `project/active`: active project page.
+- `resource/index`: index page for external resources.
 
 Vault tags:
 
 - `vault/management`: vault organization.
 - `obsidian/tags`: Obsidian tag rules.
+- `obsidian/workflow`: Obsidian usage workflow.
+- `codex/second-brain`: Codex-assisted second-brain workflow.
 
 ## When To Add Tags
 
@@ -127,6 +157,16 @@ tags:
 
 This creates noise.
 
+Do not use capitalized one-off status tags:
+
+- Bad: `Done-by-me`
+- Good: `status/done-by-me`
+
+Exception:
+
+- Existing finished notes may keep their old tags if changing the tag would only be cosmetic.
+- During exam sprint, do not edit completed notes just to normalize tags.
+
 Do not use both singular and plural:
 
 - Bad: `se/diagram`, `se/diagrams`
@@ -145,10 +185,22 @@ Find all SE notes:
 tag:course/se
 ```
 
+Find all QF notes:
+
+```text
+tag:course/qf
+```
+
 Find SE drawing-practice notes:
 
 ```text
 tag:course/se tag:exam/drawing
+```
+
+Find open-book exam notes:
+
+```text
+tag:exam/open-book
 ```
 
 Find use case notes:
@@ -161,4 +213,10 @@ Find vault-management notes:
 
 ```text
 tag:vault/management
+```
+
+Find unprocessed captured material:
+
+```text
+tag:status/inbox OR tag:source/clipping
 ```

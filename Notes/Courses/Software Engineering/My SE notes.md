@@ -36,7 +36,7 @@ Detailed notes:
 - [[11 Use Case Diagram Relationships]]
 - [[01 Diagram Questions Drawing Guide]]
 - [[04 Class Exercise Templates]]
-- [[09 All PPT Explanations]]
+- [[SE Revision From Models to Cost Estimation]]
 
 ---
 
@@ -86,7 +86,7 @@ Source:
 Source:
 
 - Lecture 5 OO Object / Classes: [PDF](<file:///D:/study/se/Lecture%205%20-%20OO%20object.pdf>) / [TXT](<file:///D:/study/se/Lecture%205%20-%20OO%20object.txt>)
-- Related: [[05 Lecture Review Checklists]]
+- Related: [[00 SE Exam Map]]
 
 ## Abstraction 抽象
 抽象就是只保留当前问题里重要的属性和行为，忽略不重要的细节。
@@ -724,8 +724,8 @@ Source:
 
 ![[sis-activity.png]]
 
-![[sis-usecase.png]]
-
+![[sis-usecase.png|697]]
+![[sis-std.png]]
 ## Objects
 
 Source:
@@ -807,3 +807,103 @@ Entity objects never access boundary or control objects.
 中文：
 
 Entity object 不应该反过来依赖界面或控制对象。
+
+
+# Lecture 11 - Object-oriented detailed design
+## Restructuring
+Source: [Lecture 11 - Object-oriented detailed design.pdf, pp. 18-24](<file:///D:/study/se/Lecture%2011%20-%20Object-oriented%20detailed%20design.pdf>)
+
+Classes in a subsystem can be further adjusted
+- Change n-ary associations to binary associations
+- Increase the inheritance
+- Collapse (降级) classes with no significant （明显的） behavior into attributes
+- Use qualifier （限定符 ） to change the one-to-many and many-to-many relationship
+- Implement an association class as a class
+
+# Structural factoring
+![[two-level-factoring.png]]
+
+# Software testing
+## Unit Testing 单元测试
+
+**Unit testing = 测一个单独的 function / program / class。**
+
+课件例子是 `deductBalance()` 这个函数，unit testing 就是单独测试这个函数在不同 balance 和 amount 下是否返回正确结果、是否扣款、是否显示余额不足提示。课件也明确写：unit testing 是 test a single program or a function。
+
+比如 ASDW 项目里：
+
+`checkLogin()`  
+`editInterviewRecord()`  
+`validateStudentId()`  
+`calculateScore()`
+
+这些都可以单独做 unit testing。
+
+---
+
+## Integration Testing 集成测试
+
+**Integration testing = 测几个 modules 合起来能不能正常工作。**
+
+一个函数单独没问题，不代表它和别的模块组合起来也没问题。课件说 integration testing 是 test a module or an integration of several modules。
+
+比如：
+
+Login module 单独没问题。  
+Edit interview record module 单独没问题。  
+但登录后权限能不能正确传到 edit 页面？  
+edit 后数据库是否真的更新？  
+这就是 integration testing。
+
+---
+
+## System Testing 系统测试
+
+**System testing = 测整个系统。**
+
+它不是只看某个函数，也不是只看几个模块，而是看整个软件作为一个完整系统是否满足需求。课件直接写 system testing 是 test a system。
+
+比如：
+
+用户从 login → search student → edit interview record → save → logout 完整走一遍。  
+如果这个完整流程能正确运行，才说明系统层面没有明显问题。
+
+---
+
+## Regression Testing 回归测试
+
+**Regression testing = 修 bug 后，用之前的测试数据再测一次。**
+
+课件说 regression testing 是在 bugs 被修复后执行，用同一组 test data 测 updated source code，目标是确保修 bug 没有引入更多 bugs。
+
+比如你修了 edit interview record 的保存问题，结果影响了 search 功能。  
+Regression testing 就是防这种情况。
+
+一句话记：
+
+**Regression testing 检查“修了旧 bug 后，有没有弄坏旧功能”。**
+
+## V & V
+– Verification
+- Check if the system meets the specification. 
+- Are we building the system properly (right procedure)?
+– Validation 
+- Check if the system meets users’ requirements (user’s expectation). 
+- Are we building the proper system (right system)?
+
+
+
+# White-Box Testing
+- Statement testing
+  -Every statement must be executed （运行）at least once
+- Branch testing
+  -Every branch must be executed at least once
+- Path testing
+  -Every path must be executed at least once
+# Configuration Management
+## Configuration management activities
+- Planning
+- Change Management
+- Version control
+- System building
+![[system-building.png]]

@@ -17,6 +17,12 @@ Source index: [[SE Source Index]]
 - Drawing questions should be practiced like the class exercises.
 - Priority evidence: teacher review photos in `D:\study\se\review-important-picture`.
 
+## Current Status - 2026-06-01
+
+- The SE note base is mature enough for exam practice.
+- Do not spend the next sprint expanding broad summaries unless a concrete missed concept appears.
+- Priority is timed recall: redraw diagrams, say English terms aloud, and write one MCQ trap after each block.
+
 ## High-Priority Scope From Review Photos
 
 - Lecture 4 System Models: environment/context model, use case diagram, state transition diagram, data flow model, structure/data/object models.
@@ -57,7 +63,7 @@ Source index: [[SE Source Index]]
 
 1. Read [[07 Final Cram Sheet]] once.
 2. Redraw all prompts in [[08 Drawing Drill Pack]] without looking.
-3. Use [[09 All PPT Explanations]] to understand every class exercise PPT.
+3. Use [[SE Revision From Models to Cost Estimation]] to review model, design, testing, configuration management, and cost estimation topics.
 4. Re-read [[10 Include vs Extend]] before any use case diagram practice.
 5. Check every uncertain term in [[06 SE Bilingual Glossary and MCQ Traps]].
 6. Revisit class exercise PPTX only for diagrams you still cannot reproduce.
@@ -69,3 +75,8 @@ Source index: [[SE Source Index]]
 3. Draw the diagram from memory.
 4. Compare against the class exercise/PPT.
 5. Write one "trap" for multiple choice.
+
+## Sprint Rule
+
+- One SE session should produce visible output: one redrawn diagram, one corrected mistake, or one concept boundary sentence.
+- If a diagram cannot be drawn in 8 minutes, review [[04 Class Exercise Templates]] and immediately redraw it once.
