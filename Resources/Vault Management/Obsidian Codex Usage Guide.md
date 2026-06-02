@@ -22,7 +22,7 @@ tags:
 Until the 2026-06-06 QF exam, this vault should behave like an exam-output machine:
 
 - QF first priority: CH4-5 QFSE / QPL / FDM / Cardano / numerical algorithm, because the exam has a 40% long calculation question.
-- QF second priority: CH6-9 short-answer templates from !Exam Focus.
+- QF second priority: CH6-9 short-answer templates from **Exam Focus**.
 - SE priority: timed diagram recall and MCQ boundary practice, not more broad note expansion.
 - Knowledge-base cleanup is useful only when it makes review faster or prevents confusion.
 
@@ -71,7 +71,7 @@ Review rule:
 Use Obsidian-resolvable image paths after importing notes:
 
 ```md
-![[lec02_waterfall_model.png]]
+![lec02_waterfall_model.png](<Resources/Software%20Engineering/Images/lec02_waterfall_model.png>)
 ```
 
 Avoid this when the asset folder is not at the vault root:
@@ -80,13 +80,13 @@ Avoid this when the asset folder is not at the vault root:
 ![Waterfall Model](se_revision_assets/lec02_waterfall_model.png)
 ```
 
-Reason: Obsidian may resolve Markdown image paths from the vault root, so a nested imported note can show "file not found" even when the image exists beside the note. Filename-only embeds are usually safer when asset filenames are unique.
+Reason: Obsidian may resolve Markdown image paths from the vault root, so a nested imported note can show "file not found" even when the image exists beside the note. Copy course images into `Resources/.../Images` and use a vault-relative Resources path.
 
 Maintenance rule:
 
 - Fixing broken image embeds is allowed as a structure/maintenance edit.
 - Do not rewrite the study content while fixing image paths.
-- After import, check that image filenames are unique and that image embeds point to existing files inside the vault.
+- After import, check that image links point to existing files inside the vault.
 
 ## Capture Workflow
 
