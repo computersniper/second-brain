@@ -84,6 +84,72 @@ mindmap
 
 ---
 
+## 思维导图节点定位
+
+- **SE Revision**
+  - [[SE Revision From Models to Cost Estimation#目录|目录]]
+  - [[SE Revision From Models to Cost Estimation#15. 快速复习表|快速复习表]]
+- **Process Models**
+  - [[SE Revision From Models to Cost Estimation#1. Lecture 2 - Software Process Models|Process Models]]
+  - [[SE Revision From Models to Cost Estimation#1.2 Waterfall Model 瀑布模型|Waterfall]]
+  - [[SE Revision From Models to Cost Estimation#1.3 Incremental Model 增量模型|Incremental]]
+  - [[SE Revision From Models to Cost Estimation#1.4 Prototyping Model 原型模型|Prototyping]]
+  - [[SE Revision From Models to Cost Estimation#1.5 Spiral Model 螺旋模型|Spiral]]
+  - [[SE Revision From Models to Cost Estimation#1.6 RUP - Rational Unified Process|RUP]]
+- **Requirements**
+  - [[SE Revision From Models to Cost Estimation#2. Lecture 3 - Software Requirements|Requirements]]
+  - [[SE Revision From Models to Cost Estimation#2.2 User Requirements vs System Requirements|User vs System]]
+  - [[SE Revision From Models to Cost Estimation#2.3 Functional / Non-functional / Domain Requirements|Functional vs Non-functional]]
+  - [[SE Revision From Models to Cost Estimation#2.3 Functional / Non-functional / Domain Requirements|Domain]]
+  - [[SE Revision From Models to Cost Estimation#2.5 Requirements Specification 的表达方式|Specification styles]]
+- **System Models**
+  - [[SE Revision From Models to Cost Estimation#3. System Models: DFD / Activity Diagram / UML notations|System Models]]
+  - [[SE Revision From Models to Cost Estimation#3.1 Data Flow Diagram, DFD|DFD]]
+  - [[SE Revision From Models to Cost Estimation#3.2 Activity Diagram|Activity Diagram]]
+  - [[SE Revision From Models to Cost Estimation#3.3 UML 常见箭头和 notation 总结|UML notation]]
+  - [[SE Revision From Models to Cost Estimation#3.3 UML 常见箭头和 notation 总结|State Transition]]
+- **Architecture**
+  - [[SE Revision From Models to Cost Estimation#4. Architectural Design 基础原则|Architecture]]
+  - [[SE Revision From Models to Cost Estimation#4.1 Pattern|Pattern]]
+  - [[SE Revision From Models to Cost Estimation#4.2 Modularity 模块化|Modularity]]
+  - [[SE Revision From Models to Cost Estimation#4.3 Information Hiding 信息隐藏|Information Hiding]]
+  - [[SE Revision From Models to Cost Estimation#4.4 Independence = Low Coupling + High Cohesion|Coupling vs Cohesion]]
+  - [[SE Revision From Models to Cost Estimation#5. System Organization Models|Repository / Client-server / Layered / MVC]]
+- **OOD**
+  - [[SE Revision From Models to Cost Estimation#7. OO method vs Structured Analysis method|OO vs Structured Analysis]]
+  - [[SE Revision From Models to Cost Estimation#8.2 Observer Design Pattern|Observer Pattern]]
+  - [[SE Revision From Models to Cost Estimation#9. Object-Oriented Detailed Design|Detailed Design]]
+  - [[SE Revision From Models to Cost Estimation#9.2 Signature and Visibility|Signature / Visibility]]
+  - [[SE Revision From Models to Cost Estimation#9.3 Pre-condition and Post-condition|Pre and Post Conditions]]
+- **Structured Design**
+  - [[SE Revision From Models to Cost Estimation#10. Lecture 12 - Structured Design and Isolating Transform Center|Structured Design]]
+  - [[SE Revision From Models to Cost Estimation#10.1 Structured Design 整体路线|DFD to Structure Tree]]
+  - [[SE Revision From Models to Cost Estimation#10.3 Isolating Transform Center|Transform Center]]
+  - [[SE Revision From Models to Cost Estimation#10.4 First-level factoring|Factoring]]
+  - [[SE Revision From Models to Cost Estimation#10.7 Restructuring: reduce coupling and increase cohesion|Restructuring]]
+- **Testing**
+  - [[SE Revision From Models to Cost Estimation#11. Lecture 13 - Software Testing 1|Testing]]
+  - [[SE Revision From Models to Cost Estimation#11.4 Black-box Testing|Black-box]]
+  - [[SE Revision From Models to Cost Estimation#11.5 White-box Testing|White-box]]
+  - [[SE Revision From Models to Cost Estimation#12.2 Test Oracle|Test Oracle]]
+  - [[SE Revision From Models to Cost Estimation#12.4 Test Automation|Automation]]
+  - [[SE Revision From Models to Cost Estimation#12.6 Test Case Management|Test Case Management]]
+- **Configuration Management**
+  - [[SE Revision From Models to Cost Estimation#13. Lecture 15 - Configuration Management|Configuration Management]]
+  - [[SE Revision From Models to Cost Estimation#13.2 Planning|Planning]]
+  - [[SE Revision From Models to Cost Estimation#13.3 Change Management|Change Management]]
+  - [[SE Revision From Models to Cost Estimation#13.4 Version Control|Version Control]]
+  - [[SE Revision From Models to Cost Estimation#13.5 Release Management|Release / Build]]
+- **Cost Estimation**
+  - [[SE Revision From Models to Cost Estimation#14. Lecture 16 - Cost Estimation|Cost Estimation]]
+  - [[SE Revision From Models to Cost Estimation#14.5 LOC / KLOC|LOC / KLOC]]
+  - [[SE Revision From Models to Cost Estimation#14.6 Function Points|Function Points]]
+  - [[SE Revision From Models to Cost Estimation#14.7 Object Points|Object Points]]
+  - [[SE Revision From Models to Cost Estimation#14.11 COCOMO 2 四个子模型|COCOMO II]]
+  - [[SE Revision From Models to Cost Estimation#14.17 Staffing and Calendar Time|Staffing Time]]
+
+---
+
 ## 目录
 
 1. Lecture 2 - Software Process Models
