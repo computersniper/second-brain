@@ -377,11 +377,11 @@ Meaning:
 
 ## Difference
 
-| Relationship | Question to ask | Meaning | Mermaid / UML |
-|---|---|---|---|
-| Inheritance | Is B a kind of A? | B 是 A 的一种 | `A <|-- B` |
-| Aggregation | Does A have B? | A 拥有/包含 B | `A o-- B` |
-| Composition | Is B a part of A and cannot exist independently? | B 是 A 的强组成部分 | `A *-- B` |
+| Relationship | Question to ask                                  | Meaning      | Mermaid / UML |       |
+| ------------ | ------------------------------------------------ | ------------ | ------------- | ----- |
+| Inheritance  | Is B a kind of A?                                | B 是 A 的一种    | `A <          | -- B` |
+| Aggregation  | Does A have B?                                   | A 拥有/包含 B    | `A o-- B`     |       |
+| Composition  | Is B a part of A and cannot exist independently? | B 是 A 的强组成部分 | `A *-- B`     |       |
 
 
 ### Aggregation vs Composition

@@ -410,3 +410,7 @@ solve QFSE -> evaluate Quantum Price Levels (QPL)
 
 考试如果问 “which way to go”，可以回答：Path Integral is theoretically powerful but computationally heavy; QAHO is more direct for numerical implementation and QPL computation.
 
+
+# Ch4
+Time-dependent Schrödinger Equation:
+i*hbar * dPsi(x,t)/dt = H * Psi(x,t)
