@@ -29,6 +29,18 @@ This vault is not just a place to store notes. It is a working second brain for 
 
 The current operating mode is **exam sprint first**. A beautiful vault is nice; a vault that helps answer questions under time pressure is better.
 
+## My Brain
+
+<p align="center">
+  <a href="Resources/Vault%20Management/Interactive%20Vault%20Graph.html">
+    <img src="Resources/Vault%20Management/Images/interactive-vault-graph-preview.gif" alt="My Brain animated graph preview" width="100%">
+  </a>
+</p>
+
+<p align="center">
+  <a href="Resources/Vault%20Management/Interactive%20Vault%20Graph.html"><strong>Open My Brain - draggable interactive graph</strong></a>
+</p>
+
 ## Current Sprint
 
 | Track | Current state | Next pressure point |
