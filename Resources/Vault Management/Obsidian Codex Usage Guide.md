@@ -71,7 +71,7 @@ Review rule:
 Use Obsidian internal embeds after importing notes:
 
 ```md
-![[Resources/Software Engineering/Images/lec02_waterfall_model.png]]
+![[lec02_waterfall_model.png]]
 ```
 
 Avoid Markdown image paths when Obsidian reports "file not found":
@@ -81,7 +81,9 @@ Avoid Markdown image paths when Obsidian reports "file not found":
 ![Waterfall Model](se_revision_assets/lec02_waterfall_model.png)
 ```
 
-Reason: Obsidian may resolve Markdown image paths differently from internal links, so a nested imported note can show "file not found" even when the image exists inside the vault. Copy course images into `Resources/.../Images` and use `![[Resources/.../Images/...]]` embeds.
+Reason: Obsidian may resolve folder-qualified Markdown or wikilink image paths differently from filename-only attachment embeds, so a nested imported note can show "file not found" even when the image exists inside the vault. Copy course images into `Resources/.../Images` and use filename-only embeds such as `![[file.png]]`.
+
+If Obsidian still reports "file not found" for `![[Resources/.../Images/file.png]]`, use the filename-only embed `![[file.png]]`. This matches the working image style used by the rest of the vault.
 
 Maintenance rule:
 
