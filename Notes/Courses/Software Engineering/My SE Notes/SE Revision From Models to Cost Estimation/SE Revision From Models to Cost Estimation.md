@@ -27,79 +27,59 @@ This note is a Software Engineering exam revision map from **Software Process Mo
 ## 思维导图
 
 ```mermaid
-%%{init: {"themeVariables": {"fontSize": "18px", "fontFamily": "Arial"}}}%%
-flowchart LR
-    SE(["SE Revision<br/>Models to Cost Estimation"])
-
-    SE --> PM["Process Models"]
-    SE --> REQ["Requirements"]
-    SE --> SM["System Models"]
-    SE --> AD["Architectural Design"]
-    SE --> OOD["OOD and Patterns"]
-    SE --> SD["Structured Design"]
-    SE --> TEST["Testing"]
-    SE --> CM["Configuration Management"]
-    SE --> CE["Cost Estimation"]
-
-    PM --> PM1["Waterfall"]
-    PM --> PM2["Incremental"]
-    PM --> PM3["Prototyping"]
-    PM --> PM4["Spiral"]
-    PM --> PM5["RUP"]
-
-    REQ --> REQ1["User vs System"]
-    REQ --> REQ2["Functional"]
-    REQ --> REQ3["Non-functional"]
-    REQ --> REQ4["Domain"]
-    REQ --> REQ5["Specification Styles"]
-
-    SM --> SM1["DFD"]
-    SM --> SM2["Activity Diagram"]
-    SM --> SM3["UML Notations"]
-    SM --> SM4["State Transition"]
-
-    AD --> AD1["Pattern"]
-    AD --> AD2["Modularity"]
-    AD --> AD3["Information Hiding"]
-    AD --> AD4["Coupling and Cohesion"]
-    AD --> AD5["Repository / Client-server / Layered / MVC"]
-
-    OOD --> OOD1["OO vs Structured Analysis"]
-    OOD --> OOD2["Observer Pattern"]
-    OOD --> OOD3["Detailed Design"]
-    OOD --> OOD4["Signature and Visibility"]
-    OOD --> OOD5["Pre/Post Conditions"]
-
-    SD --> SD1["DFD to Structure Tree"]
-    SD --> SD2["Transform Center"]
-    SD --> SD3["First-level Factoring"]
-    SD --> SD4["Restructuring"]
-
-    TEST --> TEST1["Black-box"]
-    TEST --> TEST2["White-box"]
-    TEST --> TEST3["Test Oracle"]
-    TEST --> TEST4["Test Automation"]
-    TEST --> TEST5["Test Case Management"]
-
-    CM --> CM1["Planning"]
-    CM --> CM2["Change Management"]
-    CM --> CM3["Version Control"]
-    CM --> CM4["Release Management"]
-    CM --> CM5["System Building"]
-
-    CE --> CE1["LOC / KLOC"]
-    CE --> CE2["Function Points"]
-    CE --> CE3["Object Points"]
-    CE --> CE4["Productivity"]
-    CE --> CE5["COCOMO II"]
-    CE --> CE6["Staffing and Calendar Time"]
-
-    classDef root fill:#263238,stroke:#111,color:#fff,font-size:24px,font-weight:bold;
-    classDef module fill:#e3f2fd,stroke:#1565c0,color:#0d47a1,font-size:20px,font-weight:bold;
-    classDef item fill:#fff,stroke:#90a4ae,color:#263238,font-size:17px;
-    class SE root;
-    class PM,REQ,SM,AD,OOD,SD,TEST,CM,CE module;
-    class PM1,PM2,PM3,PM4,PM5,REQ1,REQ2,REQ3,REQ4,REQ5,SM1,SM2,SM3,SM4,AD1,AD2,AD3,AD4,AD5,OOD1,OOD2,OOD3,OOD4,OOD5,SD1,SD2,SD3,SD4,TEST1,TEST2,TEST3,TEST4,TEST5,CM1,CM2,CM3,CM4,CM5,CE1,CE2,CE3,CE4,CE5,CE6 item;
+%%{init: {"themeVariables": {"fontSize": "22px", "fontFamily": "Arial"}}}%%
+mindmap
+  root((SE Revision))
+    Process Models
+      Waterfall
+      Incremental
+      Prototyping
+      Spiral
+      RUP
+    Requirements
+      User vs System
+      Functional vs Non-functional
+      Domain
+      Specification styles
+    System Models
+      DFD
+      Activity Diagram
+      UML notation
+      State Transition
+    Architecture
+      Pattern
+      Modularity
+      Information Hiding
+      Coupling vs Cohesion
+      Repository / Client-server / Layered / MVC
+    OOD
+      OO vs Structured Analysis
+      Observer Pattern
+      Detailed Design
+      Signature / Visibility
+      Pre and Post Conditions
+    Structured Design
+      DFD to Structure Tree
+      Transform Center
+      Factoring
+      Restructuring
+    Testing
+      Black-box
+      White-box
+      Test Oracle
+      Automation
+      Test Case Management
+    Configuration Management
+      Planning
+      Change Management
+      Version Control
+      Release / Build
+    Cost Estimation
+      LOC / KLOC
+      Function Points
+      Object Points
+      COCOMO II
+      Staffing Time
 ```
 
 ---
