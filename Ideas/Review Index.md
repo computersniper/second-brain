@@ -9,7 +9,7 @@ tags:
 
 This page is the single entry point for review notes.
 
-Rule: list review notes here as plain text, not wikilinks, so individual review notes do not appear in the relationship graph.
+Rule: list review notes here as plain text/path records. Each review file may link back to [[Review Index]], but review content should not wikilink every note it mentions.
 
 ## Weekly / Brain Reviews
 

@@ -62,7 +62,8 @@ AGENTS -> Vault Relationship Map -> course/review/root indexes -> detail notes
 Review rule:
 
 - Review Index may be linked from the vault tree.
-- Individual review notes should be listed inside Review Index as plain text/path records if they should not appear as graph nodes.
+- Individual review notes should be listed inside Review Index as plain text/path records.
+- Each review file may link back to [[Review Index]] as its single structural parent.
 - Specific review files should not wikilink every note they mention; otherwise the review content will expand in the graph.
 
 ## Image Embed Rules

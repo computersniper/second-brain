@@ -7,6 +7,8 @@ tags:
 
 # Second Brain Review - 2026-05-31
 
+Review index: [[Review Index]]
+
 ## Snapshot
 
 当前 vault 已经具备第二大脑的基础结构：

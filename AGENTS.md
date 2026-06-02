@@ -70,7 +70,7 @@ Rule: AGENTS should not list every SE/QF child note. Keep the vault like a tree:
 - 期末冲刺期优先服务考试输出，不要为了美化知识库牺牲复习时间
 - 已做好的课程正文、我自己整理的笔记、可直接复习的内容页默认只读；除非我明确要求修改，否则只在项目页、AGENTS、管理笔记、复盘笔记、Inbox 处理记录里更新。
 - 维护知识库结构时，优先保持树状层级：[[Vault Relationship Map]] 只连课程根节点；SE/QF 的具体笔记放到各自 course map / source index / personal index 里管理。
-- Review notes should be recorded in [[Review Index]] without wikilinking individual review files. Do not display individual review notes as nodes in the vault relationship tree.
+- Review notes should link back to [[Review Index]] as their only structural review link. Do not wikilink every note mentioned inside review content.
 - 修复图片显示问题属于维护任务，可以改路径/嵌入语法，但不要改学习正文内容。
 
 # Current Course Focus

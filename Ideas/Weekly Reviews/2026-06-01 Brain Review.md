@@ -7,6 +7,8 @@ tags:
 
 # 2026-06-01 Brain Review
 
+Review index: [[Review Index]]
+
 ## What I Read
 
 This review is based on the current local Obsidian vault:
