@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Second Brain Interactive Graph</title>
+  <style>
+    :root {
+      --bg: #050816;
+      --panel: rgba(15, 23, 42, 0.76);
+      --panel-strong: rgba(15, 23, 42, 0.92);
+      --text: #e5f4ff;
+      --muted: #8aa8bd;
+      --cyan: #67e8f9;
+      --blue: #38bdf8;
+      --violet: #a78bfa;
+      --green: #34d399;
+      --amber: #fbbf24;
+      --line: rgba(103, 232, 249, 0.2);
+      --line-active: rgba(103, 232, 249, 0.72);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(56, 189, 248, 0.14), transparent 30%),
+        radial-gradient(circle at 80% 18%, rgba(167, 139, 250, 0.12), transparent 34%),
+        linear-gradient(135deg, #020617 0%, #050816 45%, #0f172a 100%);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow: hidden;
+    }
+
+    .shell {
+      display: grid;
+      grid-template-columns: minmax(260px, 320px) 1fr;
+      height: 100%;
+    }
+
+    aside {
+      position: relative;
+      z-index: 2;
+      padding: 28px;
+      border-right: 1px solid rgba(148, 163, 184, 0.16);
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.94), rgba(15, 23, 42, 0.7));
+      box-shadow: 18px 0 60px rgba(0, 0, 0, 0.28);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 24px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .subtitle {
+      margin: 0 0 24px;
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .hud {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .tile {
+      padding: 12px;
+      border: 1px solid rgba(103, 232, 249, 0.18);
+      border-radius: 10px;
+      background: rgba(2, 6, 23, 0.44);
+    }
+
+    .tile strong {
+      display: block;
+      font-size: 20px;
+      color: var(--cyan);
+    }
+
+    .tile span {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    button,
+    a.button {
+      cursor: pointer;
+      border: 1px solid rgba(103, 232, 249, 0.22);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(15, 23, 42, 0.86);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 12px;
+      transition: border-color 140ms ease, color 140ms ease, background 140ms ease;
+    }
+
+    button:hover,
+    button.active,
+    a.button:hover {
+      border-color: rgba(103, 232, 249, 0.78);
+      color: var(--cyan);
+      background: rgba(8, 47, 73, 0.64);
+    }
+
+    .inspector {
+      min-height: 190px;
+      padding: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      border-radius: 14px;
+      background: var(--panel);
+    }
+
+    .inspector .type {
+      color: var(--cyan);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+    }
+
+    .inspector h2 {
+      margin: 8px 0;
+      font-size: 18px;
+    }
+
+    .inspector p {
+      color: var(--muted);
+      line-height: 1.55;
+      font-size: 13px;
+    }
+
+    .hint {
+      margin-top: 20px;
+      color: rgba(226, 232, 240, 0.62);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    main {
+      position: relative;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .topbar {
+      position: absolute;
+      top: 24px;
+      left: 28px;
+      right: 28px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      pointer-events: none;
+    }
+
+    .topbar .label {
+      color: rgba(226, 232, 240, 0.72);
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .topbar .status {
+      color: var(--cyan);
+      font-size: 12px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .grid-line {
+      stroke: rgba(148, 163, 184, 0.045);
+      stroke-width: 1;
+    }
+
+    .link {
+      stroke: var(--line);
+      stroke-width: 1.25;
+    }
+
+    .link.active {
+      stroke: var(--line-active);
+      stroke-width: 2.2;
+    }
+
+    .node circle {
+      stroke: rgba(226, 232, 240, 0.65);
+      stroke-width: 1.3;
+      filter: drop-shadow(0 0 18px rgba(103, 232, 249, 0.18));
+    }
+
+    .node.root circle {
+      stroke-width: 2.5;
+      filter: drop-shadow(0 0 26px rgba(103, 232, 249, 0.38));
+    }
+
+    .node text {
+      fill: var(--text);
+      font-size: 12px;
+      paint-order: stroke;
+      stroke: rgba(2, 6, 23, 0.8);
+      stroke-width: 4px;
+      stroke-linejoin: round;
+      pointer-events: none;
+    }
+
+    .node.dim {
+      opacity: 0.22;
+    }
+
+    .link.dim {
+      opacity: 0.12;
+    }
+
+    @media (max-width: 780px) {
+      body {
+        overflow: auto;
+      }
+
+      .shell {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 72vh;
+      }
+
+      aside {
+        border-right: 0;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside>
+      <h1>Mirror Graph</h1>
+      <p class="subtitle">A draggable local graph for the Second Brain vault. Drag nodes, filter clusters, double-click a node to open its note.</p>
+
+      <div class="hud">
+        <div class="tile">
+          <strong id="nodeCount">0</strong>
+          <span>nodes</span>
+        </div>
+        <div class="tile">
+          <strong id="linkCount">0</strong>
+          <span>links</span>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="qf">QF</button>
+        <button data-filter="se">SE</button>
+        <button data-filter="management">Management</button>
+        <button data-filter="flow">Flow</button>
+      </div>
+
+      <div class="inspector" id="inspector">
+        <div class="type">selected node</div>
+        <h2>Second Brain</h2>
+        <p>Click a node to inspect it. Drag nodes to reshape the map. Double-click a node to open the linked Markdown page.</p>
+        <a class="button" id="openLink" href="../../AGENTS.md">Open selected</a>
+      </div>
+
+      <p class="hint">Tip: this file is standalone. It uses no external libraries, so it works offline inside the vault.</p>
+    </aside>
+
+    <main>
+      <div class="topbar">
+        <div class="label">interactive vault topology</div>
+        <div class="status" id="status">simulation online</div>
+      </div>
+      <svg id="graph" role="img" aria-label="Interactive Second Brain graph"></svg>
+    </main>
+  </div>
+
+  <script>
+    const nodes = [
+      { id: "Second Brain", type: "root", group: "management", description: "The vault as a mirrored cognition system.", href: "../../README.md", x: 660, y: 360 },
+      { id: "AGENTS", type: "rules", group: "management", description: "Codex-facing operating rules and current sprint constraints.", href: "../../AGENTS.md", x: 500, y: 270 },
+      { id: "Vault Relationship Map", type: "map", group: "management", description: "The readable topology and navigation rules for this vault.", href: "Vault%20Relationship%20Map.md", x: 650, y: 230 },
+      { id: "Obsidian Codex Usage Guide", type: "guide", group: "management", description: "How captures, notes, reviews, resources, and projects should move.", href: "Obsidian%20Codex%20Usage%20Guide.md", x: 810, y: 280 },
+      { id: "Obsidian Tagging Guide", type: "guide", group: "management", description: "Folder, link, and tag rules for keeping the graph clean.", href: "Obsidian%20Tagging%20Guide.md", x: 820, y: 430 },
+      { id: "2026-06-01 Brain Review", type: "review", group: "management", description: "Latest full-vault review and current highest-leverage gaps.", href: "../../Ideas/Weekly%20Reviews/2026-06-01%20Brain%20Review.md", x: 520, y: 470 },
+
+      { id: "Inbox", type: "buffer", group: "flow", description: "Raw captures and temporary material before triage.", href: "../../Inbox/", x: 300, y: 380 },
+      { id: "Codex Triage", type: "process", group: "flow", description: "Classify, link, extract, and route material.", href: "../../AGENTS.md", x: 420, y: 380 },
+      { id: "Notes", type: "storage", group: "flow", description: "Organized course and concept knowledge.", href: "../../Notes/", x: 560, y: 590 },
+      { id: "Ideas", type: "storage", group: "flow", description: "Original thinking, reviews, and cognitive changes.", href: "../../Ideas/", x: 700, y: 610 },
+      { id: "Projects", type: "storage", group: "flow", description: "Active trackers and next actions.", href: "../../Projects/", x: 830, y: 570 },
+      { id: "Resources", type: "storage", group: "flow", description: "Source indexes, images, and vault-management assets.", href: "../../Resources/", x: 970, y: 500 },
+
+      { id: "QF Exam Review", type: "project", group: "qf", description: "Quantum Finance project tracker and immediate next actions.", href: "../../Projects/QF%20Exam%20Review.md", x: 980, y: 310 },
+      { id: "QF Course Map", type: "course map", group: "qf", description: "Coverage control for Quantum Finance chapters.", href: "../../Notes/Courses/Quantum%20Finance/QF%20Course%20Map.md", x: 1110, y: 260 },
+      { id: "Exam Focus", type: "teacher focus", group: "qf", description: "Teacher-confirmed QF revision scope.", href: "../../Notes/Courses/Quantum%20Finance/Exam%20Focus.md", x: 1190, y: 380 },
+      { id: "Quantum Finance Notes", type: "notes", group: "qf", description: "Chinese understanding and chapter logic.", href: "../../Notes/Courses/Quantum%20Finance/Quantum%20Finance%20Notes.md", x: 1050, y: 470 },
+      { id: "QF Open-Book Exam Sheet", type: "exam output", group: "qf", description: "English formulas, templates, and A4 candidates.", href: "../../Notes/Courses/Quantum%20Finance/QF%20Open-Book%20Exam%20Sheet.md", x: 1190, y: 520 },
+      { id: "QF Source Index", type: "source", group: "qf", description: "Original Quantum Finance PDF links.", href: "../../Resources/Quantum%20Finance/QF%20Source%20Index.md", x: 1010, y: 170 },
+
+      { id: "SE Exam Review", type: "project", group: "se", description: "Software Engineering practice route and sprint rule.", href: "../../Projects/SE%20Exam%20Review.md", x: 410, y: 170 },
+      { id: "00 SE Exam Map", type: "course map", group: "se", description: "Control page for Software Engineering exam review.", href: "../../Notes/Courses/Software%20Engineering/00%20SE%20Exam%20Map.md", x: 260, y: 210 },
+      { id: "Diagram Drawing Guide", type: "drawing guide", group: "se", description: "Repeatable steps for UML, DFD, structured tree, and testing diagrams.", href: "../../Notes/Courses/Software%20Engineering/01%20Diagram%20Questions%20Drawing%20Guide.md", x: 190, y: 330 },
+      { id: "Final Cram Sheet", type: "cram", group: "se", description: "Last-day concept sheet.", href: "../../Notes/Courses/Software%20Engineering/07%20Final%20Cram%20Sheet.md", x: 210, y: 500 },
+      { id: "Drawing Drill Pack", type: "drill", group: "se", description: "Active recall practice for drawing-heavy questions.", href: "../../Notes/Courses/Software%20Engineering/08%20Drawing%20Drill%20Pack.md", x: 360, y: 540 },
+      { id: "SE Source Index", type: "source", group: "se", description: "Original SE lecture and class exercise links.", href: "../../Resources/Software%20Engineering/SE%20Source%20Index.md", x: 160, y: 130 }
+    ];
+
+    const links = [
+      ["Second Brain", "AGENTS"], ["Second Brain", "Vault Relationship Map"], ["Second Brain", "Obsidian Codex Usage Guide"],
+      ["AGENTS", "QF Exam Review"], ["AGENTS", "SE Exam Review"], ["AGENTS", "2026-06-01 Brain Review"],
+      ["Vault Relationship Map", "QF Course Map"], ["Vault Relationship Map", "00 SE Exam Map"], ["Vault Relationship Map", "Obsidian Tagging Guide"],
+      ["Inbox", "Codex Triage"], ["Codex Triage", "Notes"], ["Codex Triage", "Ideas"], ["Codex Triage", "Projects"], ["Codex Triage", "Resources"],
+      ["Projects", "QF Exam Review"], ["Projects", "SE Exam Review"], ["Resources", "QF Source Index"], ["Resources", "SE Source Index"], ["Ideas", "2026-06-01 Brain Review"],
+      ["QF Exam Review", "QF Course Map"], ["QF Exam Review", "Exam Focus"], ["QF Exam Review", "QF Open-Book Exam Sheet"], ["QF Course Map", "Quantum Finance Notes"], ["Exam Focus", "Quantum Finance Notes"], ["Quantum Finance Notes", "QF Open-Book Exam Sheet"], ["QF Source Index", "Quantum Finance Notes"],
+      ["SE Exam Review", "00 SE Exam Map"], ["00 SE Exam Map", "Diagram Drawing Guide"], ["Diagram Drawing Guide", "Drawing Drill Pack"], ["Final Cram Sheet", "Drawing Drill Pack"], ["SE Source Index", "00 SE Exam Map"]
+    ].map(([source, target]) => ({ source, target }));
+
+    const colors = {
+      root: "#67e8f9",
+      management: "#38bdf8",
+      qf: "#22d3ee",
+      se: "#a78bfa",
+      flow: "#34d399"
+    };
+
+    const svg = document.getElementById("graph");
+    const inspector = document.getElementById("inspector");
+    const openLink = document.getElementById("openLink");
+    const status = document.getElementById("status");
+    document.getElementById("nodeCount").textContent = nodes.length;
+    document.getElementById("linkCount").textContent = links.length;
+
+    const state = {
+      width: 0,
+      height: 0,
+      selected: nodes[0],
+      filter: "all",
+      dragging: null,
+      pointer: null
+    };
+
+    const nodeById = new Map(nodes.map(node => [node.id, node]));
+    links.forEach(link => {
+      link.sourceNode = nodeById.get(link.source);
+      link.targetNode = nodeById.get(link.target);
+    });
+
+    function resize() {
+      const rect = svg.getBoundingClientRect();
+      state.width = rect.width;
+      state.height = rect.height;
+      svg.setAttribute("viewBox", `0 0 ${state.width} ${state.height}`);
+      if (!svg.querySelector(".grid")) render();
+    }
+
+    function render() {
+      svg.innerHTML = "";
+
+      const grid = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      grid.classList.add("grid");
+      for (let x = 0; x < state.width; x += 64) {
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.setAttribute("x1", x);
+        line.setAttribute("x2", x);
+        line.setAttribute("y1", 0);
+        line.setAttribute("y2", state.height);
+        line.classList.add("grid-line");
+        grid.appendChild(line);
+      }
+      for (let y = 0; y < state.height; y += 64) {
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.setAttribute("x1", 0);
+        line.setAttribute("x2", state.width);
+        line.setAttribute("y1", y);
+        line.setAttribute("y2", y);
+        line.classList.add("grid-line");
+        grid.appendChild(line);
+      }
+      svg.appendChild(grid);
+
+      const linkLayer = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      linkLayer.id = "links";
+      svg.appendChild(linkLayer);
+
+      const nodeLayer = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      nodeLayer.id = "nodes";
+      svg.appendChild(nodeLayer);
+
+      links.forEach(link => {
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.dataset.source = link.source;
+        line.dataset.target = link.target;
+        line.classList.add("link");
+        link.el = line;
+        linkLayer.appendChild(line);
+      });
+
+      nodes.forEach(node => {
+        node.vx = node.vx || 0;
+        node.vy = node.vy || 0;
+        node.x = Math.min(Math.max(node.x, 80), state.width - 80);
+        node.y = Math.min(Math.max(node.y, 80), state.height - 80);
+
+        const group = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        group.classList.add("node", node.type === "root" ? "root" : "leaf");
+        group.dataset.id = node.id;
+
+        const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        circle.setAttribute("r", node.type === "root" ? 18 : 12);
+        circle.setAttribute("fill", colors[node.type] || colors[node.group] || "#38bdf8");
+
+        const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        text.setAttribute("x", 18);
+        text.setAttribute("y", 4);
+        text.textContent = node.id;
+
+        group.appendChild(circle);
+        group.appendChild(text);
+        group.addEventListener("pointerdown", event => startDrag(event, node));
+        group.addEventListener("click", () => selectNode(node));
+        group.addEventListener("dblclick", () => {
+          window.location.href = node.href;
+        });
+
+        node.el = group;
+        nodeLayer.appendChild(group);
+      });
+
+      updateInspector(nodes[0]);
+      tick();
+    }
+
+    function selectNode(node) {
+      state.selected = node;
+      updateInspector(node);
+      updateVisibility();
+    }
+
+    function updateInspector(node) {
+      inspector.querySelector(".type").textContent = node.type;
+      inspector.querySelector("h2").textContent = node.id;
+      inspector.querySelector("p").textContent = node.description;
+      openLink.href = node.href;
+      openLink.textContent = `Open ${node.id}`;
+    }
+
+    function startDrag(event, node) {
+      state.dragging = node;
+      state.pointer = getPoint(event);
+      node.fx = node.x;
+      node.fy = node.y;
+      svg.setPointerCapture(event.pointerId);
+    }
+
+    svg.addEventListener("pointermove", event => {
+      if (!state.dragging) return;
+      const point = getPoint(event);
+      state.dragging.x += point.x - state.pointer.x;
+      state.dragging.y += point.y - state.pointer.y;
+      state.dragging.vx = 0;
+      state.dragging.vy = 0;
+      state.pointer = point;
+      tick();
+    });
+
+    svg.addEventListener("pointerup", event => {
+      if (!state.dragging) return;
+      state.dragging.fx = null;
+      state.dragging.fy = null;
+      state.dragging = null;
+      svg.releasePointerCapture(event.pointerId);
+    });
+
+    function getPoint(event) {
+      const rect = svg.getBoundingClientRect();
+      return {
+        x: event.clientX - rect.left,
+        y: event.clientY - rect.top
+      };
+    }
+
+    function simulate() {
+      const alpha = state.dragging ? 0.18 : 0.06;
+      const centerX = state.width / 2;
+      const centerY = state.height / 2;
+
+      nodes.forEach(node => {
+        node.vx += (centerX - node.x) * 0.0008;
+        node.vy += (centerY - node.y) * 0.0008;
+      });
+
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const a = nodes[i];
+          const b = nodes[j];
+          let dx = a.x - b.x;
+          let dy = a.y - b.y;
+          let dist = Math.sqrt(dx * dx + dy * dy) || 1;
+          const force = Math.min(4200 / (dist * dist), 2.4);
+          dx /= dist;
+          dy /= dist;
+          a.vx += dx * force * alpha;
+          a.vy += dy * force * alpha;
+          b.vx -= dx * force * alpha;
+          b.vy -= dy * force * alpha;
+        }
+      }
+
+      links.forEach(link => {
+        const a = link.sourceNode;
+        const b = link.targetNode;
+        const dx = b.x - a.x;
+        const dy = b.y - a.y;
+        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        const target = 145;
+        const force = (dist - target) * 0.004;
+        const fx = (dx / dist) * force;
+        const fy = (dy / dist) * force;
+        a.vx += fx;
+        a.vy += fy;
+        b.vx -= fx;
+        b.vy -= fy;
+      });
+
+      nodes.forEach(node => {
+        if (node.fx != null) return;
+        node.vx *= 0.86;
+        node.vy *= 0.86;
+        node.x = Math.min(Math.max(node.x + node.vx, 48), state.width - 160);
+        node.y = Math.min(Math.max(node.y + node.vy, 48), state.height - 48);
+      });
+    }
+
+    function tick() {
+      links.forEach(link => {
+        link.el.setAttribute("x1", link.sourceNode.x);
+        link.el.setAttribute("y1", link.sourceNode.y);
+        link.el.setAttribute("x2", link.targetNode.x);
+        link.el.setAttribute("y2", link.targetNode.y);
+      });
+
+      nodes.forEach(node => {
+        node.el.setAttribute("transform", `translate(${node.x}, ${node.y})`);
+      });
+    }
+
+    function updateVisibility() {
+      const selected = state.selected;
+      const related = new Set([selected.id]);
+      links.forEach(link => {
+        if (link.source === selected.id) related.add(link.target);
+        if (link.target === selected.id) related.add(link.source);
+      });
+
+      nodes.forEach(node => {
+        const inFilter = state.filter === "all" || node.group === state.filter || node.type === "root";
+        const connected = related.has(node.id);
+        node.el.classList.toggle("dim", !inFilter || !connected);
+      });
+
+      links.forEach(link => {
+        const inFilter = state.filter === "all" || link.sourceNode.group === state.filter || link.targetNode.group === state.filter;
+        const active = link.source === selected.id || link.target === selected.id;
+        link.el.classList.toggle("active", active);
+        link.el.classList.toggle("dim", !inFilter || !active);
+      });
+    }
+
+    document.querySelectorAll("[data-filter]").forEach(button => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll("[data-filter]").forEach(other => other.classList.remove("active"));
+        button.classList.add("active");
+        state.filter = button.dataset.filter;
+        status.textContent = `${state.filter} cluster`;
+        updateVisibility();
+      });
+    });
+
+    resize();
+    window.addEventListener("resize", resize);
+    render();
+    updateVisibility();
+    setInterval(() => {
+      simulate();
+      tick();
+    }, 16);
+  </script>
+</body>
+</html>

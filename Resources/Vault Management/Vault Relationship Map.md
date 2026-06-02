@@ -35,6 +35,7 @@ Operating rules:
 
 Vault management:
 
+- [[Interactive Vault Graph]]
 - [[Obsidian Codex Usage Guide]]
 - [[Obsidian Tagging Guide]]
 - [[Review Index]]
@@ -88,5 +89,6 @@ flowchart TD
 
 - Start from [[AGENTS]] when you need the current operating rules.
 - Start from [[Vault Relationship Map]] when deciding where to go.
+- Open [[Interactive Vault Graph]] when you want a draggable graph-style view.
 - From there, open [[QF Course Map]] for Quantum Finance or [[00 SE Exam Map]] for Software Engineering.
 - Use [[Review Index]] when deciding the next highest-leverage action from past reviews.
