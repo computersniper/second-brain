@@ -8,71 +8,87 @@ tags:
 
 # Vault Relationship Map
 
-This is the human-readable relationship map for the vault. Use it as the first stop when deciding where a note belongs or which page to open next.
+This is the human-readable relationship tree for the vault. Use it as the first stop when deciding where a note belongs or which page to open next.
 
-## Clickable Link Index
+## Tree Index
 
-Core control pages:
+```text
+Vault Relationship Map
+├── Operating Rules
+│   └── AGENTS
+├── Vault Management
+│   ├── Obsidian Codex Usage Guide
+│   ├── Obsidian Tagging Guide
+│   ├── 2026-06-01 Brain Review
+│   └── Second Brain Review - 2026-05-31
+└── Courses
+    ├── Quantum Finance
+    │   └── QF Course Map
+    └── Software Engineering
+        └── 00 SE Exam Map
+```
+
+## Clickable Links
+
+Operating rules:
 
 - [[AGENTS]]
+
+Vault management:
+
 - [[Obsidian Codex Usage Guide]]
 - [[Obsidian Tagging Guide]]
 - [[2026-06-01 Brain Review]]
 - [[Second Brain Review - 2026-05-31]]
 
-Course maps:
+Course roots:
 
 - [[QF Course Map]]
 - [[00 SE Exam Map]]
 
-## Main Flow
+## Vault Tree
 
 ```mermaid
 flowchart TD
-    Inbox["/Inbox\nraw capture"] --> Triage["Codex triage\nclassify, link, extract"]
-    Clippings["/Clippings\nlegacy captures"] --> Triage
-    Triage --> Notes["/Notes\norganized knowledge"]
-    Triage --> Ideas["/Ideas\noriginal thinking and reviews"]
-    Triage --> Projects["/Projects\nactions and progress"]
-    Triage --> Resources["/Resources\nsource indexes and images"]
+    Root["[[Vault Relationship Map]]"]
 
-    Notes --> CourseMaps["Course maps\none entry per subject"]
-    CourseMaps --> QFMap["[[QF Course Map]]"]
-    CourseMaps --> SEMap["[[00 SE Exam Map]]"]
-    Ideas --> BrainReview["[[2026-06-01 Brain Review]]"]
-    Resources --> SourceIndexes["Source indexes\nlinked from course maps"]
+    Root --> Operating["Operating Rules"]
+    Operating --> AGENTS["[[AGENTS]]"]
+
+    Root --> Management["Vault Management"]
+    Management --> Usage["[[Obsidian Codex Usage Guide]]"]
+    Management --> Tags["[[Obsidian Tagging Guide]]"]
+    Management --> ReviewToday["[[2026-06-01 Brain Review]]"]
+    Management --> ReviewPrev["[[Second Brain Review - 2026-05-31]]"]
+
+    Root --> Courses["Courses"]
+    Courses --> QF["Quantum Finance"]
+    Courses --> SE["Software Engineering"]
+    QF --> QFMap["[[QF Course Map]]"]
+    SE --> SEMap["[[00 SE Exam Map]]"]
 ```
 
-## Exam Sprint Map
+## Storage Tree
 
-```mermaid
-flowchart LR
-    AGENTS["[[AGENTS]]\nidentity + rules"] --> Sprint["Exam Sprint Rules"]
-
-    Sprint --> QFMap["[[QF Course Map]]\nQF second layer"]
-    Sprint --> SEMap["[[00 SE Exam Map]]\nSE second layer"]
+```text
+/Inbox      -> raw capture, then triage
+/Notes      -> organized course and concept notes
+/Ideas      -> original thinking and reviews
+/Projects   -> active project progress pages
+/Resources  -> source indexes, images, external files
+/Clippings  -> legacy web captures
 ```
 
 ## Course Layer Rule
 
 - QF details live under [[QF Course Map]].
 - SE details live under [[00 SE Exam Map]].
-- This page should keep only one direct course connection per subject, so the vault-level graph stays readable.
-
-## Management Relationships
-
-```mermaid
-flowchart TD
-    AGENTS["[[AGENTS]]"] --> Usage["[[Obsidian Codex Usage Guide]]"]
-    AGENTS --> Tags["[[Obsidian Tagging Guide]]"]
-    AGENTS --> Map["[[Vault Relationship Map]]"]
-    Map --> ReviewToday["[[2026-06-01 Brain Review]]"]
-    Map --> ReviewPrev["[[Second Brain Review - 2026-05-31]]"]
-```
+- Keep only one direct course root per subject on this page.
+- Do not list every SE/QF detail page here; let the subject map own its children.
 
 ## Navigation Rules
 
 - Start from [[AGENTS]] when you need the current operating rules.
-- Start from [[QF Course Map]] when studying Quantum Finance.
-- Start from [[00 SE Exam Map]] when studying Software Engineering.
+- Start from [[Vault Relationship Map]] when deciding where to go.
+- From there, open [[QF Course Map]] for Quantum Finance or [[00 SE Exam Map]] for Software Engineering.
 - Start from [[2026-06-01 Brain Review]] when deciding the next highest-leverage action.
