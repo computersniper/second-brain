@@ -108,6 +108,25 @@
       border-color: rgba(255, 255, 255, 0.32);
     }
 
+    label.toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      height: 32px;
+      padding: 0 10px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12px;
+      user-select: none;
+    }
+
+    label.toggle input {
+      width: auto;
+      height: auto;
+      margin: 0;
+    }
+
     .legend {
       left: 18px;
       bottom: 18px;
@@ -210,8 +229,8 @@
       fill: var(--text);
       font-size: 13px;
       paint-order: stroke;
-      stroke: rgba(31, 31, 31, 0.92);
-      stroke-width: 5px;
+      stroke: rgba(31, 31, 31, 0.96);
+      stroke-width: 7px;
       stroke-linejoin: round;
       pointer-events: none;
       user-select: none;
@@ -220,6 +239,14 @@
     .node.small-label text {
       font-size: 11px;
       fill: rgba(232, 232, 232, 0.82);
+    }
+
+    .node.hide-label text {
+      display: none;
+    }
+
+    .node text tspan {
+      paint-order: stroke;
     }
 
     @media (max-width: 760px) {
@@ -246,6 +273,7 @@
     <select id="tagFilter" aria-label="Filter by tag">
       <option value="all">All tags</option>
     </select>
+    <label class="toggle"><input id="labelsToggle" type="checkbox" checked> Labels</label>
     <button id="reset">Reset view</button>
   </div>
 
@@ -282,6 +310,7 @@
     const nodeLayer = document.getElementById("nodes");
     const search = document.getElementById("search");
     const tagFilter = document.getElementById("tagFilter");
+    const labelsToggle = document.getElementById("labelsToggle");
     const resetButton = document.getElementById("reset");
     const legend = document.getElementById("legend");
     const inspector = document.getElementById("inspector");
@@ -301,7 +330,8 @@
       pointer: null,
       selected: null,
       query: "",
-      tag: "all"
+      tag: "all",
+      showLabels: true
     };
 
     function colorFor(node) {
@@ -370,8 +400,8 @@
 
         const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
         text.setAttribute("x", radiusFor(node) + 9);
-        text.setAttribute("y", 5);
-        text.textContent = node.title;
+        text.setAttribute("y", 0);
+        addWrappedText(text, node.title, node.degree || 0);
 
         group.appendChild(circle);
         group.appendChild(text);
@@ -387,6 +417,34 @@
 
         node.el = group;
         nodeLayer.appendChild(group);
+      });
+    }
+
+    function addWrappedText(text, title, degree) {
+      const maxChars = degree > 8 ? 30 : 24;
+      const words = title.split(/\s+/);
+      const lines = [];
+      let current = "";
+
+      for (const word of words) {
+        const next = current ? `${current} ${word}` : word;
+        if (next.length > maxChars && current) {
+          lines.push(current);
+          current = word;
+        } else {
+          current = next;
+        }
+      }
+      if (current) lines.push(current);
+
+      const finalLines = lines.length > 2 ? [lines[0], `${lines.slice(1).join(" ").slice(0, maxChars - 1)}…`] : lines;
+      const start = finalLines.length === 1 ? 5 : -2;
+      finalLines.forEach((line, index) => {
+        const tspan = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+        tspan.setAttribute("x", text.getAttribute("x"));
+        tspan.setAttribute("dy", index === 0 ? start : 15);
+        tspan.textContent = line;
+        text.appendChild(tspan);
       });
     }
 
@@ -465,6 +523,7 @@
       state.tx = event.clientX - svg.getBoundingClientRect().left - before.x * state.scale;
       state.ty = event.clientY - svg.getBoundingClientRect().top - before.y * state.scale;
       updateTransform();
+      updateVisibility();
     }, { passive: false });
 
     function selectNode(node) {
@@ -498,8 +557,10 @@
       nodes.forEach(node => {
         const visible = matchesFilter(node);
         const selectedContext = !selected || related.has(node.id);
+        const hideLabel = !state.showLabels || (state.scale < 0.72 && (node.degree || 0) < 8) || (!selectedContext && (node.degree || 0) < 4);
         node.el.classList.toggle("dim", !visible || !selectedContext);
         node.el.classList.toggle("selected", selected?.id === node.id);
+        node.el.classList.toggle("hide-label", hideLabel);
       });
 
       edges.forEach(edge => {
@@ -511,14 +572,14 @@
     }
 
     function simulate() {
-      const alpha = state.draggingNode ? 0.16 : 0.05;
+      const alpha = state.draggingNode ? 0.2 : 0.085;
       const cx = state.width / 2;
       const cy = state.height / 2;
 
       nodes.forEach(node => {
         if (node.fixed) return;
-        node.vx += (cx - node.x) * 0.0005;
-        node.vy += (cy - node.y) * 0.0005;
+        node.vx += (cx - node.x) * 0.00075;
+        node.vy += (cy - node.y) * 0.00075;
       });
 
       for (let i = 0; i < nodes.length; i++) {
@@ -528,8 +589,9 @@
           let dx = a.x - b.x;
           let dy = a.y - b.y;
           let dist = Math.sqrt(dx * dx + dy * dy) || 1;
-          const minDist = radiusFor(a) + radiusFor(b) + 54;
-          const force = Math.min(3200 / (dist * dist), 2.2);
+          const labelBoost = ((a.degree || 0) > 4 || (b.degree || 0) > 4) ? 18 : 0;
+          const minDist = radiusFor(a) + radiusFor(b) + 66 + labelBoost;
+          const force = Math.min(5200 / (dist * dist), 3.2);
           dx /= dist;
           dy /= dist;
           a.vx += dx * force * alpha;
@@ -553,8 +615,8 @@
         const dx = b.x - a.x;
         const dy = b.y - a.y;
         const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-        const target = 128;
-        const force = (dist - target) * 0.005;
+        const target = 160;
+        const force = (dist - target) * 0.0052;
         const fx = (dx / dist) * force;
         const fy = (dy / dist) * force;
         if (!a.fixed) {
@@ -569,8 +631,8 @@
 
       nodes.forEach(node => {
         if (node.fixed) return;
-        node.vx *= 0.88;
-        node.vy *= 0.88;
+        node.vx *= 0.91;
+        node.vy *= 0.91;
         node.x += node.vx;
         node.y += node.vy;
       });
@@ -606,6 +668,11 @@
 
     tagFilter.addEventListener("change", () => {
       state.tag = tagFilter.value;
+      updateVisibility();
+    });
+
+    labelsToggle.addEventListener("change", () => {
+      state.showLabels = labelsToggle.checked;
       updateVisibility();
     });
 
