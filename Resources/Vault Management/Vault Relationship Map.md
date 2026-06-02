@@ -82,7 +82,7 @@ flowchart TD
 - SE details live under [[00 SE Exam Map]].
 - Keep only one direct course root per subject on this page.
 - Do not list every SE/QF detail page here; let the subject map own its children.
-- Review notes live under [[Review Index]]. Keep only the review index as the tree node here.
+- Review notes are listed in [[Review Index]] as plain text. Keep only the review index as the tree node here.
 
 ## Navigation Rules
 

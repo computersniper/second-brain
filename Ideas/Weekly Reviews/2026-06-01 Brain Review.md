@@ -3,8 +3,6 @@ tags:
   - review/weekly
   - vault/management
   - exam/review
-  - course/qf
-  - course/se
 ---
 
 # 2026-06-01 Brain Review
@@ -15,9 +13,9 @@ This review is based on the current local Obsidian vault:
 
 - `AGENTS.md`
 - Inbox clipping about Obsidian + Codex second brain
-- QF notes: [[QF Course Map]], [[Exam Focus]], [[Quantum Finance Notes]], [[QF Open-Book Exam Sheet]]
-- SE notes: [[00 SE Exam Map]], drawing guides, testing/cost quick notes, class exercise templates, final cram sheet, drill pack, PPT explanations, use case relationship notes, and my SE notes
-- Projects: [[SE Exam Review]], [[QF Exam Review]]
+- QF notes: QF Course Map, Exam Focus, Quantum Finance Notes, QF Open-Book Exam Sheet
+- SE notes: 00 SE Exam Map, drawing guides, testing/cost quick notes, class exercise templates, final cram sheet, drill pack, PPT explanations, use case relationship notes, and my SE notes
+- Projects: SE Exam Review, QF Exam Review
 - Resource indexes and vault management notes
 
 ## Current Shape
@@ -76,8 +74,8 @@ Vault gaps:
 
 ## Highest Leverage Next Actions
 
-1. Build QF CH4 into [[QF Open-Book Exam Sheet]].
-2. Build QF CH5 into [[QF Open-Book Exam Sheet]].
+1. Build QF CH4 into QF Open-Book Exam Sheet.
+2. Build QF CH5 into QF Open-Book Exam Sheet.
 3. Compress one A4 candidate from the open-book sheet.
 4. Do one SE timed drill session: use case diagram, class diagram, structured tree, and triangle testing.
 5. After each study session, write only one line: what I could not reproduce without looking.

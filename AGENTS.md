@@ -33,7 +33,7 @@ Rule: AGENTS should not list every SE/QF child note. Keep the vault like a tree:
 - My SE notes live under the SE branch.
 - Open them through: Vault Relationship Map -> 00 SE Exam Map -> My SE Notes Index.
 - Obsidian tags and graph notes live under vault management / personal SE summaries, not as direct AGENTS-level links.
-- Review notes live under Review Index.
+- Review notes are listed under Review Index as plain text/path records.
 
 # How This Vault Works
 
@@ -56,7 +56,7 @@ Rule: AGENTS should not list every SE/QF child note. Keep the vault like a tree:
 - 期末冲刺期优先服务考试输出，不要为了美化知识库牺牲复习时间
 - 已做好的课程正文、我自己整理的笔记、可直接复习的内容页默认只读；除非我明确要求修改，否则只在项目页、AGENTS、管理笔记、复盘笔记、Inbox 处理记录里更新。
 - 维护知识库结构时，优先保持树状层级：[[Vault Relationship Map]] 只连课程根节点；SE/QF 的具体笔记放到各自 course map / source index / personal index 里管理。
-- Review notes should connect through [[Review Index]]. Do not display individual review notes as nodes in the vault relationship tree.
+- Review notes should be recorded in [[Review Index]] without wikilinking individual review files. Do not display individual review notes as nodes in the vault relationship tree.
 
 # Current Course Focus
 
