@@ -41,7 +41,7 @@ The current operating mode is **exam sprint first**. A beautiful vault is nice; 
 
 - [AGENTS.md](AGENTS.md): identity, current goals, Codex rules, sprint priorities.
 - [Vault Relationship Map](Resources/Vault%20Management/Vault%20Relationship%20Map.md): the graph of how this vault fits together.
-- [Interactive Vault Graph](Resources/Vault%20Management/Interactive%20Vault%20Graph.html): a local draggable graph view for core vault nodes.
+- [Interactive Vault Graph](Resources/Vault%20Management/Interactive%20Vault%20Graph.html): a local draggable graph view generated from Markdown links and YAML tags.
 - [Obsidian Codex Usage Guide](Resources/Vault%20Management/Obsidian%20Codex%20Usage%20Guide.md): how Inbox, Notes, Ideas, Projects, and Resources should be used.
 - [2026-06-01 Brain Review](Ideas/Weekly%20Reviews/2026-06-01%20Brain%20Review.md): latest full-vault review and next actions.
 

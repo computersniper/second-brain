@@ -16,31 +16,33 @@ Open the HTML file:
 ## What It Does
 
 - Drag nodes to reshape the graph.
+- Pan the canvas and zoom with the mouse wheel.
 - Click a node to inspect what it represents.
 - Double-click a node to open the linked Markdown file.
-- Filter clusters: QF, SE, Management, and Flow.
+- Filter by tag and search by note title/path.
+- Color nodes by their primary YAML tag.
+- Draw edges from Obsidian-style `[[wikilinks]]`, embeds, and local Markdown links.
 - Works offline with no external JavaScript libraries.
 
-## Scope
+## Updating The Graph
 
-This graph intentionally includes only core nodes:
+The graph data is generated from Markdown files, not from `.obsidian/graph.json`.
 
-- [[AGENTS]]
-- [[Vault Relationship Map]]
-- [[Obsidian Codex Usage Guide]]
-- [[Obsidian Tagging Guide]]
-- [[2026-06-01 Brain Review]]
-- [[QF Exam Review]]
-- [[QF Course Map]]
-- [[Exam Focus]]
-- [[Quantum Finance Notes]]
-- [[QF Open-Book Exam Sheet]]
-- [[QF Source Index]]
-- [[SE Exam Review]]
-- [[00 SE Exam Map]]
-- [[01 Diagram Questions Drawing Guide]]
-- [[07 Final Cram Sheet]]
-- [[08 Drawing Drill Pack]]
-- [[SE Source Index]]
+Run this from the vault root after adding notes, links, or tags:
 
-The goal is to feel like a small Obsidian graph view, not to list every note in the vault.
+```powershell
+node "Resources\Vault Management\scripts\build-interactive-vault-graph.js"
+```
+
+The script regenerates:
+
+```text
+Resources/Vault Management/Interactive Vault Graph Data.js
+```
+
+## Data Rules
+
+- Nodes: every Markdown file in the vault.
+- Node color: first meaningful YAML tag, using a stable palette.
+- Edges: resolved `[[internal links]]`, `![[embeds]]`, and relative `.md` links.
+- `.obsidian/graph.json`: useful for Obsidian display settings, but not reliable as the complete source of note relationships.
