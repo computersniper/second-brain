@@ -63,7 +63,7 @@ Source index: [[SE Source Index]]
 
 1. Read [[07 Final Cram Sheet]] once.
 2. Redraw all prompts in [[08 Drawing Drill Pack]] without looking.
-3. Use [[09 All PPT Explanations]] to understand every class exercise PPT.
+3. Use [[SE Revision From Models to Cost Estimation]] to review model, design, testing, configuration management, and cost estimation topics.
 4. Re-read [[10 Include vs Extend]] before any use case diagram practice.
 5. Check every uncertain term in [[06 SE Bilingual Glossary and MCQ Traps]].
 6. Revisit class exercise PPTX only for diagrams you still cannot reproduce.

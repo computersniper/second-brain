@@ -46,6 +46,8 @@ Source folder: `D:\study\qf\ppt`
 
 ## Active Notes
 
+- [[QF Exam Review]]
 - [[Quantum Finance Notes]]
 - [[Exam Focus]]
 - [[QF Open-Book Exam Sheet]]
+- [[QF Source Index]]

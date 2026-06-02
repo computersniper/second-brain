@@ -104,15 +104,27 @@ This is the control page for Software Engineering exam review.
 
 ## Active Notes
 
-- [[00 My SE Notes Index]]
-- [[01 Diagram Questions Drawing Guide]]
-- [[02 Testing Quick Notes]]
-- [[03 Cost Estimation Quick Notes]]
-- [[04 Class Exercise Templates]]
-- [[05 Lecture Review Checklists]]
-- [[06 SE Bilingual Glossary and MCQ Traps]]
-- [[07 Final Cram Sheet]]
-- [[08 Drawing Drill Pack]]
-- [[09 All PPT Explanations]]
-- [[10 Include vs Extend]]
-- [[11 Use Case Diagram Relationships]]
+### Course Control
+
+- [[SE Exam Review]]
+- [[SE Source Index]]
+
+### Personal Index
+
+- [[00 My SE Notes Index|My SE Notes Index]]
+
+### Direct Exam Review
+
+- [[My SE notes|My SE notes]]
+- [[SE Revision From Models to Cost Estimation]]
+- [[Exercise]]
+
+### Focused Notes
+
+- [[01 Diagram Questions Drawing Guide|Diagram Questions Drawing Guide]]
+- [[04 Class Exercise Templates|Class Exercise Templates]]
+- [[06 SE Bilingual Glossary and MCQ Traps|SE Bilingual Glossary and MCQ Traps]]
+- [[07 Final Cram Sheet|Final Cram Sheet]]
+- [[08 Drawing Drill Pack|Drawing Drill Pack]]
+- [[10 Include vs Extend|Include vs Extend]]
+- [[11 Use Case Diagram Relationships|Use Case Diagram Relationships]]
