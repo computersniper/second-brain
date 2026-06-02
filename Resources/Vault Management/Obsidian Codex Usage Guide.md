@@ -43,6 +43,50 @@ Until the 2026-06-06 QF exam, this vault should behave like an exam-output machi
 - 如果是“有目标、截止时间、下一步行动”，放 Projects。
 - 如果是“课件、图片、PDF、PPT 或大文件索引”，放 Resources。
 
+## Relationship Graph Rules
+
+The vault graph should be readable as a tree:
+
+```text
+AGENTS -> Vault Relationship Map -> course/review/root indexes -> detail notes
+```
+
+- [[Vault Relationship Map]] is the top-level tree, not a full list of every useful note.
+- QF details live under QF Course Map.
+- SE details live under 00 SE Exam Map.
+- Review details live under [[Review Index]].
+- Do not put every SE/QF/review note directly into the vault relationship map.
+- Use `[[wikilinks]]` when the relationship should appear in Obsidian graph.
+- Use plain text or file paths when a note is only citing evidence, history, or review context.
+
+Review rule:
+
+- Review Index may be linked from the vault tree.
+- Individual review notes should be listed inside Review Index as plain text/path records if they should not appear as graph nodes.
+- Specific review files should not wikilink every note they mention; otherwise the review content will expand in the graph.
+
+## Image Embed Rules
+
+Use Obsidian-resolvable image paths after importing notes:
+
+```md
+![[Notes/Courses/Software Engineering/My SE Notes/SE Revision From Models to Cost Estimation/se_revision_assets/lec02_waterfall_model.png]]
+```
+
+Avoid this when the asset folder is not at the vault root:
+
+```md
+![Waterfall Model](se_revision_assets/lec02_waterfall_model.png)
+```
+
+Reason: Obsidian may resolve Markdown image paths from the vault root, so a nested imported note can show "file not found" even when the image exists beside the note.
+
+Maintenance rule:
+
+- Fixing broken image embeds is allowed as a structure/maintenance edit.
+- Do not rewrite the study content while fixing image paths.
+- After import, check that image embeds point to existing files inside the vault.
+
 ## Capture Workflow
 
 网页剪藏：

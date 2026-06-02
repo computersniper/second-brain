@@ -35,6 +35,20 @@ Rule: AGENTS should not list every SE/QF child note. Keep the vault like a tree:
 - Obsidian tags and graph notes live under vault management / personal SE summaries, not as direct AGENTS-level links.
 - Review notes are listed under Review Index as plain text/path records.
 
+## Graph Hygiene
+
+- The vault relationship graph should behave like a tree, not a full backlink cloud.
+- [[Vault Relationship Map]] should link only to high-level index/root pages.
+- Course detail pages should live under their course map, for example QF Course Map or 00 SE Exam Map.
+- Review files should not wikilink the notes they mention. Keep review citations as plain text or file paths so review content does not expand in the graph.
+- If a page is only citing evidence or history, prefer plain text/path references instead of `[[wikilinks]]`.
+
+## Image Embed Rules
+
+- For images inside the vault, prefer Obsidian embeds with vault-relative paths: `![[Notes/.../image.png]]`.
+- Avoid imported Markdown image paths like `![name](se_revision_assets/image.png)` unless that folder is at the vault root.
+- When importing a note with a local asset folder, keep the assets with the note or move them to Resources, then rewrite image embeds so Obsidian can resolve them.
+
 # How This Vault Works
 
 - Inbox: `/Inbox` — 所有新捕获、未整理的原始素材；当前待处理剪藏：[[用 Obsidian + Codex，搭一个会主动思考的个人知识库]]
@@ -57,6 +71,7 @@ Rule: AGENTS should not list every SE/QF child note. Keep the vault like a tree:
 - 已做好的课程正文、我自己整理的笔记、可直接复习的内容页默认只读；除非我明确要求修改，否则只在项目页、AGENTS、管理笔记、复盘笔记、Inbox 处理记录里更新。
 - 维护知识库结构时，优先保持树状层级：[[Vault Relationship Map]] 只连课程根节点；SE/QF 的具体笔记放到各自 course map / source index / personal index 里管理。
 - Review notes should be recorded in [[Review Index]] without wikilinking individual review files. Do not display individual review notes as nodes in the vault relationship tree.
+- 修复图片显示问题属于维护任务，可以改路径/嵌入语法，但不要改学习正文内容。
 
 # Current Course Focus
 
