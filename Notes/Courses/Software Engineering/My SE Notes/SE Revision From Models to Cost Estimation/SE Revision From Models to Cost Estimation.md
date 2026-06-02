@@ -14,9 +14,73 @@ tags:
 
 # Software Engineering 复习资料：从 Process Models 到 Cost Estimation
 
-> 整理范围：从你说“针对几个模型给我做个笔记”开始，到 Lecture 16 - Cost Estimation 结束。  
-> 重点风格：以理解为主，配合必要考试关键词、公式、图区分和 ASDW/iSpace 例子。  
-> 图片说明：所有截图均来自你上传的课程课件或聊天中截图，已复制到 `Resources/Software Engineering/Images/`。
+## 笔记说明
+
+This note is a Software Engineering exam revision map from **Software Process Models** to **Cost Estimation**.
+
+- Purpose: connect core definitions, model comparisons, diagram ideas, testing concepts, configuration management, and cost estimation formulas.
+- Exam use: focus on English terms, MCQ boundaries, when-to-use distinctions, diagram recognition, and calculation/template recall.
+- Images: stored in `Resources/Software Engineering/Images/` and embedded with vault-relative paths.
+
+---
+
+## 思维导图
+
+```mermaid
+%%{init: {"themeVariables": {"fontSize": "22px", "fontFamily": "Arial"}}}%%
+mindmap
+  root((SE Revision))
+    Process Models
+      Waterfall
+      Incremental
+      Prototyping
+      Spiral
+      RUP
+    Requirements
+      User vs System
+      Functional vs Non-functional
+      Domain
+      Specification styles
+    System Models
+      DFD
+      Activity Diagram
+      UML notation
+      State Transition
+    Architecture
+      Pattern
+      Modularity
+      Information Hiding
+      Coupling vs Cohesion
+      Repository / Client-server / Layered / MVC
+    OOD
+      OO vs Structured Analysis
+      Observer Pattern
+      Detailed Design
+      Signature / Visibility
+      Pre and Post Conditions
+    Structured Design
+      DFD to Structure Tree
+      Transform Center
+      Factoring
+      Restructuring
+    Testing
+      Black-box
+      White-box
+      Test Oracle
+      Automation
+      Test Case Management
+    Configuration Management
+      Planning
+      Change Management
+      Version Control
+      Release / Build
+    Cost Estimation
+      LOC / KLOC
+      Function Points
+      Object Points
+      COCOMO II
+      Staffing Time
+```
 
 ---
 
@@ -226,7 +290,7 @@ RUP 的图很重要：横轴是 phases，纵轴是 workflows，例如 Business M
 
 ---
 
-## 1.7 模型对比表
+## 1.7 对比
 
 | Model | 核心思想 | 适合情况 | 最大优点 | 最大问题 |
 |---|---|---|---|---|
