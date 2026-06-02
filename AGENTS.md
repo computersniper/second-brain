@@ -18,8 +18,7 @@ Next milestone: 2026-06-06 量子金融开卷考试前，完成 QF CH4-5/QPL 长
 - Vault relationship map: [[Vault Relationship Map]]
 - Codex usage guide: [[Obsidian Codex Usage Guide]]
 - Tag guide: [[Obsidian Tagging Guide]]
-- Latest brain review reference: 2026-06-01 Brain Review
-- Previous structure review reference: Second Brain Review - 2026-05-31
+- Review index: [[Review Index]]
 
 ## Active Exam Projects
 
@@ -34,12 +33,13 @@ Rule: AGENTS should not list every SE/QF child note. Keep the vault like a tree:
 - My SE notes live under the SE branch.
 - Open them through: Vault Relationship Map -> 00 SE Exam Map -> My SE Notes Index.
 - Obsidian tags and graph notes live under vault management / personal SE summaries, not as direct AGENTS-level links.
+- Review notes live under Review Index.
 
 # How This Vault Works
 
 - Inbox: `/Inbox` — 所有新捕获、未整理的原始素材；当前待处理剪藏：[[用 Obsidian + Codex，搭一个会主动思考的个人知识库]]
 - Notes: `/Notes` — 外网文章、阅读高亮、学习资料、干货内容；当前课程重点从 [[Vault Relationship Map]] 进入。
-- Ideas: `/Ideas` — 我个人的原创思考、灵感、感悟、复盘；Review notes can be referenced by title, but do not need to appear as tree nodes.
+- Ideas: `/Ideas` — 我个人的原创思考、灵感、感悟、复盘；Review notes use [[Review Index]] as the single entry point.
 - Projects: `/Projects` — 我正在推进的所有工作与项目；课程项目入口通过 [[Vault Relationship Map]] 的课程树进入。
 - Resources: `/Resources` — 外部课件、图片、PDF、PPT 等资料的索引；课程 source index 通过对应 course map 进入。
 - Clippings: `/Clippings` — 历史网页剪藏暂存区；新剪藏优先进入 `/Inbox`，已有剪藏经 Codex 消化后归档到 Notes / Ideas / Projects / Resources
@@ -56,7 +56,7 @@ Rule: AGENTS should not list every SE/QF child note. Keep the vault like a tree:
 - 期末冲刺期优先服务考试输出，不要为了美化知识库牺牲复习时间
 - 已做好的课程正文、我自己整理的笔记、可直接复习的内容页默认只读；除非我明确要求修改，否则只在项目页、AGENTS、管理笔记、复盘笔记、Inbox 处理记录里更新。
 - 维护知识库结构时，优先保持树状层级：[[Vault Relationship Map]] 只连课程根节点；SE/QF 的具体笔记放到各自 course map / source index / personal index 里管理。
-- Review notes only need reference mentions unless explicitly requested. Do not display them as nodes in the vault relationship tree.
+- Review notes should connect through [[Review Index]]. Do not display individual review notes as nodes in the vault relationship tree.
 
 # Current Course Focus
 
