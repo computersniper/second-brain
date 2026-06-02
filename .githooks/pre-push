@@ -1,0 +1,44 @@
+#!/bin/sh
+set -eu
+
+remote_name="${1:-origin}"
+repo_root="$(git rev-parse --show-toplevel)"
+
+if [ "${SECOND_BRAIN_PRE_PUSH_ACTIVE:-}" = "1" ]; then
+  exit 0
+fi
+
+cd "$repo_root"
+
+echo "[second-brain] Updating My Brain graph data and animated preview..."
+node "Resources/Vault Management/scripts/build-interactive-vault-graph.js" "$repo_root"
+python "Resources/Vault Management/scripts/generate-my-brain-preview.py" "$repo_root"
+
+git add -- "Resources/Vault Management/Interactive Vault Graph Data.js" \
+  "Resources/Vault Management/Images/interactive-vault-graph-preview.gif"
+
+made_commit=0
+if ! git diff --cached --quiet -- "Resources/Vault Management/Interactive Vault Graph Data.js" \
+  "Resources/Vault Management/Images/interactive-vault-graph-preview.gif"; then
+  git commit -m "Update My Brain graph preview" -- \
+    "Resources/Vault Management/Interactive Vault Graph Data.js" \
+    "Resources/Vault Management/Images/interactive-vault-graph-preview.gif"
+  made_commit=1
+fi
+
+upstream="$(git rev-parse --abbrev-ref --symbolic-full-name '@{u}' 2>/dev/null || true)"
+branch="$(git branch --show-current)"
+
+if [ "$made_commit" = "1" ]; then
+  echo "[second-brain] Pushing updated branch with refreshed preview..."
+  if [ -n "$upstream" ]; then
+    remote_branch="${upstream#*/}"
+    SECOND_BRAIN_PRE_PUSH_ACTIVE=1 git push --no-verify "$remote_name" "HEAD:$remote_branch"
+  else
+    SECOND_BRAIN_PRE_PUSH_ACTIVE=1 git push --no-verify -u "$remote_name" "$branch"
+  fi
+  echo "[second-brain] Refreshed preview was pushed. Canceling the original pre-push invocation."
+  exit 1
+fi
+
+echo "[second-brain] My Brain preview is already current."

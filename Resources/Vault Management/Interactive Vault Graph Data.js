@@ -1,5 +1,5 @@
 window.VAULT_GRAPH_DATA = {
-  "generatedAt": "2026-06-02T18:26:11.196Z",
+  "generatedAt": "2026-06-02T18:54:06.670Z",
   "nodes": [
     {
       "id": "Notes/Courses/Quantum Finance/QF Course Map",

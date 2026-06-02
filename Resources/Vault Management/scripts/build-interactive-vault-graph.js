@@ -112,6 +112,9 @@ function resolveMarkdownLink(raw, sourceFile, maps) {
 }
 
 const mdFiles = walk(root);
+const generatedAt = mdFiles.length
+  ? new Date(Math.max(...mdFiles.map(file => fs.statSync(file).mtimeMs))).toISOString()
+  : new Date(0).toISOString();
 const notes = mdFiles.map(file => {
   const text = read(file);
   const { tags, body } = parseFrontmatter(text);
@@ -175,7 +178,7 @@ tags.forEach((tag, index) => {
 });
 
 const data = {
-  generatedAt: new Date().toISOString(),
+  generatedAt,
   nodes: notes
     .sort((a, b) => a.title.localeCompare(b.title, "zh-Hans-CN"))
     .map(note => ({

@@ -40,6 +40,29 @@ The script regenerates:
 Resources/Vault Management/Interactive Vault Graph Data.js
 ```
 
+The animated README preview is generated from the same graph data:
+
+```powershell
+python "Resources\Vault Management\scripts\generate-my-brain-preview.py"
+```
+
+## Push Automation
+
+This vault uses a local Git `pre-push` hook under `.githooks/pre-push`.
+
+Enable it once from the vault root:
+
+```powershell
+git config core.hooksPath .githooks
+```
+
+After that, a normal `git push` will:
+
+- rebuild `Interactive Vault Graph Data.js`;
+- regenerate `Resources/Vault Management/Images/interactive-vault-graph-preview.gif`;
+- create an automatic commit named `Update My Brain graph preview` if the generated files changed;
+- push the refreshed branch.
+
 ## Data Rules
 
 - Nodes: every Markdown file in the vault.
