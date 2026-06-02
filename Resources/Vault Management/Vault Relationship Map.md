@@ -18,9 +18,7 @@ Vault Relationship Map
 │   └── AGENTS
 ├── Vault Management
 │   ├── Obsidian Codex Usage Guide
-│   ├── Obsidian Tagging Guide
-│   ├── 2026-06-01 Brain Review
-│   └── Second Brain Review - 2026-05-31
+│   └── Obsidian Tagging Guide
 └── Courses
     ├── Quantum Finance
     │   └── QF Course Map
@@ -38,13 +36,16 @@ Vault management:
 
 - [[Obsidian Codex Usage Guide]]
 - [[Obsidian Tagging Guide]]
-- [[2026-06-01 Brain Review]]
-- [[Second Brain Review - 2026-05-31]]
 
 Course roots:
 
 - [[QF Course Map]]
 - [[00 SE Exam Map]]
+
+Reference reviews:
+
+- 2026-06-01 Brain Review
+- Second Brain Review - 2026-05-31
 
 ## Vault Tree
 
@@ -58,8 +59,6 @@ flowchart TD
     Root --> Management["Vault Management"]
     Management --> Usage["[[Obsidian Codex Usage Guide]]"]
     Management --> Tags["[[Obsidian Tagging Guide]]"]
-    Management --> ReviewToday["[[2026-06-01 Brain Review]]"]
-    Management --> ReviewPrev["[[Second Brain Review - 2026-05-31]]"]
 
     Root --> Courses["Courses"]
     Courses --> QF["Quantum Finance"]
@@ -85,10 +84,11 @@ flowchart TD
 - SE details live under [[00 SE Exam Map]].
 - Keep only one direct course root per subject on this page.
 - Do not list every SE/QF detail page here; let the subject map own its children.
+- Review notes are references, not tree nodes. Use plain text names when they should not create graph edges.
 
 ## Navigation Rules
 
 - Start from [[AGENTS]] when you need the current operating rules.
 - Start from [[Vault Relationship Map]] when deciding where to go.
 - From there, open [[QF Course Map]] for Quantum Finance or [[00 SE Exam Map]] for Software Engineering.
-- Start from [[2026-06-01 Brain Review]] when deciding the next highest-leverage action.
+- Use recent Brain Review notes as references when deciding the next highest-leverage action.
