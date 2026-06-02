@@ -45,7 +45,8 @@ Rule: AGENTS should not list every SE/QF child note. Keep the vault like a tree:
 
 ## Image Embed Rules
 
-- For images inside the vault, prefer Obsidian embeds with vault-relative paths: `![[Notes/.../image.png]]`.
+- For images inside the vault, prefer filename-only Obsidian embeds when the filename is unique: `![[image.png]]`.
+- If the filename is duplicated in the vault, use a longer vault-relative path.
 - Avoid imported Markdown image paths like `![name](se_revision_assets/image.png)` unless that folder is at the vault root.
 - When importing a note with a local asset folder, keep the assets with the note or move them to Resources, then rewrite image embeds so Obsidian can resolve them.
 
