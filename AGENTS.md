@@ -56,7 +56,7 @@ Rule: AGENTS should not list every SE/QF child note. Keep the vault like a tree:
 
 - Keep GitHub-renderable generated notes outside the Obsidian vault, at `D:\study\second-brain-github-view`.
 - Never create or commit a `GitHub View` folder inside `D:\study\second-brain`; it makes Obsidian graph show duplicate notes.
-- Before pushing/publishing, run `node "Resources/Vault Management/scripts/build-github-view.js" "D:\study\second-brain"` to convert Obsidian image embeds and wikilinks into GitHub Markdown.
+- Before pushing/publishing, run `node "Resources/Vault Management/scripts/publish-github-view.js" "D:\study\second-brain"` to convert Obsidian image embeds and wikilinks into GitHub Markdown and push the `github-view` branch.
 
 # How This Vault Works
 

@@ -13,7 +13,7 @@ cd "$repo_root"
 echo "[second-brain] Updating My Brain graph data and animated preview..."
 node "Resources/Vault Management/scripts/build-interactive-vault-graph.js" "$repo_root"
 python "Resources/Vault Management/scripts/generate-my-brain-preview.py" "$repo_root"
-node "Resources/Vault Management/scripts/build-github-view.js" "$repo_root"
+node "Resources/Vault Management/scripts/publish-github-view.js" "$repo_root"
 
 git add -- "Resources/Vault Management/Interactive Vault Graph Data.js" \
   "Resources/Vault Management/Images/interactive-vault-graph-preview.gif"

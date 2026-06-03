@@ -42,8 +42,11 @@ function walk(dir, files = []) {
 }
 
 function ensureCleanDir(dir) {
-  fs.rmSync(dir, { recursive: true, force: true });
   fs.mkdirSync(dir, { recursive: true });
+  for (const entry of fs.readdirSync(dir)) {
+    if (entry === ".git") continue;
+    fs.rmSync(path.join(dir, entry), { recursive: true, force: true });
+  }
 }
 
 function isMarkdown(file) {
