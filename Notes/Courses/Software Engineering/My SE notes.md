@@ -46,7 +46,7 @@ Source:
 
 - [10 Include vs Extend](./10%20Include%20vs%20Extend.md)
 - [11 Use Case Diagram Relationships](./11%20Use%20Case%20Diagram%20Relationships.md)
-- Image: [use-case-diagram-relationships.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/use-case-diagram-relationships.png)
+- Image: [use-case-diagram-relationships.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/use-case-diagram-relationships.png)
 
 Include:  A (Base case) ---include---> B    必做的公共步骤。`include` 表示“每次执行 A，都一定会执行 B”。B 通常是多个 use case 共享的公共子流程。
 
@@ -59,7 +59,7 @@ B is a kind of A.
 For two use cases A and B, if A the generalization of B, and B is a specialization of A, then they have inheritance relationships.
 子 use case 是父 use case 的一种特殊类型。
 
-![use-case-diagram-relationships.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/use-case-diagram-relationships.png)
+![use-case-diagram-relationships.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/use-case-diagram-relationships.png)
 
 
 # State Machine Model
@@ -68,18 +68,18 @@ Source:
 
 - Lecture 4 System Models: [PDF](<file:///D:/study/se/Lecture%204%20System%20models.pdf>)
 - Class exercise: [state transition diagram PPTX](<file:///D:/study/se/class%20exercise%20lecture%204%20state%20transition%20diagram.pptx>)
-- Image: [state-transition-machine.png.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/state-transition-machine.png.png)
+- Image: [state-transition-machine.png.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/state-transition-machine.png.png)
 
-![state-transition-machine.png.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/state-transition-machine.png.png)
+![state-transition-machine.png.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/state-transition-machine.png.png)
 
 Data-Flow Model
 
 Source:
 
 - Lecture 4 System Models: [PDF](<file:///D:/study/se/Lecture%204%20System%20models.pdf>)
-- Image: [notation.png.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/notation.png.png)
+- Image: [notation.png.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/notation.png.png)
 
-![notation.png.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/notation.png.png)
+![notation.png.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/notation.png.png)
 
 # Features of A Class
 
@@ -134,9 +134,9 @@ Develop the software which is a collection of objects that incorporate both data
 Source:
 
 - Lecture 6 OOA / UML introduction: [PDF](<file:///D:/study/se/Lecture%206%20-%20OOA%20%20UML%20introduction.pdf>)
-- Image: [uml.png.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/uml.png.png)
+- Image: [uml.png.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/uml.png.png)
 
-![uml.png.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/uml.png.png)
+![uml.png.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/uml.png.png)
 
 ## Class Diagram
 
@@ -200,11 +200,11 @@ Associations are inherently bidirectional.
 Bidirectional A student can query the books he/she borrowed and It is possible to find which student is this book lent to
 
 
-![asspcoatopm-classes.png.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/asspcoatopm-classes.png.png)
+![asspcoatopm-classes.png.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/asspcoatopm-classes.png.png)
 
 Source:
 
-- Image: [asspcoatopm-classes.png.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/asspcoatopm-classes.png.png)
+- Image: [asspcoatopm-classes.png.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/asspcoatopm-classes.png.png)
 - Related: association class explanation from class diagram lecture/exercise.
 
 关联关系本身可以有属性和操作。
@@ -265,9 +265,9 @@ One student can borrow 0 or many books
 
 Source:
 
-- Image: [qualifier.png.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/qualifier.png.png)
+- Image: [qualifier.png.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/qualifier.png.png)
 
-![qualifier.png.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/qualifier.png.png)
+![qualifier.png.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/qualifier.png.png)
 
 ### Inheritance vs Aggregation
 
@@ -508,11 +508,11 @@ Book <|-- Library     wrong, because Library is not a kind of Book
 
 ## Operation
 
-![operations-in-a-class.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/operations-in-a-class.png)
+![operations-in-a-class.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/operations-in-a-class.png)
 
 Source:
 
-- Image: [operations-in-a-class.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/operations-in-a-class.png)
+- Image: [operations-in-a-class.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/operations-in-a-class.png)
 - Lecture 5 OO Object / Classes: [PDF](<file:///D:/study/se/Lecture%205%20-%20OO%20object.pdf>)
 - Related concept: class operations should work on attributes of the same class.
 
@@ -599,11 +599,11 @@ User 发出 draw 的命令，但 Line 根据自己的两个点来画线。
 
 ## Association between Classes
 
-![association-between-classes.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/association-between-classes.png)
+![association-between-classes.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/association-between-classes.png)
 
 Source:
 
-- Image: [association-between-classes.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/association-between-classes.png)
+- Image: [association-between-classes.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/association-between-classes.png)
 - Lecture 5 / class modeling slides.
 - Related section: [Operation](./My%20SE%20notes.md#operation)
 
@@ -720,12 +720,12 @@ Source:
 
 - Lecture 7 OOA example: [PDF](<file:///D:/study/se/Lecture%207%20-%20OOA%20-%20An%20example.pdf>) / [TXT](<file:///D:/study/se/Lecture%207%20-%20OOA%20-%20An%20example.txt>)
 - Assignment / iSpace document: [A Simplified iSpace System.docx](<file:///D:/study/se/A%20Simplified%20iSpace%20System.docx>)
-- Images: [sis-activity.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/sis-activity.png), [sis-usecase.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/sis-usecase.png)
+- Images: [sis-activity.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/sis-activity.png), [sis-usecase.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/sis-usecase.png)
 
-![sis-activity.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/sis-activity.png)
+![sis-activity.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/sis-activity.png)
 
-![sis-usecase.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/sis-usecase.png)
-![sis-std.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/sis-std.png)
+![sis-usecase.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/sis-usecase.png)
+![sis-std.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/sis-std.png)
 ## Objects
 
 Source:
@@ -821,7 +821,7 @@ Classes in a subsystem can be further adjusted
 - Implement an association class as a class
 
 # Structural factoring
-![two-level-factoring.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/two-level-factoring.png)
+![two-level-factoring.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/two-level-factoring.png)
 
 # Software testing
 ## Unit Testing 单元测试
@@ -906,4 +906,4 @@ Regression testing 就是防这种情况。
 - Change Management
 - Version control
 - System building
-![system-building.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/system-building.png)
+![system-building.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/system-building.png)

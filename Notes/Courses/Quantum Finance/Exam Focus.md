@@ -38,7 +38,7 @@ Source: `D:\study\qf\ppt\Course Revision.pdf`
 
 Revision slide:
 
-![revision-ch1-focus.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Quantum%20Finance/Images/revision-ch1-focus.png)
+![revision-ch1-focus.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Quantum%20Finance/Images/revision-ch1-focus.png)
 
 Must know:
 
@@ -56,13 +56,13 @@ What to remember:
 
 Key image:
 
-![ch1-concentric-sphere-model.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Quantum%20Finance/Images/ch1-concentric-sphere-model.png)
+![ch1-concentric-sphere-model.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Quantum%20Finance/Images/ch1-concentric-sphere-model.png)
 
 ## CH2 Focus
 
 Revision slide:
 
-![revision-ch2-focus.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Quantum%20Finance/Images/revision-ch2-focus.png)
+![revision-ch2-focus.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Quantum%20Finance/Images/revision-ch2-focus.png)
 
 Must know:
 
@@ -88,19 +88,19 @@ Highest-risk distinctions:
 
 Key images:
 
-![ch2-classical-vs-quantum-field.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Quantum%20Finance/Images/ch2-classical-vs-quantum-field.png)
+![ch2-classical-vs-quantum-field.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Quantum%20Finance/Images/ch2-classical-vs-quantum-field.png)
 
-![ch2-path-integral-infinite-slit.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Quantum%20Finance/Images/ch2-path-integral-infinite-slit.png)
+![ch2-path-integral-infinite-slit.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Quantum%20Finance/Images/ch2-path-integral-infinite-slit.png)
 
-![ch2-quantum-harmonic-oscillator.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Quantum%20Finance/Images/ch2-quantum-harmonic-oscillator.png)
+![ch2-quantum-harmonic-oscillator.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Quantum%20Finance/Images/ch2-quantum-harmonic-oscillator.png)
 
-![ch2-quantum-anharmonic-oscillator.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Quantum%20Finance/Images/ch2-quantum-anharmonic-oscillator.png)
+![ch2-quantum-anharmonic-oscillator.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Quantum%20Finance/Images/ch2-quantum-anharmonic-oscillator.png)
 
 ## CH3 Focus
 
 Revision slide:
 
-![revision-ch3-focus.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Quantum%20Finance/Images/revision-ch3-focus.png)
+![revision-ch3-focus.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Quantum%20Finance/Images/revision-ch3-focus.png)
 
 Must know:
 
@@ -124,11 +124,11 @@ Highest-risk distinctions:
 
 Key images:
 
-![ch3-forward-interest-rate-field.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Quantum%20Finance/Images/ch3-forward-interest-rate-field.png)
+![ch3-forward-interest-rate-field.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Quantum%20Finance/Images/ch3-forward-interest-rate-field.png)
 
-![ch3-qfse-characteristics.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Quantum%20Finance/Images/ch3-qfse-characteristics.png)
+![ch3-qfse-characteristics.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Quantum%20Finance/Images/ch3-qfse-characteristics.png)
 
-![ch3-path-integral-vs-qaho.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Quantum%20Finance/Images/ch3-path-integral-vs-qaho.png)
+![ch3-path-integral-vs-qaho.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Quantum%20Finance/Images/ch3-path-integral-vs-qaho.png)
 
 ## CH4 Focus
 

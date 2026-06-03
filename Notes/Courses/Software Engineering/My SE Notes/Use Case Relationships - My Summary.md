@@ -9,7 +9,7 @@ tags:
 
 # Use Case Relationships - My Summary
 
-![use-case-diagram-relationships.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/use-case-diagram-relationships.png)
+![use-case-diagram-relationships.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/use-case-diagram-relationships.png)
 
 ## The Five Relationships
 
