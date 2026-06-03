@@ -52,6 +52,12 @@ Rule: AGENTS should not list every SE/QF child note. Keep the vault like a tree:
 - Avoid imported Markdown image paths like `![name](se_revision_assets/image.png)` unless that folder is actually at the vault root.
 - When importing a note with a local asset folder, move/copy the assets into Resources, then rewrite image links to Obsidian filename embeds such as `![[image.png]]`.
 
+## GitHub View Rules
+
+- Keep GitHub-renderable generated notes outside the Obsidian vault, at `D:\study\second-brain-github-view`.
+- Never create or commit a `GitHub View` folder inside `D:\study\second-brain`; it makes Obsidian graph show duplicate notes.
+- Before pushing/publishing, run `node "Resources/Vault Management/scripts/build-github-view.js" "D:\study\second-brain"` to convert Obsidian image embeds and wikilinks into GitHub Markdown.
+
 # How This Vault Works
 
 - Inbox: `/Inbox` — 所有新捕获、未整理的原始素材；当前待处理剪藏：[[用 Obsidian + Codex，搭一个会主动思考的个人知识库]]

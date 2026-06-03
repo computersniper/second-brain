@@ -13,6 +13,7 @@ desktop.ini
 ~$*
 
 # Large generated exports should stay outside Git unless intentionally curated
+GitHub View/
 *.pdf
 *.ppt
 *.pptx
