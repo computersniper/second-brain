@@ -16,6 +16,8 @@ Use this as active recall. Draw first, then check [[04 Class Exercise Templates]
 3. Compare with the checklist.
 4. Mark the first mistake, not every mistake.
 5. Redraw the same type once more after 20 minutes.
+6. Keep answers at the end of the drill note, not directly under the prompt.
+7. Use Mermaid for diagram answers so they can be reviewed in Obsidian and GitHub.
 
 ## Drill 1: Bank Use Case Diagram
 
@@ -202,3 +204,305 @@ Self-check:
 English sentence:
 
 Cost estimation predicts effort, time, and cost before or during development.
+
+---
+
+## Answer Key
+
+Use this section only after attempting the drills.
+
+### Answer 1: Bank Use Case Diagram
+
+```mermaid
+flowchart LR
+  Customer["Customer<br/>(actor)"]
+
+  subgraph BankSystem["Bank System"]
+    TimeDeposit(("Time deposit"))
+    Transfer(("Transfer"))
+    InquireBalance(("Inquire balance"))
+    SameCurrency(("Same currency transfer"))
+    DifferentCurrency(("Different currency transfer"))
+  end
+
+  Customer --- TimeDeposit
+  Customer --- Transfer
+  Customer --- InquireBalance
+  SameCurrency -- "generalization" --> Transfer
+  DifferentCurrency -- "generalization" --> Transfer
+```
+
+Key answer:
+- `Customer` is outside the system boundary.
+- The three user-visible goals are inside `Bank System`.
+- Same-currency and different-currency transfers are special types of `Transfer`, so they are modeled with generalization, not include.
+
+### Answer 2: Email State Transition Diagram
+
+```mermaid
+stateDiagram-v2
+  [*] --> LoginPage
+  LoginPage --> EmailListPage: login [correct]
+  LoginPage --> LoginPage: login [incorrect] / show warning
+  EmailListPage --> EditingPage: compose
+  EditingPage --> EditingPage: send [no subject] / show warning
+  EditingPage --> EmailListPage: send [has subject] / send email
+  EditingPage --> EmailListPage: cancel
+  EmailListPage --> LoginPage: logout
+```
+
+Key answer:
+- Pages/windows are stable states.
+- Login warning and no-subject warning can be modeled as actions on transitions.
+- Guards such as `[correct]` and `[no subject]` decide which transition fires.
+
+### Answer 3: Person Class Diagram
+
+```mermaid
+classDiagram
+  class Person {
+    mobilePhoneNumber: String
+  }
+
+  class Student {
+    studentId: String
+    dormitoryNumber: String
+    major: String
+    homeAddress: String
+  }
+
+  class Teacher {
+    officeNumber: String
+    staffId: String
+    officePhoneNumber: String
+  }
+
+  class Security_Guard {
+    staffId: String
+  }
+
+  class Mentor {
+    emailAddress: String
+  }
+
+  class Course {
+    courseId: String
+    name: String
+  }
+
+  Person <|-- Student
+  Person <|-- Teacher
+  Person <|-- Security_Guard
+  Teacher <|-- Mentor
+  Teacher "1" --> "*" Course : teaches
+  Student "*" --> "1" Mentor : has
+```
+
+Key answer:
+- Hollow triangle points to the superclass in UML; Mermaid uses `<|--`.
+- `Mentor` is a type of `Teacher`, not just associated with Teacher.
+- Multiplicity can be adjusted if the question gives stricter rules, but a reasonable default is many students can have one mentor.
+
+### Answer 4: Bank Account Class Diagram
+
+```mermaid
+classDiagram
+  class Customer {
+    customerId: String
+    name: String
+  }
+
+  class BankAccount {
+    accountNumber: String
+    balance: Money
+  }
+
+  class SavingAccount
+
+  class Deposit {
+    startDate: Date
+    maturityDate: Date
+    amount: Money
+    interestRate: Decimal
+  }
+
+  class Investment {
+    type: String
+    unit: Integer
+    price: Money
+    amount: Money
+  }
+
+  class Transfer {
+    date: Date
+    amount: Money
+  }
+
+  BankAccount <|-- SavingAccount
+  Customer "1" --> "*" BankAccount : owns
+  SavingAccount "1" --> "*" Deposit : has
+  SavingAccount "1" --> "*" Investment : has
+  SavingAccount "1" --> "*" Transfer : outgoing
+  SavingAccount "1" --> "*" Transfer : incoming
+```
+
+Key answer:
+- `Transfer` has its own attributes, so it should be modeled as a class or association class.
+- `Deposit` and `Investment` belong to account-related structure, not directly to `Customer`.
+- If the exam states source and target accounts explicitly, add role names such as `fromAccount` and `toAccount`.
+
+### Answer 5: Order Activity Diagram
+
+```mermaid
+flowchart TD
+  Start((start)) --> ClientSetOrder["Client sets order to cloud"]
+  ClientSetOrder --> CloudToFactory["Cloud sends order to factory"]
+  ClientSetOrder --> CloudToCourier["Cloud sets order to courier"]
+  CloudToFactory --> FactoryPrepare["Factory prepares product"]
+  CloudToCourier --> CourierDeliver["Courier delivers product"]
+  FactoryPrepare --> CourierDeliver
+  CourierDeliver --> CourierNotifyCloud["Courier sends notification to cloud"]
+  CourierNotifyCloud --> NotifyClient["Cloud notifies client"]
+  CourierNotifyCloud --> NotifyFactory["Cloud notifies factory"]
+  NotifyClient --> End((end))
+  NotifyFactory --> End
+```
+
+Key answer:
+- Use activity/action labels, not class names only.
+- Parallel branches are acceptable when cloud notifies factory and courier independently.
+- Swimlanes can be added if the question explicitly asks for responsibility partitions.
+
+### Answer 6: Transfer Sequence Diagram
+
+```mermaid
+sequenceDiagram
+  actor User
+  participant Transfer
+  participant SavingAccount
+  participant TimeDeposit
+  participant NewTimeDeposit as New TimeDeposit
+
+  User->>Transfer: requestTransfer(amount)
+  Transfer->>SavingAccount: checkBalance(amount)
+  SavingAccount-->>Transfer: balanceOK
+  Transfer->>SavingAccount: withdraw(amount)
+  alt time deposit exists
+    Transfer->>TimeDeposit: renew(amount)
+  else no time deposit exists
+    Transfer->>NewTimeDeposit: create(amount)
+  end
+  Transfer->>TimeDeposit: deposit(amount)
+  Transfer-->>User: transferResult
+```
+
+Key answer:
+- Sequence diagrams show object communication ordered by time.
+- `checkBalance`, `withdraw`, `renew/create`, and `deposit` are messages.
+- Creation can be shown with a `create()` message.
+
+### Answer 7: Structured Design From DFD
+
+```mermaid
+flowchart TD
+  Main["Main control module"]
+  Input["Input branch"]
+  Transform["Transform center branch"]
+  Output["Output branch"]
+
+  Main --> Input
+  Main --> Transform
+  Main --> Output
+
+  Input --> ReadInput["Read input data"]
+  Input --> ValidateInput["Validate input"]
+  Transform --> CoreTransform["Perform central transformation"]
+  Transform --> UpdateData["Update data store"]
+  Output --> FormatOutput["Format output"]
+  Output --> SendOutput["Send output"]
+```
+
+Key answer:
+- First-level factoring normally separates input, transform, and output branches.
+- Second-level modules follow the processes in the DFD.
+- Restructuring should reduce coupling and increase cohesion.
+
+### Answer 8: Triangle Testing
+
+Control-flow chart:
+
+```mermaid
+flowchart TD
+  Start((start)) --> Input["input a, b, c"]
+  Input --> Positive{"a <= 0 or b <= 0 or c <= 0?"}
+  Positive -- yes --> OutOfRange["print out of range"]
+  Positive -- no --> TriangleRule{"a >= b+c or b >= a+c or c >= a+b?"}
+  TriangleRule -- yes --> NotTriangle["print not a triangle"]
+  TriangleRule -- no --> Triangle["print triangle"]
+  OutOfRange --> End((end))
+  NotTriangle --> End
+  Triangle --> End
+```
+
+Equivalence classes:
+
+| Class | Example | Expected output |
+|---|---|---|
+| input out of range | `(-1, -2, 3)` | out of range |
+| not a triangle | `(1, 2, 3)` | not a triangle |
+| valid triangle | `(4, 5, 6)` | triangle |
+
+Minimum useful test cases:
+
+| Purpose | Test case | Expected output |
+|---|---|---|
+| invalid input branch | `(-1, -2, 3)` | out of range |
+| triangle inequality equality boundary | `(1, 2, 3)` | not a triangle |
+| valid triangle branch | `(4, 5, 6)` | triangle |
+
+### Answer 9: Configuration Management Concept Map
+
+```mermaid
+mindmap
+  root((Configuration Management))
+    Version Control
+      Track versions
+      Support parallel work
+    Change Management
+      Change requests
+      Impact analysis
+      Approval
+    Release Management
+      Delivered versions
+      Release planning
+    System Building
+      Assemble components
+      Build executable
+    CASE Tools
+      Tool support
+      Automation
+```
+
+Key answer:
+- Version control is part of configuration management, not the whole thing.
+- Change management controls proposed changes.
+- Release management controls what version is delivered.
+- System building turns components into a runnable system.
+
+### Answer 10: Cost Estimation Comparison Table
+
+| Method / term | Core idea | Strength | Trap |
+|---|---|---|---|
+| LOC / KLOC | estimate by lines of code | simple after language is known | language-dependent |
+| Function Points | estimate by system functionality | earlier than LOC, user-oriented | needs weighting/counting rules |
+| Object Points | screens, reports, components | useful for application composition | not UML object count |
+| COCOMO II | algorithmic effort model | structured cost model | needs correct submodel and parameters |
+| Productivity | output / effort | compares efficiency | depends on measurement type |
+| Person-month | one person working one month | effort unit | not equal to calendar month |
+| Price to win | bid price based on market/contract | useful for winning contract | not true engineering cost |
+
+Exam wording:
+
+```text
+Cost estimation predicts the effort, time, and cost required to develop a software system. Different metrics are useful at different stages: LOC is code-based, function points are functionality-based, object points are screen/report/component-based, and COCOMO II is an algorithmic cost model.
+```

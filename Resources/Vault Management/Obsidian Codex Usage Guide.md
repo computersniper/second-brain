@@ -184,6 +184,16 @@ QF 复习时，优先维护开放卷检索能力：
 - 开放卷页要短、可扫读、能快速定位。
 - 不追求完整教材化，优先追求考场可用。
 
+### Drill / Practice Note Format
+
+练习题类笔记要保留 active recall，不要让答案打断做题：
+
+- 题目区只放 prompt、must include、self-check 和需要记住的考试句子。
+- 答案统一放在文末 `Answer Key`。
+- 图题答案用 Mermaid code block 展示，例如 `flowchart`、`classDiagram`、`sequenceDiagram`、`stateDiagram-v2`、`mindmap`。
+- 非图题答案可以用表格、步骤或短模板，但仍然放在 `Answer Key`。
+- 如果题目用于限时训练，题目区保留 timer / checklist，答案区保留最小标准答案即可。
+
 ## Note Quality Checklist
 
 一篇整理后的笔记至少要有：
