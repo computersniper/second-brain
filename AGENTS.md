@@ -1,0 +1,121 @@
+# Who I Am
+
+Name: 蔡杰超
+Work: 大四计算机专业学生
+Focus: 大模型与自然语言处理
+Goals 2026: 读研，实习，科研，找工作
+
+# Current Projects
+
+Active: 期末考试复习
+Stuck on: 如何在有限时间内把软件工程和量子金融的复习资料，压缩成考场上能直接输出的答案、图、公式、模型判断和概念边界
+Next milestone: 2026-06-06 量子金融开卷考试前，完成 QF CH4-5/QPL 长题能力和 CH6-9 短答框架；同时保持 SE 画图题与 MCQ 概念边界的手感
+
+# Core Vault Links
+
+## Dashboard
+
+- Vault relationship map: [Vault Relationship Map](./Resources/Vault%20Management/Vault%20Relationship%20Map.md)
+- Codex usage guide: [Obsidian Codex Usage Guide](./Resources/Vault%20Management/Obsidian%20Codex%20Usage%20Guide.md)
+- Tag guide: [Obsidian Tagging Guide](./Resources/Vault%20Management/Obsidian%20Tagging%20Guide.md)
+- Review index: [Review Index](./Ideas/Review%20Index.md)
+
+## Active Exam Projects
+
+- Course tree root: [Vault Relationship Map](./Resources/Vault%20Management/Vault%20Relationship%20Map.md)
+- QF branch root inside the tree: QF Course Map
+- SE branch root inside the tree: 00 SE Exam Map
+
+Rule: AGENTS should not list every SE/QF child note. Keep the vault like a tree: AGENTS -> Vault Relationship Map -> course map -> detailed notes.
+
+## Personal / Curated Notes
+
+- My SE notes live under the SE branch.
+- Open them through: Vault Relationship Map -> 00 SE Exam Map -> My SE Notes Index.
+- Obsidian tags and graph notes live under vault management / personal SE summaries, not as direct AGENTS-level links.
+- Review notes are listed under Review Index as plain text/path records.
+
+## Graph Hygiene
+
+- The vault relationship graph should behave like a tree, not a full backlink cloud.
+- [Vault Relationship Map](./Resources/Vault%20Management/Vault%20Relationship%20Map.md) should link only to high-level index/root pages.
+- Course detail pages should live under their course map, for example QF Course Map or 00 SE Exam Map.
+- Review files should not wikilink the notes they mention. Keep review citations as plain text or file paths so review content does not expand in the graph.
+- If a page is only citing evidence or history, prefer plain text/path references instead of `[[wikilinks]]`.
+
+## Image Embed Rules
+
+- For course images inside the vault, copy them into the relevant `Resources/.../Images` folder.
+- Use Obsidian internal embeds by filename for course images, for example `![[image.png]]`.
+- Keep the actual image files in `Resources/.../Images`, but do not include the full folder path in the embed if Obsidian reports "file not found".
+- Avoid vault-root Markdown image paths like `![name](<Resources/Software%20Engineering/Images/image.png>)` for imported course images.
+- Avoid imported Markdown image paths like `![name](se_revision_assets/image.png)` unless that folder is actually at the vault root.
+- When importing a note with a local asset folder, move/copy the assets into Resources, then rewrite image links to Obsidian filename embeds such as `![[image.png]]`.
+
+## GitHub View Rules
+
+- Keep GitHub-renderable generated notes outside the Obsidian vault, at `D:\study\second-brain-github-view`.
+- Never create or commit a `GitHub View` folder inside `D:\study\second-brain`; it makes Obsidian graph show duplicate notes.
+- Before pushing/publishing, run `node "Resources/Vault Management/scripts/publish-github-view.js" "D:\study\second-brain"` to convert Obsidian image embeds and wikilinks into GitHub Markdown and push the `github-view` branch.
+
+# How This Vault Works
+
+- Inbox: `/Inbox` — 所有新捕获、未整理的原始素材；当前待处理剪藏：[用 Obsidian + Codex，搭一个会主动思考的个人知识库](./Inbox/%E7%94%A8%20Obsidian%20%2B%20Codex%EF%BC%8C%E6%90%AD%E4%B8%80%E4%B8%AA%E4%BC%9A%E4%B8%BB%E5%8A%A8%E6%80%9D%E8%80%83%E7%9A%84%E4%B8%AA%E4%BA%BA%E7%9F%A5%E8%AF%86%E5%BA%93.md)
+- Notes: `/Notes` — 外网文章、阅读高亮、学习资料、干货内容；当前课程重点从 [Vault Relationship Map](./Resources/Vault%20Management/Vault%20Relationship%20Map.md) 进入。
+- Ideas: `/Ideas` — 我个人的原创思考、灵感、感悟、复盘；Review notes use [Review Index](./Ideas/Review%20Index.md) as the single entry point.
+- Projects: `/Projects` — 我正在推进的所有工作与项目；课程项目入口通过 [Vault Relationship Map](./Resources/Vault%20Management/Vault%20Relationship%20Map.md) 的课程树进入。
+- Resources: `/Resources` — 外部课件、图片、PDF、PPT 等资料的索引；课程 source index 通过对应 course map 进入。
+- Clippings: `/Clippings` — 历史网页剪藏暂存区；新剪藏优先进入 `/Inbox`，已有剪藏经 Codex 消化后归档到 Notes / Ideas / Projects / Resources
+
+# What I Want From You (Codex)
+
+- 自动扫描我的全部笔记，发现我看不到的隐藏关联
+- 每天早上自动生成专属认知简报
+- 每周自动做一次深度认知复盘与总结
+- 直接在对应文件夹新建、修改、优化我的 Markdown 笔记
+- 所有回答只基于我的私有笔记，拒绝网络通用套话
+- 主动提醒我的认知变化、新旧观点冲突与思维漏洞
+- 自动帮我整理 Inbox 杂乱素材，归档格式化到对应文件夹
+- 期末冲刺期优先服务考试输出，不要为了美化知识库牺牲复习时间
+- 已做好的课程正文、我自己整理的笔记、可直接复习的内容页默认只读；除非我明确要求修改，否则只在项目页、AGENTS、管理笔记、复盘笔记、Inbox 处理记录里更新。
+- 维护知识库结构时，优先保持树状层级：[Vault Relationship Map](./Resources/Vault%20Management/Vault%20Relationship%20Map.md) 只连课程根节点；SE/QF 的具体笔记放到各自 course map / source index / personal index 里管理。
+- Review notes should link back to [Review Index](./Ideas/Review%20Index.md) as their only structural review link. Do not wikilink every note mentioned inside review content.
+- 修复图片显示问题属于维护任务，可以改路径/嵌入语法，但不要改学习正文内容。
+
+# Current Course Focus
+
+- Software Engineering / SE 复习资料源：`D:\study\se`
+- 复习重点图片：`D:\study\se\review-important-picture`
+- SE 笔记位置：`/Notes/Courses/Software Engineering`，核心入口在 [Vault Relationship Map](./Resources/Vault%20Management/Vault%20Relationship%20Map.md) 的 SE branch 下
+- 我自己整理的 SE 精简笔记：`/Notes/Courses/Software Engineering/My SE Notes`
+- SE 项目推进页：通过 Vault Relationship Map -> 00 SE Exam Map 进入
+- SE 当前状态：资料体系已比较完整，后续优先做 active recall、限时画图、MCQ trap 复述，不优先继续扩写大段笔记。
+- SE 复习笔记要求：中文帮助理解，英文术语必须保留并能用于考试作答；选择题关注概念边界，画图题关注 UML、DFD、structured tree、architecture model、testing diagram 等可复现步骤。
+- Quantum Finance / QF 复习资料源：`D:\study\qf\ppt`
+- QF 笔记位置：`/Notes/Courses/Quantum Finance`，核心入口在 [Vault Relationship Map](./Resources/Vault%20Management/Vault%20Relationship%20Map.md) 的 QF branch 下
+- QF 项目推进页：通过 Vault Relationship Map -> QF Course Map 进入
+- QF 考试信息：2026-06-06 18:30-20:30，T7-306；Short Questions Q1-Q6 共 60%，Long Question with calculation Q7 共 40%；可带 scientific calculator 和 one A4 size note。
+- QF 当前状态：Course Revision 已入库，CH1-3 已整理到主笔记和开卷速查；CH4-5/QFSE/QPL/FDM/Cardano/算法是最高优先级，CH6-9 是短答框架优先。
+- QF 复习笔记要求：服务开卷考试，优先整理公式、模型、英文术语、when to use、confusion trap、calculation steps、algorithm steps 和可直接写在卷面上的 answer template。
+
+# Exam Sprint Rules
+
+- 如果时间有限，优先更新能直接提升考场输出的笔记：QF Open-Book Exam Sheet、Exam Focus、SE Final Cram Sheet、Drawing Drill Pack。
+- QF 每章整理顺序：teacher focus -> core definition -> formula/model -> when to use -> confusion trap -> answer template -> A4 sheet candidate。
+- SE 每个主题整理顺序：English term -> one-line definition -> MCQ boundary -> drawing steps -> common mistake。
+- 每次整理后都要给出下一步最小行动，避免只总结不推进。
+- 已完成笔记不做格式、标签、措辞上的无关优化；需要改进时优先新增复盘、任务、索引或“待改建议”，不要直接动正文。
+
+# Vault Tag Rules
+
+- Prefer YAML `tags` properties at the top of notes.
+- Use nested lowercase tags such as `course/se`, `exam/drawing`, `exam/mcq`, `se/use-case`.
+- Use folders for stable storage location, links for concept relationships, and tags for filtering/status/topic.
+- Avoid one-off tags and duplicate singular/plural forms.
+- Tag guide: [Obsidian Tagging Guide](./Resources/Vault%20Management/Obsidian%20Tagging%20Guide.md).
+- Obsidian + Codex usage guide: [Obsidian Codex Usage Guide](./Resources/Vault%20Management/Obsidian%20Codex%20Usage%20Guide.md).
+- Relationship map: [Vault Relationship Map](./Resources/Vault%20Management/Vault%20Relationship%20Map.md).
+
+# What I Am Reading and Thinking About
+
+2026-06-01：本周注意力集中在期末考试冲刺。QF 的主要矛盾是“开卷资料很多，但 A4 纸和 2 小时考试要求高度压缩”，因此要把 CH4-5/QPL 长题链条先打通；SE 的主要矛盾是“资料足够，但必须转成限时画图和概念边界反应”。

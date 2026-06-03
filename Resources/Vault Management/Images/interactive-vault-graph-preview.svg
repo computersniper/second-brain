@@ -1,0 +1,245 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-label="Second Brain graph preview">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="45%" r="62%">
+      <stop offset="0%" stop-color="#2b2b2b"/>
+      <stop offset="65%" stop-color="#1f1f1f"/>
+      <stop offset="100%" stop-color="#191919"/>
+    </radialGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#glow)"/>
+  <text x="34" y="48" fill="#e8e8e8" font-size="22" letter-spacing="4" font-family="Inter,Segoe UI,Arial,sans-serif">SECOND BRAIN GRAPH</text>
+  <text x="34" y="74" fill="#8a8a8a" font-size="13" font-family="Inter,Segoe UI,Arial,sans-serif">Generated from Markdown links and YAML tags ? 32 notes ? 100 edges</text>
+  <g><line x1="564.4" y1="629.7" x2="862.3" y2="392.5" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="564.4" y1="629.7" x2="931.3" y2="307.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="564.4" y1="629.7" x2="987.1" y2="412.1" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="564.4" y1="629.7" x2="411.8" y2="288.3" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="564.4" y1="629.7" x2="915.2" y2="325.1" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="925.1" y1="426.2" x2="411.8" y2="288.3" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="798.2" y1="697.6" x2="928.4" y2="680.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="798.2" y1="697.6" x2="857.9" y2="739.6" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="938.1" y1="671.7" x2="911.4" y2="621.6" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="938.1" y1="671.7" x2="928.4" y2="680.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="938.1" y1="671.7" x2="798.2" y2="697.6" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="938.1" y1="671.7" x2="857.9" y2="739.6" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="938.1" y1="671.7" x2="815.6" y2="617.2" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="928.4" y1="680.7" x2="857.9" y2="739.6" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="928.4" y1="680.7" x2="798.2" y2="697.6" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="625.5" y1="288.2" x2="678.0" y2="158.8" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="625.5" y1="288.2" x2="705.9" y2="152.3" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="625.5" y1="288.2" x2="772.3" y2="204.1" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="625.5" y1="288.2" x2="765.0" y2="178.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="625.5" y1="288.2" x2="621.2" y2="206.1" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="625.5" y1="288.2" x2="729.3" y2="271.2" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="625.5" y1="288.2" x2="761.1" y2="242.3" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="625.5" y1="288.2" x2="726.3" y2="163.8" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="625.5" y1="288.2" x2="626.6" y2="196.6" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="625.5" y1="288.2" x2="783.5" y2="181.4" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="625.5" y1="288.2" x2="662.6" y2="273.2" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="625.5" y1="288.2" x2="654.1" y2="193.4" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="625.5" y1="288.2" x2="743.2" y2="276.3" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="705.9" y1="152.3" x2="621.2" y2="206.1" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="705.9" y1="152.3" x2="765.0" y2="178.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="743.2" y1="276.3" x2="621.2" y2="206.1" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="743.2" y1="276.3" x2="765.0" y2="178.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="761.1" y1="242.3" x2="743.2" y2="276.3" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="621.2" y1="206.1" x2="765.0" y2="178.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="765.0" y1="178.7" x2="621.2" y2="206.1" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="662.6" y1="273.2" x2="678.0" y2="158.8" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="662.6" y1="273.2" x2="752.2" y2="247.4" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="662.6" y1="273.2" x2="647.0" y2="222.2" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="752.2" y1="247.4" x2="621.2" y2="206.1" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="752.2" y1="247.4" x2="765.0" y2="178.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="772.3" y1="204.1" x2="783.5" y2="181.4" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="772.3" y1="204.1" x2="621.2" y2="206.1" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="772.3" y1="204.1" x2="765.0" y2="178.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="772.3" y1="204.1" x2="705.9" y2="152.3" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="772.3" y1="204.1" x2="743.2" y2="276.3" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="772.3" y1="204.1" x2="678.0" y2="158.8" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="772.3" y1="204.1" x2="625.5" y2="288.2" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="911.4" y1="621.6" x2="938.1" y2="671.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="911.4" y1="621.6" x2="857.9" y2="739.6" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="911.4" y1="621.6" x2="815.6" y2="617.2" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="911.4" y1="621.6" x2="798.2" y2="697.6" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="626.6" y1="196.6" x2="783.5" y2="181.4" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="626.6" y1="196.6" x2="726.3" y2="163.8" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="626.6" y1="196.6" x2="761.1" y2="242.3" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="626.6" y1="196.6" x2="678.0" y2="158.8" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="626.6" y1="196.6" x2="621.2" y2="206.1" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="626.6" y1="196.6" x2="729.3" y2="271.2" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="626.6" y1="196.6" x2="743.2" y2="276.3" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="445.6" y1="745.4" x2="564.4" y2="629.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="445.6" y1="745.4" x2="862.3" y2="392.5" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="445.6" y1="745.4" x2="931.3" y2="307.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="445.6" y1="745.4" x2="925.1" y2="426.2" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="445.6" y1="745.4" x2="911.4" y2="621.6" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="445.6" y1="745.4" x2="938.1" y2="671.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="445.6" y1="745.4" x2="798.2" y2="697.6" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="445.6" y1="745.4" x2="928.4" y2="680.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="445.6" y1="745.4" x2="857.9" y2="739.6" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="445.6" y1="745.4" x2="815.6" y2="617.2" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="445.6" y1="745.4" x2="626.6" y2="196.6" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="445.6" y1="745.4" x2="625.5" y2="288.2" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="445.6" y1="745.4" x2="705.9" y2="152.3" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="445.6" y1="745.4" x2="726.3" y2="163.8" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="445.6" y1="745.4" x2="761.1" y2="242.3" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="445.6" y1="745.4" x2="783.5" y2="181.4" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="815.6" y1="617.2" x2="857.9" y2="739.6" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="815.6" y1="617.2" x2="938.1" y2="671.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="815.6" y1="617.2" x2="911.4" y2="621.6" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="815.6" y1="617.2" x2="928.4" y2="680.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="783.5" y1="181.4" x2="662.6" y2="273.2" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="783.5" y1="181.4" x2="625.5" y2="288.2" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="783.5" y1="181.4" x2="678.0" y2="158.8" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="783.5" y1="181.4" x2="705.9" y2="152.3" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="783.5" y1="181.4" x2="743.2" y2="276.3" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="783.5" y1="181.4" x2="729.3" y2="271.2" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="783.5" y1="181.4" x2="726.3" y2="163.8" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="783.5" y1="181.4" x2="761.1" y2="242.3" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="783.5" y1="181.4" x2="621.2" y2="206.1" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="783.5" y1="181.4" x2="765.0" y2="178.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="931.3" y1="307.7" x2="862.3" y2="392.5" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="931.3" y1="307.7" x2="411.8" y2="288.3" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="987.1" y1="412.1" x2="621.2" y2="206.1" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="987.1" y1="412.1" x2="765.0" y2="178.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="919.2" y1="421.0" x2="411.8" y2="288.3" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="862.3" y1="392.5" x2="564.4" y2="629.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="862.3" y1="392.5" x2="955.5" y2="422.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="862.3" y1="392.5" x2="931.3" y2="307.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="862.3" y1="392.5" x2="987.1" y2="412.1" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="862.3" y1="392.5" x2="411.8" y2="288.3" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="862.3" y1="392.5" x2="938.1" y2="671.7" stroke="rgba(210,210,210,0.16)" stroke-width="1"/>
+<line x1="862.3" y1="392.5" x2="625.5" y2="288.2" stroke="rgba(210,210,210,0.16)" stroke-width="1"/></g>
+  <g><g>
+    <circle cx="938.1" cy="671.7" r="12.6" fill="#a7e84b" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="958.7" y="671.7" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="958.7" dy="4">00 QF Course Map</tspan></text>
+  </g>
+<g>
+    <circle cx="625.5" cy="288.2" r="15.1" fill="#e9b84e" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="648.6" y="288.2" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="648.6" dy="4">00 SE Exam Map</tspan></text>
+  </g>
+<g>
+    <circle cx="705.9" cy="152.3" r="11.4" fill="#e9b84e" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="725.3" y="152.3" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="725.3" dy="4">01 Diagram Questions</tspan><tspan x="725.3" dy="15">Drawing Guide</tspan></text>
+  </g>
+<g>
+    <circle cx="743.2" cy="276.3" r="11.8" fill="#e9b84e" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="763.0" y="276.3" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="763.0" dy="4">04 Class Exercise</tspan><tspan x="763.0" dy="15">Templates</tspan></text>
+  </g>
+<g>
+    <circle cx="621.2" cy="206.1" r="13.0" fill="#e9b84e" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="642.2" y="206.1" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="642.2" dy="4">10 Include vs Extend</tspan></text>
+  </g>
+<g>
+    <circle cx="765.0" cy="178.7" r="12.6" fill="#e9b84e" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="785.6" y="178.7" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="785.6" dy="4">11 Use Case Diagram</tspan><tspan x="785.6" dy="15">Relationships</tspan></text>
+  </g>
+<g>
+    <circle cx="925.1" cy="426.2" r="9.1" fill="#ef5a5a" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="942.2" y="426.2" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="942.2" dy="4">2026-06-01 Brain Review</tspan></text>
+  </g>
+<g>
+    <circle cx="915.2" cy="325.1" r="8.2" fill="#ef5a5a" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="931.4" y="325.1" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="931.4" dy="4">用 Obsidian +</tspan><tspan x="931.4" dy="15">Codex，搭一个会主动思考的个人知识库</tspan></text>
+  </g>
+<g>
+    <circle cx="761.1" cy="242.3" r="10.9" fill="#e9b84e" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="780.0" y="242.3" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="780.0" dy="4">Drawing Drill Pack</tspan></text>
+  </g>
+<g>
+    <circle cx="798.2" cy="697.6" r="11.4" fill="#a7e84b" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="817.6" y="697.6" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="817.6" dy="4">Exam Focus</tspan></text>
+  </g>
+<g>
+    <circle cx="726.3" cy="163.8" r="10.4" fill="#e9b84e" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="744.7" y="163.8" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="744.7" dy="4">Final Cram Sheet</tspan></text>
+  </g>
+<g>
+    <circle cx="955.5" cy="422.7" r="8.2" fill="#ef5a5a" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="971.7" y="422.7" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="971.7" dy="4">Interactive Vault Graph</tspan></text>
+  </g>
+<g>
+    <circle cx="654.1" cy="193.4" r="8.2" fill="#e9b84e" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="670.3" y="193.4" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="670.3" dy="4">Lec 11 Class exercise</tspan></text>
+  </g>
+<g>
+    <circle cx="772.3" cy="204.1" r="12.2" fill="#e9b84e" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="792.5" y="204.1" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="792.5" dy="4">My SE Notes</tspan></text>
+  </g>
+<g>
+    <circle cx="662.6" cy="273.2" r="10.9" fill="#e9b84e" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="681.5" y="273.2" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="681.5" dy="4">My SE Notes Index</tspan></text>
+  </g>
+<g>
+    <circle cx="931.3" cy="307.7" r="10.9" fill="#ef5a5a" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="950.2" y="307.7" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="950.2" dy="4">Obsidian Codex Usage</tspan><tspan x="950.2" dy="15">Guide</tspan></text>
+  </g>
+<g>
+    <circle cx="987.1" cy="412.1" r="10.4" fill="#ef5a5a" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="1005.5" y="412.1" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="1005.5" dy="4">Obsidian Tagging Guide</tspan></text>
+  </g>
+<g>
+    <circle cx="647.0" cy="222.2" r="8.2" fill="#e9b84e" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="663.2" y="222.2" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="663.2" dy="4">Obsidian Tags and Graph</tspan><tspan x="663.2" dy="15">- My Summary</tspan></text>
+  </g>
+<g>
+    <circle cx="911.4" cy="621.6" r="11.8" fill="#a7e84b" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="931.2" y="621.6" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="931.2" dy="4">QF Exam Review</tspan></text>
+  </g>
+<g>
+    <circle cx="857.9" cy="739.6" r="11.4" fill="#a7e84b" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="877.3" y="739.6" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="877.3" dy="4">QF Open-Book Exam Sheet</tspan></text>
+  </g>
+<g>
+    <circle cx="815.6" cy="617.2" r="11.8" fill="#a7e84b" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="835.4" y="617.2" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="835.4" dy="4">QF Source Index</tspan></text>
+  </g>
+<g>
+    <circle cx="928.4" cy="680.7" r="11.4" fill="#a7e84b" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="947.8" y="680.7" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="947.8" dy="4">Quantum Finance Notes</tspan></text>
+  </g>
+<g>
+    <circle cx="445.6" cy="745.4" r="14.8" fill="#56e0ba" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="468.4" y="745.4" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="468.4" dy="4">README</tspan></text>
+  </g>
+<g>
+    <circle cx="411.8" cy="288.3" r="10.9" fill="#bdbdbd" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="430.7" y="288.3" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="430.7" dy="4">Review Index</tspan></text>
+  </g>
+<g>
+    <circle cx="729.3" cy="271.2" r="9.8" fill="#e9b84e" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="747.1" y="271.2" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="747.1" dy="4">SE Bilingual Glossary</tspan><tspan x="747.1" dy="15">and MCQ Traps</tspan></text>
+  </g>
+<g>
+    <circle cx="626.6" cy="196.6" r="12.6" fill="#e9b84e" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="647.2" y="196.6" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="647.2" dy="4">SE Exam Review</tspan></text>
+  </g>
+<g>
+    <circle cx="783.5" cy="181.4" r="14.2" fill="#e9b84e" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="805.7" y="181.4" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="805.7" dy="4">SE Source Index</tspan></text>
+  </g>
+<g>
+    <circle cx="919.2" cy="421.0" r="8.2" fill="#ef5a5a" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="935.4" y="421.0" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="935.4" dy="4">Second Brain Review -</tspan><tspan x="935.4" dy="15">2026-05-31</tspan></text>
+  </g>
+<g>
+    <circle cx="678.0" cy="158.8" r="10.9" fill="#e9b84e" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="696.9" y="158.8" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="696.9" dy="4">Software Engineering</tspan><tspan x="696.9" dy="15">复习资料：从 Process Models 到</tspan></text>
+  </g>
+<g>
+    <circle cx="752.2" cy="247.4" r="9.8" fill="#e9b84e" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="770.0" y="247.4" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="770.0" dy="4">Use Case Relationships -</tspan><tspan x="770.0" dy="15">My Summary</tspan></text>
+  </g>
+<g>
+    <circle cx="862.3" cy="392.5" r="13.0" fill="#ef5a5a" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="883.3" y="392.5" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="883.3" dy="4">Vault Relationship Map</tspan></text>
+  </g>
+<g>
+    <circle cx="564.4" cy="629.7" r="11.8" fill="#56e0ba" stroke="rgba(255,255,255,0.35)" stroke-width="1.2"/>
+    <text x="584.2" y="629.7" fill="#e8e8e8" font-size="14" font-family="Inter,Segoe UI,Arial,sans-serif" paint-order="stroke" stroke="#1f1f1f" stroke-width="5" stroke-linejoin="round"><tspan x="584.2" dy="4">Who I Am</tspan></text>
+  </g></g>
+  <g><g><circle cx="34" cy="824" r="6" fill="#e9b84e"/><text x="48" y="829" fill="#a8a8a8" font-size="13" font-family="Inter,Segoe UI,Arial,sans-serif">course/se</text></g>
+<g><circle cx="279" cy="824" r="6" fill="#ef5a5a"/><text x="293" y="829" fill="#a8a8a8" font-size="13" font-family="Inter,Segoe UI,Arial,sans-serif">vault/management</text></g>
+<g><circle cx="524" cy="824" r="6" fill="#a7e84b"/><text x="538" y="829" fill="#a8a8a8" font-size="13" font-family="Inter,Segoe UI,Arial,sans-serif">course/qf</text></g>
+<g><circle cx="769" cy="824" r="6" fill="#56e0ba"/><text x="783" y="829" fill="#a8a8a8" font-size="13" font-family="Inter,Segoe UI,Arial,sans-serif">untagged</text></g>
+<g><circle cx="34" cy="854" r="6" fill="#bdbdbd"/><text x="48" y="859" fill="#a8a8a8" font-size="13" font-family="Inter,Segoe UI,Arial,sans-serif">ideas/review</text></g></g>
+</svg>
