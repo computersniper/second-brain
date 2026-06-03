@@ -20,7 +20,7 @@ This note is a Software Engineering exam revision map from **Software Process Mo
 
 - Purpose: connect core definitions, model comparisons, diagram ideas, testing concepts, configuration management, and cost estimation formulas.
 - Exam use: focus on English terms, MCQ boundaries, when-to-use distinctions, diagram recognition, and calculation/template recall.
-- Images: stored in `Resources/Software Engineering/Images/` and embedded with explicit note-relative Markdown paths.
+- Images: copied into local `assets/` for this note and embedded with simple relative Markdown paths.
 
 ---
 
@@ -193,7 +193,7 @@ mindmap
 
 ## 1.2 Waterfall Model 瀑布模型
 
-![lec02_waterfall_model.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec02_waterfall_model.png)
+![lec02_waterfall_model.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec02_waterfall_model.png)
 
 **核心思想：**
 
@@ -229,7 +229,7 @@ Analysis -> Design -> Coding -> Test -> Maintenance
 
 ## 1.3 Incremental Model 增量模型
 
-![lec02_incremental_process.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec02_incremental_process.png)
+![lec02_incremental_process.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec02_incremental_process.png)
 
 **核心思想：**
 
@@ -263,7 +263,7 @@ Increment 5: view grade + edit profile
 
 ## 1.4 Prototyping Model 原型模型
 
-![lec02_prototyping_model.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec02_prototyping_model.png)
+![lec02_prototyping_model.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec02_prototyping_model.png)
 
 **核心思想：**
 
@@ -300,7 +300,7 @@ Increment 5: view grade + edit profile
 
 ## 1.5 Spiral Model 螺旋模型
 
-![lec02_spiral_model.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec02_spiral_model.png)
+![lec02_spiral_model.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec02_spiral_model.png)
 
 **核心关键词：Risk 风险。**
 
@@ -337,7 +337,7 @@ Increment 5: view grade + edit profile
 
 ## 1.6 RUP - Rational Unified Process
 
-![lec02_rup_diagram.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec02_rup_diagram.png)
+![lec02_rup_diagram.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec02_rup_diagram.png)
 
 RUP 是一种更完整、规范的迭代式过程模型，特别适合 OO / UML 项目。
 
@@ -423,7 +423,7 @@ RUP 的图很重要：横轴是 phases，纵轴是 workflows，例如 Business M
 
 ## 2.4 Requirements should not be imprecise
 
-![lec03_imprecise_requirements.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec03_imprecise_requirements.png)
+![lec03_imprecise_requirements.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec03_imprecise_requirements.png)
 
 需求不应该不精确。不精确主要有三种：
 
@@ -431,7 +431,7 @@ RUP 的图很重要：横轴是 phases，纵轴是 workflows，例如 Business M
 2. **Incomplete**：不完整，少了某些情况。
 3. **Inconsistent**：不一致，规则互相冲突。
 
-![lec03_ambiguous_incomplete_inconsistent.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec03_ambiguous_incomplete_inconsistent.png)
+![lec03_ambiguous_incomplete_inconsistent.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec03_ambiguous_incomplete_inconsistent.png)
 
 例子：
 
@@ -456,7 +456,7 @@ If A = 0, output 0
 
 ### Structured Natural Language
 
-![lec03_structured_natural_language.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec03_structured_natural_language.png)
+![lec03_structured_natural_language.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec03_structured_natural_language.png)
 
 用固定模板写需求，例如：
 
@@ -471,13 +471,13 @@ If A = 0, output 0
 
 ### Graphical Specification
 
-![lec03_graphical_spec_atm.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec03_graphical_spec_atm.png)
+![lec03_graphical_spec_atm.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec03_graphical_spec_atm.png)
 
 适合描述状态变化、流程、条件。
 
 ### Tabular Specification
 
-![lec03_tabular_spec_atm.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec03_tabular_spec_atm.png)
+![lec03_tabular_spec_atm.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec03_tabular_spec_atm.png)
 
 适合条件组合很多的需求，比如 ATM 的 card legal/illegal、selection、amount 与 balance 的关系。
 
@@ -523,7 +523,7 @@ DFD 不是 class diagram，也不是 sequence diagram。
 - Data Flow：数据流向。
 - Data Store：数据库或文件。
 
-![lec12_dataflow_insulin.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec12_dataflow_insulin.png)
+![lec12_dataflow_insulin.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec12_dataflow_insulin.png)
 
 在 insulin pump 例子中：
 
@@ -556,7 +556,7 @@ Activity Diagram 描述业务流程里活动的先后、分支、并行关系。
 
 ### 并行 fork/join
 
-![activity_parallel_register.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/activity_parallel_register.png)
+![activity_parallel_register.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/activity_parallel_register.png)
 
 这张图表示：
 
@@ -569,7 +569,7 @@ Start -> Register -> 并行执行 Record in MIS / Record in AR / Notify Programm
 
 ### 选择 decision/merge
 
-![activity_selection_borrow_renew.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/activity_selection_borrow_renew.png)
+![activity_selection_borrow_renew.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/activity_selection_borrow_renew.png)
 
 这张图表示：
 
@@ -649,7 +649,7 @@ State1 -- Event [Condition] / Action --> State2
 
 ## 4.1 Pattern
 
-![lec08_pattern.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec08_pattern.png)
+![lec08_pattern.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec08_pattern.png)
 
 **Pattern** 是在特定背景下解决某类设计问题的可复用结构。
 
@@ -663,7 +663,7 @@ State1 -- Event [Condition] / Action --> State2
 
 ## 4.2 Modularity 模块化
 
-![lec08_modularity.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec08_modularity.png)
+![lec08_modularity.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec08_modularity.png)
 
 **Modularity** 是把复杂系统拆成多个模块，让人脑能够管理。
 
@@ -675,7 +675,7 @@ State1 -- Event [Condition] / Action --> State2
 
 ## 4.3 Information Hiding 信息隐藏
 
-![lec08_information_hiding.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec08_information_hiding.png)
+![lec08_information_hiding.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec08_information_hiding.png)
 
 外部只需要知道模块提供什么服务，不需要知道内部怎么实现。
 
@@ -693,7 +693,7 @@ userDAO.getUserById(id)
 
 ## 4.4 Independence = Low Coupling + High Cohesion
 
-![lec08_independence.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec08_independence.png)
+![lec08_independence.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec08_independence.png)
 
 ### Coupling 耦合
 
@@ -713,7 +713,7 @@ High cohesion, low coupling.
 
 ## 4.5 Cohesion 凝聚类型
 
-![lec08_cohesion.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec08_cohesion.png)
+![lec08_cohesion.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec08_cohesion.png)
 
 从差到好：
 
@@ -732,7 +732,7 @@ High cohesion, low coupling.
 
 ## 4.6 Coupling 耦合类型
 
-![lec08_coupling.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec08_coupling.png)
+![lec08_coupling.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec08_coupling.png)
 
 从差到好：
 
@@ -762,7 +762,7 @@ A book -> A Computer Science book -> A Software Engineering book -> A Testing bo
 
 ## 4.8 Questions to Answer in Architectural Design
 
-![lec08_arch_design_questions.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec08_arch_design_questions.png)
+![lec08_arch_design_questions.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec08_arch_design_questions.png)
 
 架构设计要回答：
 
@@ -778,7 +778,7 @@ A book -> A Computer Science book -> A Software Engineering book -> A Testing bo
 
 ## 4.9 Architecture 的不同视角
 
-![lec08_arch_perspectives.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec08_arch_perspectives.png)
+![lec08_arch_perspectives.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec08_arch_perspectives.png)
 
 | Perspective | 关注点 |
 |---|---|
@@ -792,7 +792,7 @@ A book -> A Computer Science book -> A Software Engineering book -> A Testing bo
 
 # 5. System Organization Models
 
-![lec09_system_org_models.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec09_system_org_models.png)
+![lec09_system_org_models.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec09_system_org_models.png)
 
 System organization models 讲的是系统整体怎么分解成 subsystems。
 
@@ -810,9 +810,9 @@ System organization models 讲的是系统整体怎么分解成 subsystems。
 
 ## 5.1 Repository Model 存储库模型
 
-![lec09_repository_model.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec09_repository_model.png)
+![lec09_repository_model.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec09_repository_model.png)
 
-![lec08_repository_case_toolset.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec08_repository_case_toolset.png)
+![lec08_repository_case_toolset.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec08_repository_case_toolset.png)
 
 核心：多个 subsystems 共享一个 central repository。
 
@@ -848,9 +848,9 @@ Subsystem n -> Repository
 
 ## 5.2 Client-Server Model 客户-服务器模型
 
-![lec09_client_server_model.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec09_client_server_model.png)
+![lec09_client_server_model.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec09_client_server_model.png)
 
-![lec08_client_server_example.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec08_client_server_example.png)
+![lec08_client_server_example.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec08_client_server_example.png)
 
 核心：Client 请求服务，Server 提供服务。
 
@@ -880,7 +880,7 @@ Client <- result  <- Server
 
 ## 5.3 Peer-to-Peer Model 对等模型
 
-![lec09_peer_to_peer_model.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec09_peer_to_peer_model.png)
+![lec09_peer_to_peer_model.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec09_peer_to_peer_model.png)
 
 Peer-to-peer 是 client-server 的特殊情况：每个 peer 可以同时是 requester 和 provider。
 
@@ -902,9 +902,9 @@ Peer-to-peer 是 client-server 的特殊情况：每个 peer 可以同时是 req
 
 ## 5.4 Layered Model 分层模型
 
-![lec09_layered_three_tier.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec09_layered_three_tier.png)
+![lec09_layered_three_tier.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec09_layered_three_tier.png)
 
-![lec08_layered_example.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec08_layered_example.png)
+![lec08_layered_example.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec08_layered_example.png)
 
 核心：上层使用下层服务，下层不要反过来依赖上层。
 
@@ -945,7 +945,7 @@ Storage
 
 ## 5.5 MVC Model
 
-![lec09_mvc_model_diagram.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec09_mvc_model_diagram.png)
+![lec09_mvc_model_diagram.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec09_mvc_model_diagram.png)
 
 MVC 把交互式系统分成：
 
@@ -955,7 +955,7 @@ MVC 把交互式系统分成：
 
 ### 普通 MVC vs UML MVC
 
-![lec09_uml_mvc_model.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec09_uml_mvc_model.png)
+![lec09_uml_mvc_model.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec09_uml_mvc_model.png)
 
 | MVC | UML MVC / BCE |
 |---|---|
@@ -984,7 +984,7 @@ Interface layer contains boundary objects.
 
 ## 5.7 MVC Problem and Observer Solution
 
-![lec09_mvc_problem.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec09_mvc_problem.png)
+![lec09_mvc_problem.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec09_mvc_problem.png)
 
 Layered model 规则：高层访问低层，低层不访问高层。  
 但 MVC 中 Model / Control 数据变了，View / Boundary 需要更新。
@@ -993,9 +993,9 @@ Layered model 规则：高层访问低层，低层不访问高层。
 
 解决方法：**Observer Design Pattern**。
 
-![lec09_observer_application.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec09_observer_application.png)
+![lec09_observer_application.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec09_observer_application.png)
 
-![observer_or_not_screenshot.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/observer_or_not_screenshot.png)
+![observer_or_not_screenshot.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/observer_or_not_screenshot.png)
 
 ---
 
@@ -1062,7 +1062,7 @@ SubmissionCreated event
 
 # 7. OO method vs Structured Analysis method
 
-![oo_vs_structured_user_screenshot.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/oo_vs_structured_user_screenshot.png)
+![oo_vs_structured_user_screenshot.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/oo_vs_structured_user_screenshot.png)
 
 这张图对比两条路线：
 
@@ -1118,7 +1118,7 @@ Design Pattern 是某类常见设计问题的可复用解决思路。
 
 ## 8.2 Observer Design Pattern
 
-![lec09_observer_structure.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec09_observer_structure.png)
+![lec09_observer_structure.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec09_observer_structure.png)
 
 Observer 解决的问题：
 
@@ -1230,7 +1230,7 @@ CITY_VERIFICATION verifyCities(String dept, String arr)
 
 ## 9.3 Pre-condition and Post-condition
 
-![lec11_pre_post_verifyCities.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec11_pre_post_verifyCities.png)
+![lec11_pre_post_verifyCities.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec11_pre_post_verifyCities.png)
 
 例子：
 
@@ -1265,7 +1265,7 @@ dept and arr are not null.
 
 ## 10.1 Structured Design 整体路线
 
-![lec12_oo_vs_structured.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec12_oo_vs_structured.png)
+![lec12_oo_vs_structured.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec12_oo_vs_structured.png)
 
 Structured Analysis method 不是 OO method。路线是：
 
@@ -1277,7 +1277,7 @@ Specification -> DFD -> Design -> Structured tree -> Structured Programming
 
 ## 10.2 Architecture Design Steps
 
-![lec12_arch_design_steps.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec12_arch_design_steps.png)
+![lec12_arch_design_steps.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec12_arch_design_steps.png)
 
 Structured design 的 architecture design 步骤：
 
@@ -1290,7 +1290,7 @@ Structured design 的 architecture design 步骤：
 
 ## 10.3 Isolating Transform Center
 
-![lec12_isolate_transform_center.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec12_isolate_transform_center.png)
+![lec12_isolate_transform_center.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec12_isolate_transform_center.png)
 
 Transform center 是 DFD 中最核心的数据转换部分。
 
@@ -1322,7 +1322,7 @@ Input Control -> Transformation -> Output Control
 
 ## 10.4 First-level factoring
 
-![lec12_first_level_factoring.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec12_first_level_factoring.png)
+![lec12_first_level_factoring.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec12_first_level_factoring.png)
 
 标准结构：
 
@@ -1339,7 +1339,7 @@ Central Control
 
 ### Example 1
 
-![lec12_example1_tree.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec12_example1_tree.png)
+![lec12_example1_tree.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec12_example1_tree.png)
 
 把 blood parameter 当作 transformation center 的输入：
 
@@ -1354,7 +1354,7 @@ Control delivery
 
 ### Example 2
 
-![lec12_example2_tree.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec12_example2_tree.png)
+![lec12_example2_tree.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec12_example2_tree.png)
 
 把 blood sugar level 当作 transformation center 的输入：
 
@@ -1373,11 +1373,11 @@ Control delivery
 
 ### Isolate Transform Center
 
-![lec12_eticket_transform_center.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec12_eticket_transform_center.png)
+![lec12_eticket_transform_center.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec12_eticket_transform_center.png)
 
 ### First-level factoring
 
-![lec12_eticket_first_level.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec12_eticket_first_level.png)
+![lec12_eticket_first_level.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec12_eticket_first_level.png)
 
 ```text
 Book Ticket
@@ -1388,7 +1388,7 @@ Book Ticket
 
 ### Second-level factoring
 
-![lec12_eticket_second_level.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec12_eticket_second_level.png)
+![lec12_eticket_second_level.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec12_eticket_second_level.png)
 
 把 DFD 中的 individual transforms 放到 structured tree 的合适位置。
 
@@ -1396,7 +1396,7 @@ Book Ticket
 
 ## 10.7 Restructuring: reduce coupling and increase cohesion
 
-![lec12_move_credit_card_info.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec12_move_credit_card_info.png)
+![lec12_move_credit_card_info.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec12_move_credit_card_info.png)
 
 原来 `Input credit card info` 放在 Booking Information input 下，但真正使用它的是 `Verify card`。这样数据要跨模块传递，coupling 增加。
 
@@ -1413,7 +1413,7 @@ Verify card
 
 ## 10.8 Add Save Info
 
-![lec12_add_save_info.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec12_add_save_info.png)
+![lec12_add_save_info.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec12_add_save_info.png)
 
 DFD 里可能没有明显写保存数据，但真实系统需要保存 booking information，所以 detailed design 要加 `Save info`。
 
@@ -1425,7 +1425,7 @@ Structured tree 不是机械照抄 DFD，要考虑实现需要。
 
 ## 11.1 Testing 在 SDLC 里的位置
 
-![lec13_sdlc_testing.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec13_sdlc_testing.png)
+![lec13_sdlc_testing.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec13_sdlc_testing.png)
 
 Implementation 后通常有：
 
@@ -1462,7 +1462,7 @@ Unit testing -> Integration testing -> System testing -> Operation and maintenan
 
 ### Equivalence-Class Testing
 
-![lec13_equivalence_class.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec13_equivalence_class.png)
+![lec13_equivalence_class.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec13_equivalence_class.png)
 
 把 input domain 分成 disjoint sub-domains，每个子域选代表值。
 
@@ -1470,7 +1470,7 @@ Unit testing -> Integration testing -> System testing -> Operation and maintenan
 
 ### Boundary Value Testing
 
-![lec13_boundary_value.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec13_boundary_value.png)
+![lec13_boundary_value.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec13_boundary_value.png)
 
 重点测边界附近，因为 bug 常出现在 `<` / `<=` 这种地方。
 
@@ -1490,7 +1490,7 @@ n = input variables 数量。
 
 ### Control Flow Graph
 
-![lec13_control_flow_graph.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec13_control_flow_graph.png)
+![lec13_control_flow_graph.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec13_control_flow_graph.png)
 
 ### Statement Testing
 
@@ -1498,13 +1498,13 @@ n = input variables 数量。
 
 ### Branch Testing
 
-![lec13_branch_testing.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec13_branch_testing.png)
+![lec13_branch_testing.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec13_branch_testing.png)
 
 每个 decision 的每个 branch 至少执行一次。
 
 ### Path Testing
 
-![lec13_path_testing.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec13_path_testing.png)
+![lec13_path_testing.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec13_path_testing.png)
 
 每条 path 至少执行一次。最强，但路径数量可能爆炸。
 
@@ -1527,7 +1527,7 @@ Lecture 14 讲 **测试过程怎么执行、管理和自动化**。
 
 ## 12.2 Test Oracle
 
-![lec14_test_oracle.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec14_test_oracle.png)
+![lec14_test_oracle.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec14_test_oracle.png)
 
 **Test oracle** 用来确定某个 input 的 expected output。
 
@@ -1543,7 +1543,7 @@ Oracle 通常来自 software specification。
 
 ## 12.3 Test Process
 
-![lec14_test_process.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec14_test_process.png)
+![lec14_test_process.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec14_test_process.png)
 
 三步：
 
@@ -1572,7 +1572,7 @@ Plan test -> Test execution -> Report test results
 
 ## 12.4 Test Automation
 
-![lec14_test_automation.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec14_test_automation.png)
+![lec14_test_automation.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec14_test_automation.png)
 
 自动化测试完整流程：
 
@@ -1590,7 +1590,7 @@ Plan test -> Test execution -> Report test results
 
 ### From state transition diagram
 
-![lec14_state_diagram_test_cases.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec14_state_diagram_test_cases.png)
+![lec14_state_diagram_test_cases.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec14_state_diagram_test_cases.png)
 
 测试用例可以是一串 event sequence，例如：
 
@@ -1602,7 +1602,7 @@ C3 = [e0, e4, e5]
 
 ### From source code
 
-![lec14_whitebox_condition.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec14_whitebox_condition.png)
+![lec14_whitebox_condition.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec14_whitebox_condition.png)
 
 White-box test generation 要找满足 coverage condition 的输入。自动生成 test cases 是自动化测试中最难的部分。
 
@@ -1610,7 +1610,7 @@ White-box test generation 要找满足 coverage condition 的输入。自动生�
 
 ## 12.6 Test Case Management
 
-![lec14_test_case_management.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec14_test_case_management.png)
+![lec14_test_case_management.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec14_test_case_management.png)
 
 复杂系统有大量 test cases，需要保存、分类、检索，用于 regression testing。
 
@@ -1626,7 +1626,7 @@ White-box test generation 要找满足 coverage condition 的输入。自动生�
 
 ## 12.7 Test Driver and Record-Playback
 
-![lec14_test_driver.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec14_test_driver.png)
+![lec14_test_driver.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec14_test_driver.png)
 
 Test driver 负责：
 
@@ -1640,11 +1640,11 @@ Test driver 负责：
 
 ## 12.8 Generate Oracles and Compare Results
 
-![lec14_generate_oracles.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec14_generate_oracles.png)
+![lec14_generate_oracles.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec14_generate_oracles.png)
 
 Oracle 可以从 specification 生成，但只有 specification 是 defined notation 时才容易自动生成。
 
-![lec14_compare_results.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec14_compare_results.png)
+![lec14_compare_results.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec14_compare_results.png)
 
 没有 oracle 时，很难判断 output 是否正确，只能用辅助信息，不保证 100%。
 
@@ -1669,7 +1669,7 @@ Configuration Management 是用标准和流程管理一个不断变化的软件�
 
 ## 13.2 Planning
 
-![lec15_cm_planning.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec15_cm_planning.png)
+![lec15_cm_planning.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec15_cm_planning.png)
 
 Configuration management plan 要定义：
 
@@ -1683,7 +1683,7 @@ Configuration management plan 要定义：
 
 ## 13.3 Change Management
 
-![lec15_change_management_process.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec15_change_management_process.png)
+![lec15_change_management_process.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec15_change_management_process.png)
 
 变更流程：
 
@@ -1706,7 +1706,7 @@ Request change
 
 ## 13.4 Version Control
 
-![lec15_version_control.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec15_version_control.png)
+![lec15_version_control.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec15_version_control.png)
 
 Version control 用来识别和追踪系统版本。
 
@@ -1725,7 +1725,7 @@ Version control 用来识别和追踪系统版本。
 
 ## 13.5 Release Management
 
-![lec15_release_strategy.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec15_release_strategy.png)
+![lec15_release_strategy.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec15_release_strategy.png)
 
 发布新 release 的原因：
 
@@ -1742,7 +1742,7 @@ Release 不只是 executable，还可能包括 configuration files、data files�
 
 ## 13.6 System Building
 
-![lec15_system_building.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec15_system_building.png)
+![lec15_system_building.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec15_system_building.png)
 
 System building 是把正确版本的 source code、object code、libraries、configs 构建成 executable。
 
@@ -1760,7 +1760,7 @@ Linker 把多个已经编译好的 object files 和 library files 连接起来�
 main.o + user.o + database.o + libraries -> app.exe
 ```
 
-![lec15_executable_versions.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec15_executable_versions.png)
+![lec15_executable_versions.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec15_executable_versions.png)
 
 一个 executable 可能由不同 component 的不同 version 组成：
 
@@ -1772,7 +1772,7 @@ Executable = A 1.1 + B 2.20 + C 3.2
 
 ## 13.7 CASE Tools
 
-![lec15_git_tool.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec15_git_tool.png)
+![lec15_git_tool.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec15_git_tool.png)
 
 课件提到 PVCS、Dimensions Express、Perforce、CVS、Git。你最熟悉的是 Git/GitHub：
 
@@ -1799,7 +1799,7 @@ Software size -> Productivity -> Effort/person-month -> Cost model -> Staffing/c
 
 ## 14.2 Person-month
 
-![lec16_person_month.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec16_person_month.png)
+![lec16_person_month.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec16_person_month.png)
 
 **Person-month = 一个人工作一个月的工作量。**
 
@@ -1831,7 +1831,7 @@ Project B: 100 functions, 100 errors -> 1 error/function
 
 ## 14.4 Software Size Metrics
 
-![lec16_size_metrics.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec16_size_metrics.png)
+![lec16_size_metrics.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec16_size_metrics.png)
 
 软件规模可以用：
 
@@ -1868,7 +1868,7 @@ my_array[indx] = rand();
 
 ## 14.6 Function Points
 
-![lec16_function_points.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec16_function_points.png)
+![lec16_function_points.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec16_function_points.png)
 
 **Function Points 不等于 number of functions。**
 
@@ -1896,7 +1896,7 @@ LOC = AVC x FPC
 
 ## 14.7 Object Points
 
-![lec16_object_points.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec16_object_points.png)
+![lec16_object_points.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec16_object_points.png)
 
 **Object Points 不等于 object classes 的数量。**
 
@@ -1948,7 +1948,7 @@ Lines of source code / PM
 
 ## 14.10 Algorithmic Cost Model
 
-![lec16_algorithmic_model.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec16_algorithmic_model.png)
+![lec16_algorithmic_model.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec16_algorithmic_model.png)
 
 核心公式：
 
@@ -1983,7 +1983,7 @@ Effort = A x Size^B x M
 
 ## 14.12 Application Composition Model
 
-![lec16_application_composition_formula.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec16_application_composition_formula.png)
+![lec16_application_composition_formula.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec16_application_composition_formula.png)
 
 公式：
 
@@ -2016,7 +2016,7 @@ PM = 2.94 x Size^B x M
 
 B 的计算：
 
-![lec16_exponent_B.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec16_exponent_B.png)
+![lec16_exponent_B.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec16_exponent_B.png)
 
 ```text
 B = 1.01 + 0.01 x sum(Wi)
@@ -2040,7 +2040,7 @@ Reuse Model 估算把旧代码 / reusable components 集成到新项目的工作
 
 ### 情况 1：代码不用改，只需要集成
 
-![lec16_reuse_model1.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec16_reuse_model1.png)
+![lec16_reuse_model1.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec16_reuse_model1.png)
 
 公式：
 
@@ -2054,7 +2054,7 @@ PM = (ASLOC x %AT/100) / ATPROD
 
 ### 情况 2：代码需要理解和集成
 
-![lec16_reuse_model2.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec16_reuse_model2.png)
+![lec16_reuse_model2.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec16_reuse_model2.png)
 
 先算等效新代码量：
 
@@ -2071,7 +2071,7 @@ Reuse Model 的重点：复用不是免费，旧代码也要理解、适配、�
 
 ## 14.15 Post-Architecture Model
 
-![lec16_post_architecture_size.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec16_post_architecture_size.png)
+![lec16_post_architecture_size.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec16_post_architecture_size.png)
 
 适用：系统 architecture 已经设计完成，信息更完整。
 
@@ -2091,7 +2091,7 @@ Size = NSLOC + ESLOC + MSLOC
 - **ESLOC**：equivalent source lines of code，复用代码换算出的等效新代码。
 - **MSLOC**：modified source lines of code，因需求变化要修改的代码。
 
-![lec16_post_arch_example.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec16_post_arch_example.png)
+![lec16_post_arch_example.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec16_post_arch_example.png)
 
 例子：
 
@@ -2127,7 +2127,7 @@ Post-Architecture Model -> total PM
 
 ## 14.17 Staffing and Calendar Time
 
-![lec16_tdev_staffing.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Resources/Software%20Engineering/Images/lec16_tdev_staffing.png)
+![lec16_tdev_staffing.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec16_tdev_staffing.png)
 
 公式：
 
