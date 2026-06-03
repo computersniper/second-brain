@@ -68,10 +68,10 @@ Review rule:
 
 ## Image Embed Rules
 
-Use note-relative Markdown image paths after importing large imported course notes:
+Use note-local asset paths after importing large course notes with many images:
 
 ```md
-![lec02_waterfall_model.png](<../../../../../Resources/Software%20Engineering/Images/lec02_waterfall_model.png>)
+![lec02_waterfall_model.png](<assets/lec02_waterfall_model.png>)
 ```
 
 Avoid Markdown image paths when Obsidian reports "file not found":
@@ -81,9 +81,9 @@ Avoid Markdown image paths when Obsidian reports "file not found":
 ![Waterfall Model](se_revision_assets/lec02_waterfall_model.png)
 ```
 
-Reason: Obsidian may resolve filename-only attachment embeds differently depending on attachment settings and cache, so a nested imported note can show "file not found" even when the image exists inside the vault. Copy course images into `Resources/.../Images` and use a Markdown image path relative to the current note folder.
+Reason: Obsidian may resolve filename-only attachment embeds or deep cross-folder paths differently depending on attachment settings and cache. For imported notes with many images, copy the images into an `assets/` folder beside the note and use a simple relative Markdown path.
 
-If Obsidian reports "file not found" for `![[file.png]]`, rewrite the image as an explicit relative Markdown path such as `![file.png](<../../../../../Resources/.../Images/file.png>)`.
+If Obsidian reports "file not found" for `![[file.png]]` or `../../../../../Resources/...`, rewrite the image as `![file.png](<assets/file.png>)`.
 
 Maintenance rule:
 
