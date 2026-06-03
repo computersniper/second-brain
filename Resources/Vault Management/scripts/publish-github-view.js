@@ -7,7 +7,7 @@ const VIEW_DIR = path.resolve(
   process.argv[3] || path.dirname(ROOT),
   process.argv[3] ? "" : `${path.basename(ROOT)}-github-view`
 );
-const BRANCH = "github-view";
+const VIEW_BRANCHES = ["github-view", "main"];
 const REMOTE_URL = "https://github.com/computersniper/second-brain.git";
 
 function run(command, args, cwd, allowFailure = false) {
@@ -59,7 +59,7 @@ function ensureGitRepo() {
     run("git", ["remote", "set-url", "origin", REMOTE_URL], VIEW_DIR);
   }
 
-  run("git", ["checkout", "-B", BRANCH], VIEW_DIR);
+  run("git", ["checkout", "-B", "github-view"], VIEW_DIR);
 
   if (!runText("git", ["config", "user.name"], VIEW_DIR)) {
     run("git", ["config", "user.name", "Codex"], VIEW_DIR);
@@ -83,8 +83,10 @@ function main() {
     console.log("[second-brain] GitHub view is already current.");
   }
 
-  runWithRetry("git", ["push", "-f", "origin", BRANCH], VIEW_DIR, 3);
-  console.log(`[second-brain] Published GitHub view branch from ${VIEW_DIR}`);
+  for (const branch of VIEW_BRANCHES) {
+    runWithRetry("git", ["push", "-f", "origin", `HEAD:${branch}`], VIEW_DIR, 3);
+  }
+  console.log(`[second-brain] Published GitHub view branches from ${VIEW_DIR}: ${VIEW_BRANCHES.join(", ")}`);
 }
 
 main();

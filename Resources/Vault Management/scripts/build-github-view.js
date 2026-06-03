@@ -7,6 +7,9 @@ const DEFAULT_OUTPUT_DIR = path.resolve(
   `${path.basename(ROOT)}-github-view`
 );
 const OUTPUT_DIR = path.resolve(process.argv[3] || DEFAULT_OUTPUT_DIR);
+const RAW_IMAGE_BASE =
+  process.env.GITHUB_VIEW_RAW_IMAGE_BASE ||
+  "https://raw.githubusercontent.com/computersniper/second-brain/main";
 
 const SKIP_DIRS = new Set([
   ".git",
@@ -104,6 +107,11 @@ function relativeLink(fromOutputFile, targetOutputFile, anchor = "") {
   return anchor ? `${encoded}#${anchor}` : encoded;
 }
 
+function rawImageUrl(sourceImageFile) {
+  const relative = path.relative(ROOT, sourceImageFile);
+  return `${RAW_IMAGE_BASE}/${encodePathForMarkdown(relative)}`;
+}
+
 function buildIndexes(markdownFiles, allFiles) {
   const noteIndex = new Map();
   const imageIndex = new Map();
@@ -173,11 +181,8 @@ function convertEmbeds(text, currentFile, outputFile, indexes, warnings) {
       return match;
     }
 
-    const imageOutputFile = outputPathForSource(imageFile);
-    let rel = path.relative(path.dirname(outputFile), imageOutputFile);
-    if (!rel.startsWith(".")) rel = `./${rel}`;
     const alt = path.basename(displayName).replace(/[\[\]]/g, "");
-    return `![${alt}](${encodePathForMarkdown(rel)})`;
+    return `![${alt}](${rawImageUrl(imageFile)})`;
   });
 }
 
@@ -191,10 +196,7 @@ function convertWikiLinks(text, currentFile, outputFile, indexes, warnings) {
         warnings.push(`Missing image link: ${parsed.noteName} in ${path.relative(ROOT, currentFile)}`);
         return parsed.alias || parsed.noteName;
       }
-      const imageOutputFile = outputPathForSource(imageFile);
-      let rel = path.relative(path.dirname(outputFile), imageOutputFile);
-      if (!rel.startsWith(".")) rel = `./${rel}`;
-      return `[${parsed.alias || path.basename(parsed.noteName)}](${encodePathForMarkdown(rel)})`;
+      return `[${parsed.alias || path.basename(parsed.noteName)}](${rawImageUrl(imageFile)})`;
     }
 
     const targetFile = resolveNote(parsed.noteName, currentFile, indexes.noteIndex);

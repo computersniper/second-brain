@@ -100,7 +100,7 @@ Keep the GitHub-rendered version outside the Obsidian vault.
 - Do not create a `GitHub View` folder inside the vault, because Obsidian will scan it and duplicate notes in the relationship graph.
 - Run `node "Resources/Vault Management/scripts/publish-github-view.js" "D:\study\second-brain"` before publishing a GitHub display version.
 - The script converts Obsidian embeds such as `![[image.png]]` into GitHub Markdown images and converts `[[note#heading|alias]]` links into normal Markdown links.
-- On GitHub, use the `github-view` branch for rendered notes. The `main` branch keeps the Obsidian source version.
+- On GitHub, use `main` for rendered notes. The Obsidian source vault is preserved on the `obsidian-vault` branch, and `github-view` is kept as a generated mirror branch.
 
 ## Capture Workflow
 
