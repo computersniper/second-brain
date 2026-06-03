@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Second Brain Graph</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #1f1f1f;
+      --text: #e8e8e8;
+      --muted: #a8a8a8;
+      --edge: rgba(180, 180, 180, 0.22);
+      --edge-active: rgba(232, 232, 232, 0.58);
+      --panel: rgba(32, 32, 32, 0.72);
+      --border: rgba(255, 255, 255, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    #graph {
+      width: 100vw;
+      height: 100vh;
+      display: block;
+      cursor: grab;
+      background:
+        radial-gradient(circle at 45% 42%, rgba(255, 255, 255, 0.025), transparent 34%),
+        #1f1f1f;
+    }
+
+    #graph.dragging {
+      cursor: grabbing;
+    }
+
+    .toolbar,
+    .legend,
+    .inspector {
+      position: fixed;
+      z-index: 5;
+      border: 1px solid var(--border);
+      background: var(--panel);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 18px 60px rgba(0, 0, 0, 0.24);
+    }
+
+    .toolbar {
+      top: 18px;
+      left: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 14px;
+    }
+
+    .toolbar strong {
+      padding: 0 8px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #f1f1f1;
+      white-space: nowrap;
+    }
+
+    input,
+    select,
+    button {
+      height: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.22);
+      color: var(--text);
+      font: inherit;
+      font-size: 12px;
+      outline: none;
+    }
+
+    input {
+      width: 220px;
+      padding: 0 12px;
+    }
+
+    select {
+      max-width: 220px;
+      padding: 0 10px;
+    }
+
+    button {
+      cursor: pointer;
+      padding: 0 12px;
+    }
+
+    button:hover,
+    input:focus,
+    select:focus {
+      border-color: rgba(255, 255, 255, 0.32);
+    }
+
+    label.toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      height: 32px;
+      padding: 0 10px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 12px;
+      user-select: none;
+    }
+
+    label.toggle input {
+      width: auto;
+      height: auto;
+      margin: 0;
+    }
+
+    .legend {
+      left: 18px;
+      bottom: 18px;
+      max-width: min(460px, calc(100vw - 36px));
+      padding: 12px 14px;
+      border-radius: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      display: inline-block;
+    }
+
+    .inspector {
+      right: 18px;
+      bottom: 18px;
+      width: min(340px, calc(100vw - 36px));
+      padding: 14px 16px;
+      border-radius: 14px;
+      opacity: 0;
+      transform: translateY(8px);
+      pointer-events: none;
+      transition: opacity 140ms ease, transform 140ms ease;
+    }
+
+    .inspector.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .inspector .tag {
+      color: var(--muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .inspector h2 {
+      margin: 6px 0 8px;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .inspector p {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .inspector a {
+      color: #e8e8e8;
+      font-size: 12px;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.34);
+    }
+
+    .edge {
+      stroke: var(--edge);
+      stroke-width: 1;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .edge.active {
+      stroke: var(--edge-active);
+      stroke-width: 1.6;
+    }
+
+    .node circle {
+      stroke: rgba(255, 255, 255, 0.24);
+      stroke-width: 1.2;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .node.selected circle {
+      stroke: rgba(255, 255, 255, 0.78);
+      stroke-width: 2;
+    }
+
+    .node.dim,
+    .edge.dim {
+      opacity: 0.13;
+    }
+
+    .node text {
+      fill: var(--text);
+      font-size: 13px;
+      paint-order: stroke;
+      stroke: rgba(31, 31, 31, 0.96);
+      stroke-width: 7px;
+      stroke-linejoin: round;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .node.small-label text {
+      font-size: 11px;
+      fill: rgba(232, 232, 232, 0.82);
+    }
+
+    .node.hide-label text {
+      display: none;
+    }
+
+    .node text tspan {
+      paint-order: stroke;
+    }
+
+    @media (max-width: 760px) {
+      .toolbar {
+        right: 18px;
+        flex-wrap: wrap;
+      }
+
+      input,
+      select {
+        width: min(100%, 180px);
+      }
+
+      .legend {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <strong>Second Brain Graph</strong>
+    <input id="search" type="search" placeholder="Search notes...">
+    <select id="tagFilter" aria-label="Filter by tag">
+      <option value="all">All tags</option>
+    </select>
+    <label class="toggle"><input id="labelsToggle" type="checkbox" checked> Labels</label>
+    <button id="reset">Reset view</button>
+  </div>
+
+  <div class="legend" id="legend"></div>
+
+  <div class="inspector" id="inspector">
+    <div class="tag" id="inspectorTag">note</div>
+    <h2 id="inspectorTitle">Select a note</h2>
+    <p id="inspectorMeta">Drag nodes, pan the canvas, zoom with the mouse wheel, double-click a node to open it.</p>
+    <a id="inspectorLink" href="#">Open note</a>
+  </div>
+
+  <svg id="graph" role="img" aria-label="Interactive Obsidian-style graph">
+    <g id="viewport">
+      <g id="edges"></g>
+      <g id="nodes"></g>
+    </g>
+  </svg>
+
+  <script src="Interactive%20Vault%20Graph%20Data.js"></script>
+  <script>
+    const graphData = window.VAULT_GRAPH_DATA || { nodes: [], edges: [], tags: [] };
+    const nodes = graphData.nodes.map(node => ({ ...node, vx: 0, vy: 0 }));
+    const edges = graphData.edges.map(edge => ({ ...edge }));
+    const nodeById = new Map(nodes.map(node => [node.id, node]));
+    edges.forEach(edge => {
+      edge.sourceNode = nodeById.get(edge.source);
+      edge.targetNode = nodeById.get(edge.target);
+    });
+
+    const svg = document.getElementById("graph");
+    const viewport = document.getElementById("viewport");
+    const edgeLayer = document.getElementById("edges");
+    const nodeLayer = document.getElementById("nodes");
+    const search = document.getElementById("search");
+    const tagFilter = document.getElementById("tagFilter");
+    const labelsToggle = document.getElementById("labelsToggle");
+    const resetButton = document.getElementById("reset");
+    const legend = document.getElementById("legend");
+    const inspector = document.getElementById("inspector");
+    const inspectorTag = document.getElementById("inspectorTag");
+    const inspectorTitle = document.getElementById("inspectorTitle");
+    const inspectorMeta = document.getElementById("inspectorMeta");
+    const inspectorLink = document.getElementById("inspectorLink");
+
+    const state = {
+      width: 0,
+      height: 0,
+      scale: 1,
+      tx: 0,
+      ty: 0,
+      draggingNode: null,
+      panning: false,
+      pointer: null,
+      selected: null,
+      query: "",
+      tag: "all",
+      showLabels: true
+    };
+
+    function colorFor(node) {
+      return graphData.tagColors?.[node.primaryTag] || "#bdbdbd";
+    }
+
+    function radiusFor(node) {
+      return Math.max(5, Math.min(16, 5 + Math.sqrt(node.degree || 1) * 2.15));
+    }
+
+    function initializePositions() {
+      const groups = [...new Set(nodes.map(node => node.primaryTag || "untagged"))];
+      const groupIndex = new Map(groups.map((tag, index) => [tag, index]));
+      const centerX = state.width / 2;
+      const centerY = state.height / 2;
+      const ring = Math.min(state.width, state.height) * 0.28;
+
+      nodes.forEach((node, index) => {
+        const gi = groupIndex.get(node.primaryTag || "untagged") || 0;
+        const groupAngle = (Math.PI * 2 * gi) / Math.max(groups.length, 1);
+        const localAngle = index * 2.399963229728653;
+        const jitter = 42 + (index % 7) * 8;
+        node.x = centerX + Math.cos(groupAngle) * ring + Math.cos(localAngle) * jitter;
+        node.y = centerY + Math.sin(groupAngle) * ring + Math.sin(localAngle) * jitter;
+      });
+    }
+
+    function buildControls() {
+      graphData.tags.forEach(tag => {
+        const option = document.createElement("option");
+        option.value = tag;
+        option.textContent = tag;
+        tagFilter.appendChild(option);
+      });
+
+      const priorityTags = graphData.tags.slice(0, 12);
+      priorityTags.forEach(tag => {
+        const item = document.createElement("span");
+        item.className = "legend-item";
+        item.innerHTML = `<span class="dot" style="background:${graphData.tagColors[tag] || "#bdbdbd"}"></span>${tag}`;
+        legend.appendChild(item);
+      });
+    }
+
+    function render() {
+      edgeLayer.innerHTML = "";
+      nodeLayer.innerHTML = "";
+
+      edges.forEach(edge => {
+        if (!edge.sourceNode || !edge.targetNode) return;
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.classList.add("edge");
+        edge.el = line;
+        edgeLayer.appendChild(line);
+      });
+
+      nodes.forEach(node => {
+        const group = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        group.classList.add("node");
+        if ((node.degree || 0) < 2) group.classList.add("small-label");
+        group.dataset.id = node.id;
+
+        const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        circle.setAttribute("r", radiusFor(node));
+        circle.setAttribute("fill", colorFor(node));
+
+        const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        text.setAttribute("x", radiusFor(node) + 9);
+        text.setAttribute("y", 0);
+        addWrappedText(text, node.title, node.degree || 0);
+
+        group.appendChild(circle);
+        group.appendChild(text);
+        group.addEventListener("pointerdown", event => startNodeDrag(event, node));
+        group.addEventListener("click", event => {
+          event.stopPropagation();
+          selectNode(node);
+        });
+        group.addEventListener("dblclick", event => {
+          event.stopPropagation();
+          window.location.href = node.href;
+        });
+
+        node.el = group;
+        nodeLayer.appendChild(group);
+      });
+    }
+
+    function addWrappedText(text, title, degree) {
+      const maxChars = degree > 8 ? 30 : 24;
+      const words = title.split(/\s+/);
+      const lines = [];
+      let current = "";
+
+      for (const word of words) {
+        const next = current ? `${current} ${word}` : word;
+        if (next.length > maxChars && current) {
+          lines.push(current);
+          current = word;
+        } else {
+          current = next;
+        }
+      }
+      if (current) lines.push(current);
+
+      const finalLines = lines.length > 2 ? [lines[0], `${lines.slice(1).join(" ").slice(0, maxChars - 1)}…`] : lines;
+      const start = finalLines.length === 1 ? 5 : -2;
+      finalLines.forEach((line, index) => {
+        const tspan = document.createElementNS("http://www.w3.org/2000/svg", "tspan");
+        tspan.setAttribute("x", text.getAttribute("x"));
+        tspan.setAttribute("dy", index === 0 ? start : 15);
+        tspan.textContent = line;
+        text.appendChild(tspan);
+      });
+    }
+
+    function resize() {
+      const rect = svg.getBoundingClientRect();
+      state.width = rect.width;
+      state.height = rect.height;
+      svg.setAttribute("viewBox", `0 0 ${state.width} ${state.height}`);
+      if (!nodes.some(node => Number.isFinite(node.x))) initializePositions();
+      updateTransform();
+    }
+
+    function updateTransform() {
+      viewport.setAttribute("transform", `translate(${state.tx},${state.ty}) scale(${state.scale})`);
+    }
+
+    function screenToWorld(event) {
+      const rect = svg.getBoundingClientRect();
+      return {
+        x: (event.clientX - rect.left - state.tx) / state.scale,
+        y: (event.clientY - rect.top - state.ty) / state.scale
+      };
+    }
+
+    function startNodeDrag(event, node) {
+      event.stopPropagation();
+      state.draggingNode = node;
+      state.pointer = screenToWorld(event);
+      node.fixed = true;
+      svg.classList.add("dragging");
+      svg.setPointerCapture(event.pointerId);
+    }
+
+    svg.addEventListener("pointerdown", event => {
+      state.panning = true;
+      state.pointer = { x: event.clientX, y: event.clientY };
+      svg.classList.add("dragging");
+      inspector.classList.remove("visible");
+    });
+
+    svg.addEventListener("pointermove", event => {
+      if (state.draggingNode) {
+        const point = screenToWorld(event);
+        state.draggingNode.x += point.x - state.pointer.x;
+        state.draggingNode.y += point.y - state.pointer.y;
+        state.draggingNode.vx = 0;
+        state.draggingNode.vy = 0;
+        state.pointer = point;
+        tick();
+        return;
+      }
+
+      if (state.panning) {
+        state.tx += event.clientX - state.pointer.x;
+        state.ty += event.clientY - state.pointer.y;
+        state.pointer = { x: event.clientX, y: event.clientY };
+        updateTransform();
+      }
+    });
+
+    svg.addEventListener("pointerup", event => {
+      if (state.draggingNode) {
+        state.draggingNode.fixed = false;
+        state.draggingNode = null;
+      }
+      state.panning = false;
+      svg.classList.remove("dragging");
+      if (svg.hasPointerCapture(event.pointerId)) svg.releasePointerCapture(event.pointerId);
+    });
+
+    svg.addEventListener("wheel", event => {
+      event.preventDefault();
+      const before = screenToWorld(event);
+      const factor = event.deltaY > 0 ? 0.9 : 1.1;
+      state.scale = Math.max(0.35, Math.min(2.6, state.scale * factor));
+      state.tx = event.clientX - svg.getBoundingClientRect().left - before.x * state.scale;
+      state.ty = event.clientY - svg.getBoundingClientRect().top - before.y * state.scale;
+      updateTransform();
+      updateVisibility();
+    }, { passive: false });
+
+    function selectNode(node) {
+      state.selected = node;
+      inspectorTag.textContent = `${node.primaryTag || "untagged"} / ${node.path}`;
+      inspectorTitle.textContent = node.title;
+      inspectorMeta.textContent = `${node.degree || 0} links · ${node.tags.join(", ") || "no tags"}`;
+      inspectorLink.href = node.href;
+      inspector.classList.add("visible");
+      updateVisibility();
+    }
+
+    function matchesFilter(node) {
+      const query = state.query.trim().toLowerCase();
+      const byQuery = !query || node.title.toLowerCase().includes(query) || node.path.toLowerCase().includes(query) || node.tags.some(tag => tag.toLowerCase().includes(query));
+      const byTag = state.tag === "all" || node.tags.includes(state.tag) || node.primaryTag === state.tag;
+      return byQuery && byTag;
+    }
+
+    function updateVisibility() {
+      const selected = state.selected;
+      const related = new Set();
+      if (selected) {
+        related.add(selected.id);
+        edges.forEach(edge => {
+          if (edge.source === selected.id) related.add(edge.target);
+          if (edge.target === selected.id) related.add(edge.source);
+        });
+      }
+
+      nodes.forEach(node => {
+        const visible = matchesFilter(node);
+        const selectedContext = !selected || related.has(node.id);
+        const hideLabel = !state.showLabels || (state.scale < 0.72 && (node.degree || 0) < 8) || (!selectedContext && (node.degree || 0) < 4);
+        node.el.classList.toggle("dim", !visible || !selectedContext);
+        node.el.classList.toggle("selected", selected?.id === node.id);
+        node.el.classList.toggle("hide-label", hideLabel);
+      });
+
+      edges.forEach(edge => {
+        const visible = matchesFilter(edge.sourceNode) && matchesFilter(edge.targetNode);
+        const active = selected && (edge.source === selected.id || edge.target === selected.id);
+        edge.el.classList.toggle("active", active);
+        edge.el.classList.toggle("dim", !visible || (selected && !active));
+      });
+    }
+
+    function simulate() {
+      const alpha = state.draggingNode ? 0.2 : 0.085;
+      const cx = state.width / 2;
+      const cy = state.height / 2;
+
+      nodes.forEach(node => {
+        if (node.fixed) return;
+        node.vx += (cx - node.x) * 0.00075;
+        node.vy += (cy - node.y) * 0.00075;
+      });
+
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const a = nodes[i];
+          const b = nodes[j];
+          let dx = a.x - b.x;
+          let dy = a.y - b.y;
+          let dist = Math.sqrt(dx * dx + dy * dy) || 1;
+          const labelBoost = ((a.degree || 0) > 4 || (b.degree || 0) > 4) ? 18 : 0;
+          const minDist = radiusFor(a) + radiusFor(b) + 66 + labelBoost;
+          const force = Math.min(5200 / (dist * dist), 3.2);
+          dx /= dist;
+          dy /= dist;
+          a.vx += dx * force * alpha;
+          a.vy += dy * force * alpha;
+          b.vx -= dx * force * alpha;
+          b.vy -= dy * force * alpha;
+          if (dist < minDist) {
+            const push = (minDist - dist) * 0.006;
+            a.vx += dx * push;
+            a.vy += dy * push;
+            b.vx -= dx * push;
+            b.vy -= dy * push;
+          }
+        }
+      }
+
+      edges.forEach(edge => {
+        const a = edge.sourceNode;
+        const b = edge.targetNode;
+        if (!a || !b) return;
+        const dx = b.x - a.x;
+        const dy = b.y - a.y;
+        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        const target = 160;
+        const force = (dist - target) * 0.0052;
+        const fx = (dx / dist) * force;
+        const fy = (dy / dist) * force;
+        if (!a.fixed) {
+          a.vx += fx;
+          a.vy += fy;
+        }
+        if (!b.fixed) {
+          b.vx -= fx;
+          b.vy -= fy;
+        }
+      });
+
+      nodes.forEach(node => {
+        if (node.fixed) return;
+        node.vx *= 0.91;
+        node.vy *= 0.91;
+        node.x += node.vx;
+        node.y += node.vy;
+      });
+    }
+
+    function tick() {
+      edges.forEach(edge => {
+        if (!edge.sourceNode || !edge.targetNode) return;
+        edge.el.setAttribute("x1", edge.sourceNode.x);
+        edge.el.setAttribute("y1", edge.sourceNode.y);
+        edge.el.setAttribute("x2", edge.targetNode.x);
+        edge.el.setAttribute("y2", edge.targetNode.y);
+      });
+
+      nodes.forEach(node => {
+        node.el.setAttribute("transform", `translate(${node.x},${node.y})`);
+      });
+    }
+
+    function resetView() {
+      state.scale = 1;
+      state.tx = 0;
+      state.ty = 0;
+      initializePositions();
+      updateTransform();
+      tick();
+    }
+
+    search.addEventListener("input", () => {
+      state.query = search.value;
+      updateVisibility();
+    });
+
+    tagFilter.addEventListener("change", () => {
+      state.tag = tagFilter.value;
+      updateVisibility();
+    });
+
+    labelsToggle.addEventListener("change", () => {
+      state.showLabels = labelsToggle.checked;
+      updateVisibility();
+    });
+
+    resetButton.addEventListener("click", resetView);
+
+    window.addEventListener("resize", resize);
+    resize();
+    buildControls();
+    render();
+    updateVisibility();
+
+    setInterval(() => {
+      simulate();
+      tick();
+    }, 16);
+  </script>
+</body>
+</html>
