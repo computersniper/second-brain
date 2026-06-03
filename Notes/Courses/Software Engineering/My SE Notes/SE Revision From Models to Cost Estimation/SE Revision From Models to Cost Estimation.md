@@ -121,6 +121,7 @@ mindmap
   - [[SE Revision From Models to Cost Estimation#9. Object-Oriented Detailed Design|Detailed Design]]
   - [[SE Revision From Models to Cost Estimation#9.2 Signature and Visibility|Signature / Visibility]]
   - [[SE Revision From Models to Cost Estimation#9.3 Pre-condition and Post-condition|Pre and Post Conditions]]
+  - [[SE Revision From Models to Cost Estimation#9.4 OOD Restructuring 重新组织 class diagram|OOD Restructuring]]
 - **Structured Design**
   - [[SE Revision From Models to Cost Estimation#10. Lecture 12 - Structured Design and Isolating Transform Center|Structured Design]]
   - [[SE Revision From Models to Cost Estimation#10.1 Structured Design 整体路线|DFD to Structure Tree]]
@@ -160,7 +161,7 @@ mindmap
 6. Component Control
 7. OO method vs Structured Analysis method
 8. Design Patterns and Observer Pattern
-9. Object-Oriented Detailed Design: signature / visibility / pre-post conditions
+9. Object-Oriented Detailed Design: signature / visibility / pre-post conditions / OOD restructuring
 10. Lecture 12 - Structured Design, especially Isolating Transform Center
 11. Lecture 13 - Software Testing 1
 12. Lecture 14 - Software Testing 2
@@ -1258,6 +1259,127 @@ dept and arr are not null.
 
 如果只返回 boolean，`false` 不知道是城市名错还是没有航班。  
 用 `{WRONG_CITY_NAME, NO_FLIGHT, OK}` 更精确。
+
+---
+
+## 9.4 OOD Restructuring 重新组织 class diagram
+
+![lec11_restructuring_overview.png](<assets/lec11_restructuring_overview.png>)
+
+Lecture 11 的 **Restructuring** 是 Object-Oriented Detailed Design 里的 restructuring。  
+目标不是画 structure tree，而是把 **class diagram / object design model** 调整得更适合 implementation。
+
+和 Lecture 12 的 restructuring 区别：
+
+| Topic | Lecture 11 OOD restructuring | Lecture 12 Structured Design restructuring |
+|---|---|---|
+| Input | class diagram / object design model | DFD -> structure tree |
+| Main concern | association, inheritance, multiplicity, association class | reduce coupling, increase cohesion in module tree |
+| Typical output | cleaner class diagram | better structured chart / module decomposition |
+
+Lecture 11 常见 restructuring 方法：
+
+1. Change n-ary associations to binary associations.
+2. Increase the inheritance.
+3. Collapse classes with no significant behavior into attributes.
+4. Use qualifier to change one-to-many / many-to-many relationship.
+5. Implement an association class as a class.
+
+### Change N-ary Association to Binary Association
+
+![lec11_nary_to_binary_association.png](<assets/lec11_nary_to_binary_association.png>)
+
+**Meaning:** n-ary association 是三个或更多 classes 同时参与的 association。实现时通常不直接保留 n-ary，而是改成一个中间 class，再用 binary associations 连接。
+
+步骤：
+
+1. 找出同时连接多个 classes 的 n-ary association。
+2. 把这个 association 提升为一个 normal class，例如把 Passenger / ETicket / Receipt 之间的三元关系整理成 `ETicketReceipt` 或类似中间 class。
+3. 让原来的每个 participating class 分别和这个新 class 建立 binary association。
+4. 把原来 association 上的 multiplicity 分配到新的 binary associations 上。
+5. 如果 association 自己有 attributes / operations，把它们放到新 class 里。
+
+考试判断：
+
+- 看到三方关系时，不要硬画一个三角关系用于 implementation。
+- 先问：这个关系本身是否需要被记录、创建、查询或携带属性？
+- 如果需要，就把关系对象化，变成一个 class。
+
+### Increase Inheritance
+
+![lec11_increase_inheritance.png](<assets/lec11_increase_inheritance.png>)
+
+**Meaning:** 如果多个 classes 有重复 attributes / operations，可以抽出 parent class，用 inheritance 减少重复。
+
+步骤：
+
+1. 找出多个 classes 的共同 features，例如 `Teacher` 和 `Student` 都有 `Name`、`ID`。
+2. 建立 general superclass，例如 `SchoolMember`。
+3. 把共同 attributes / operations 上移到 superclass。
+4. 子类只保留自己的特殊 attributes / operations。
+5. 检查原 association 是否应该连接 superclass 或 subclass。
+
+考试判断：
+
+- inheritance 解决的是 **is-a / specialization** 和重复 feature 问题。
+- 不要把普通 has-a 关系画成 inheritance。
+
+### Collapse Classes into Attributes
+
+![lec11_collapse_class_to_attribute.png](<assets/lec11_collapse_class_to_attribute.png>)
+
+**Meaning:** 如果一个 class 没有明显 behavior，只是一个简单值对象，可以降级为另一个 class 的 attribute。
+
+步骤：
+
+1. 检查这个 class 是否有独立 identity。
+2. 检查它是否有 meaningful operations / behavior。
+3. 如果它只保存一个简单 value，例如 `SocialInsurance.Number`，就把它变成 owner class 的 attribute。
+4. 删除原 class 和 association。
+5. 在 owner class 中加入对应 attribute，例如 `Teacher.number: String`。
+
+考试判断：
+
+- 有 behavior / lifecycle / identity 的对象保留为 class。
+- 只有简单数据值的对象可以 collapse into attribute。
+
+### Use Qualifier to Reduce Multiplicity
+
+![lec11_qualifier_reduce_multiplicity.png](<assets/lec11_qualifier_reduce_multiplicity.png>)
+
+**Meaning:** qualifier 是 association 端的小索引，用一个 key 把 `1..*` 或 `*..*` 查找关系变成更精确的 `1`。
+
+步骤：
+
+1. 找出 one-to-many 或 many-to-many association。
+2. 判断是否存在唯一查找 key，例如 `course name`。
+3. 把 key 放在 association 端作为 qualifier。
+4. 调整 multiplicity：通过 key 查找后，目标通常从 `*` 变成 `1` 或 `0..1`。
+5. 检查 key 是否真的唯一。
+
+考试判断：
+
+- qualifier 本质是 **lookup key / index**。
+- 它不是普通 attribute，而是用来降低 association multiplicity 的。
+
+### Implement an Association Class as a Class
+
+![lec11_association_class_as_class.png](<assets/lec11_association_class_as_class.png>)
+
+**Meaning:** association class 在 analysis/design 里表示“关系本身有属性或操作”。到 implementation 时，可以把它实现成一个 normal class。
+
+步骤：
+
+1. 找出 association class，例如 `Assign`。
+2. 创建一个 normal class `Assign`。
+3. 把 association class 的 attributes / operations 放入这个 class，例如 `date: Date`。
+4. 用 binary associations 连接原来的 participating classes 和这个新 class。
+5. 根据原 multiplicity 调整新 associations。
+
+考试判断：
+
+- 如果关系本身需要记录数据，比如 assigning date、borrow time、librarian，就不要只画一条线。
+- 关系有属性时，通常需要 association class；实现时再变成普通 class。
 
 ---
 
