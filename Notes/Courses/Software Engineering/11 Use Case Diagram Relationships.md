@@ -11,7 +11,7 @@ tags:
 
 Source: user-provided slide image "Relationships in Use Case Diagrams".
 
-![use-case-diagram-relationships.png](../../../Resources/Software%20Engineering/Images/use-case-diagram-relationships.png)
+![use-case-diagram-relationships.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Software%20Engineering/Images/use-case-diagram-relationships.png)
 
 ## What This Slide Is About
 

@@ -48,7 +48,7 @@ QFT = Quantum Mechanics + Classical Field Theory + Special Relativity
 
 ### 4-Tier Concentric Sphere Model
 
-![ch1-concentric-sphere-model.png](../../../Resources/Quantum%20Finance/Images/ch1-concentric-sphere-model.png)
+![ch1-concentric-sphere-model.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Quantum%20Finance/Images/ch1-concentric-sphere-model.png)
 
 ```text
 Energy Field Layer -> Neural Layer -> FinTech Layer -> Application Layer
@@ -85,7 +85,7 @@ Relativity: E = m*c^2
 
 ### Classical Field vs Quantum Field
 
-![ch2-classical-vs-quantum-field.png](../../../Resources/Quantum%20Finance/Images/ch2-classical-vs-quantum-field.png)
+![ch2-classical-vs-quantum-field.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Quantum%20Finance/Images/ch2-classical-vs-quantum-field.png)
 
 Field:
 
@@ -107,7 +107,7 @@ A classical field gives an exact value at each point, while a quantum field give
 
 ### Path Integral
 
-![ch2-path-integral-infinite-slit.png](../../../Resources/Quantum%20Finance/Images/ch2-path-integral-infinite-slit.png)
+![ch2-path-integral-infinite-slit.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Quantum%20Finance/Images/ch2-path-integral-infinite-slit.png)
 
 Core idea:
 
@@ -144,9 +144,9 @@ They visualize complex QFT / path-integral formulations in a concise form.
 
 ### Quantum Oscillators
 
-![ch2-quantum-harmonic-oscillator.png](../../../Resources/Quantum%20Finance/Images/ch2-quantum-harmonic-oscillator.png)
+![ch2-quantum-harmonic-oscillator.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Quantum%20Finance/Images/ch2-quantum-harmonic-oscillator.png)
 
-![ch2-quantum-anharmonic-oscillator.png](../../../Resources/Quantum%20Finance/Images/ch2-quantum-anharmonic-oscillator.png)
+![ch2-quantum-anharmonic-oscillator.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Quantum%20Finance/Images/ch2-quantum-anharmonic-oscillator.png)
 
 | Concept | Meaning |
 |---|---|
@@ -190,7 +190,7 @@ Price return r behaves like a quartic Quantum Anharmonic Oscillation.
 
 ### Path Integral Approach of QF
 
-![ch3-forward-interest-rate-field.png](../../../Resources/Quantum%20Finance/Images/ch3-forward-interest-rate-field.png)
+![ch3-forward-interest-rate-field.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Quantum%20Finance/Images/ch3-forward-interest-rate-field.png)
 
 Forward interest rate:
 
@@ -209,7 +209,7 @@ Evaluation = integrate over all possible functions A(t,x)
 
 ### QAHO Approach of QF
 
-![ch3-qfse-characteristics.png](../../../Resources/Quantum%20Finance/Images/ch3-qfse-characteristics.png)
+![ch3-qfse-characteristics.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Quantum%20Finance/Images/ch3-qfse-characteristics.png)
 
 Core motivation:
 
@@ -249,7 +249,7 @@ Goal: solve QFSE to evaluate QPL.
 
 ### Path Integral vs QAHO
 
-![ch3-path-integral-vs-qaho.png](../../../Resources/Quantum%20Finance/Images/ch3-path-integral-vs-qaho.png)
+![ch3-path-integral-vs-qaho.png](https://raw.githubusercontent.com/computersniper/second-brain/github-view/Resources/Quantum%20Finance/Images/ch3-path-integral-vs-qaho.png)
 
 | Aspect | Path Integral | QAHO |
 |---|---|---|
