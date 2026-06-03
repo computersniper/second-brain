@@ -71,7 +71,7 @@ Review rule:
 Use note-relative Markdown image paths after importing large imported course notes:
 
 ```md
-![lec02_waterfall_model.png](<../../../../../Resources/Software Engineering/Images/lec02_waterfall_model.png>)
+![lec02_waterfall_model.png](<../../../../../Resources/Software%20Engineering/Images/lec02_waterfall_model.png>)
 ```
 
 Avoid Markdown image paths when Obsidian reports "file not found":

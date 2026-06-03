@@ -46,7 +46,7 @@ Rule: AGENTS should not list every SE/QF child note. Keep the vault like a tree:
 ## Image Embed Rules
 
 - For course images inside the vault, copy them into the relevant `Resources/.../Images` folder.
-- Use note-relative Markdown image paths for imported course-image-heavy notes, for example `![image.png](<../../../../../Resources/Software Engineering/Images/image.png>)`.
+- Use note-relative Markdown image paths for imported course-image-heavy notes, for example `![image.png](<../../../../../Resources/Software%20Engineering/Images/image.png>)`.
 - Keep the actual image files in `Resources/.../Images`; make the note path explicitly relative to the current note folder.
 - Avoid filename-only Obsidian embeds like `![[image.png]]` for imported course-image-heavy notes if Obsidian reports "file not found".
 - Avoid vault-root Markdown image paths like `![name](<Resources/Software%20Engineering/Images/image.png>)` for imported course images.

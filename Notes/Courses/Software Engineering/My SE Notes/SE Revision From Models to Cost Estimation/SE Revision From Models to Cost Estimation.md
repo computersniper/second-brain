@@ -20,7 +20,7 @@ This note is a Software Engineering exam revision map from **Software Process Mo
 
 - Purpose: connect core definitions, model comparisons, diagram ideas, testing concepts, configuration management, and cost estimation formulas.
 - Exam use: focus on English terms, MCQ boundaries, when-to-use distinctions, diagram recognition, and calculation/template recall.
-- Images: stored in `Resources/Software Engineering/Images/` and embedded with filename-only Obsidian embeds.
+- Images: stored in `Resources/Software Engineering/Images/` and embedded with explicit note-relative Markdown paths.
 
 ---
 
