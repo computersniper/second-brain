@@ -211,8 +211,31 @@ function convertWikiLinks(text, currentFile, outputFile, indexes, warnings) {
   });
 }
 
+function convertMarkdownImageLinks(text, currentFile, indexes, warnings) {
+  return text.replace(/!\[([^\]]*)\]\((<[^>]+>|[^)]+)\)/g, (match, alt, rawTarget) => {
+    const target = rawTarget.trim().replace(/^<|>$/g, "");
+    if (/^(https?:|data:)/i.test(target)) return match;
+    if (!isImageName(target)) return match;
+
+    const decodedTarget = decodeURIComponent(target);
+    const fromCurrent = path.resolve(path.dirname(currentFile), decodedTarget);
+    let imageFile = fs.existsSync(fromCurrent)
+      ? fromCurrent
+      : resolveImage(decodedTarget, currentFile, indexes.imageIndex);
+
+    if (!imageFile) {
+      warnings.push(`Missing markdown image: ${decodedTarget} in ${path.relative(ROOT, currentFile)}`);
+      return match;
+    }
+
+    const label = alt || path.basename(decodedTarget);
+    return `![${label}](${rawImageUrl(imageFile)})`;
+  });
+}
+
 function convertMarkdownSegment(text, currentFile, outputFile, indexes, warnings) {
   let converted = text;
+  converted = convertMarkdownImageLinks(converted, currentFile, indexes, warnings);
   converted = convertEmbeds(converted, currentFile, outputFile, indexes, warnings);
   converted = convertWikiLinks(converted, currentFile, outputFile, indexes, warnings);
   converted = convertMarkdownLinks(converted, currentFile, outputFile);
