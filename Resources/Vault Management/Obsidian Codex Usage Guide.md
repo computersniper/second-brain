@@ -68,10 +68,10 @@ Review rule:
 
 ## Image Embed Rules
 
-Use Obsidian internal embeds after importing notes:
+Use note-relative Markdown image paths after importing large imported course notes:
 
 ```md
-![[lec02_waterfall_model.png]]
+![lec02_waterfall_model.png](<../../../../../Resources/Software Engineering/Images/lec02_waterfall_model.png>)
 ```
 
 Avoid Markdown image paths when Obsidian reports "file not found":
@@ -81,9 +81,9 @@ Avoid Markdown image paths when Obsidian reports "file not found":
 ![Waterfall Model](se_revision_assets/lec02_waterfall_model.png)
 ```
 
-Reason: Obsidian may resolve folder-qualified Markdown or wikilink image paths differently from filename-only attachment embeds, so a nested imported note can show "file not found" even when the image exists inside the vault. Copy course images into `Resources/.../Images` and use filename-only embeds such as `![[file.png]]`.
+Reason: Obsidian may resolve filename-only attachment embeds differently depending on attachment settings and cache, so a nested imported note can show "file not found" even when the image exists inside the vault. Copy course images into `Resources/.../Images` and use a Markdown image path relative to the current note folder.
 
-If Obsidian still reports "file not found" for `![[Resources/.../Images/file.png]]`, use the filename-only embed `![[file.png]]`. This matches the working image style used by the rest of the vault.
+If Obsidian reports "file not found" for `![[file.png]]`, rewrite the image as an explicit relative Markdown path such as `![file.png](<../../../../../Resources/.../Images/file.png>)`.
 
 Maintenance rule:
 
@@ -99,7 +99,7 @@ Keep the GitHub-rendered version outside the Obsidian vault.
 - GitHub-renderable Markdown is generated to `D:\study\second-brain-github-view`.
 - Do not create a `GitHub View` folder inside the vault, because Obsidian will scan it and duplicate notes in the relationship graph.
 - Run `node "Resources/Vault Management/scripts/publish-github-view.js" "D:\study\second-brain"` before publishing a GitHub display version.
-- The script converts Obsidian embeds such as `![[image.png]]` into GitHub Markdown images and converts `[[note#heading|alias]]` links into normal Markdown links.
+- The script converts Obsidian embeds and local Markdown image paths into GitHub Markdown images, and converts `[[note#heading|alias]]` links into normal Markdown links.
 - On GitHub, use `main` for rendered notes. The Obsidian source vault is preserved on the `obsidian-vault` branch, and `github-view` is kept as a generated mirror branch.
 
 ## Capture Workflow
