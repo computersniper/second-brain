@@ -253,33 +253,20 @@ function convertFile(text, currentFile, indexes, warnings) {
   return convertOutsideCode(text, currentFile, outputFile, indexes, warnings);
 }
 
-function writeReadme(markdownFiles) {
-  const readme = [
-    "# GitHub View",
-    "",
-    "This folder is generated from the Obsidian vault before pushing to GitHub.",
-    "",
-    "- Local Obsidian notes keep `[[wikilinks]]` and `![[image.png]]` embeds.",
-    "- GitHub View converts them into GitHub-renderable Markdown links and images.",
-    "- Do not edit files in this folder by hand; edit the original Obsidian notes instead.",
-    "",
-    "## Start Here",
-    "",
-    "- [Main README](../README.md)",
-    "- [SE Revision From Models to Cost Estimation](Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/SE%20Revision%20From%20Models%20to%20Cost%20Estimation.md)",
-    "- [00 SE Exam Map](Notes/Courses/Software%20Engineering/00%20SE%20Exam%20Map.md)",
-    "- [QF Course Map](Notes/Courses/Quantum%20Finance/QF%20Course%20Map.md)",
-    "",
-    `Generated Markdown files: ${markdownFiles.length}`,
-    "",
-  ].join("\n");
-  fs.writeFileSync(path.join(OUTPUT_DIR, "README.md"), readme, "utf8");
+function shouldCopyAsset(sourceFile) {
+  const relative = toPosix(path.relative(ROOT, sourceFile));
+  if (relative.startsWith(".git/") || relative.startsWith(".obsidian/")) return false;
+  if (relative.startsWith(".githooks/")) return false;
+  if (relative.startsWith("GitHub View/")) return false;
+  if (relative.startsWith("Resources/") && relative.includes("/raw/")) return false;
+  if (isMarkdown(sourceFile)) return false;
+  return true;
 }
 
-function copyImageAssets(allFiles) {
+function copyAssets(allFiles) {
   let copied = 0;
   for (const sourceFile of allFiles) {
-    if (!IMAGE_EXTENSIONS.has(path.extname(sourceFile).toLowerCase())) continue;
+    if (!shouldCopyAsset(sourceFile)) continue;
     const outputFile = outputPathForSource(sourceFile);
     fs.mkdirSync(path.dirname(outputFile), { recursive: true });
     fs.copyFileSync(sourceFile, outputFile);
@@ -311,15 +298,14 @@ function main() {
     fs.writeFileSync(outputFile, converted, "utf8");
   }
 
-  const copiedImages = copyImageAssets(allFiles);
-  writeReadme(markdownFiles);
+  const copiedAssets = copyAssets(allFiles);
 
   if (warnings.length) {
     const warningFile = path.join(OUTPUT_DIR, "conversion-warnings.txt");
     fs.writeFileSync(warningFile, `${warnings.join("\n")}\n`, "utf8");
   }
 
-  console.log(`Generated ${OUTPUT_DIR} (${markdownFiles.length} markdown files, ${copiedImages} images)`);
+  console.log(`Generated ${OUTPUT_DIR} (${markdownFiles.length} markdown files, ${copiedAssets} assets)`);
   if (warnings.length) {
     console.log(`Warnings: ${warnings.length} (see ${path.join(OUTPUT_DIR, "conversion-warnings.txt")})`);
   }
