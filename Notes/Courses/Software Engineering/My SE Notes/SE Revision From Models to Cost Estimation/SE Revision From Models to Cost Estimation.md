@@ -46,12 +46,16 @@ mindmap
       Activity Diagram
       UML notation
       State Transition
+      OO object
+      Class features
+      OOA UML diagrams
     Architecture
       Pattern
       Modularity
       Information Hiding
       Coupling vs Cohesion
       Repository / Client-server / Layered / MVC
+      Persistency / Database mapping
     OOD
       OO vs Structured Analysis
       Observer Pattern
@@ -108,6 +112,9 @@ mindmap
   - [Activity Diagram](./SE%20Revision%20From%20Models%20to%20Cost%20Estimation.md#32-activity-diagram)
   - [UML notation](./SE%20Revision%20From%20Models%20to%20Cost%20Estimation.md#33-uml-常见箭头和-notation-总结)
   - [State Transition](./SE%20Revision%20From%20Models%20to%20Cost%20Estimation.md#33-uml-常见箭头和-notation-总结)
+  - [OO object](./SE%20Revision%20From%20Models%20to%20Cost%20Estimation.md#34-lecture-5-oo-object-and-class)
+  - [Class features](./SE%20Revision%20From%20Models%20to%20Cost%20Estimation.md#34-lecture-5-oo-object-and-class)
+  - [OOA UML diagrams](./SE%20Revision%20From%20Models%20to%20Cost%20Estimation.md#35-lecture-6-ooa-uml-introduction)
 - **Architecture**
   - [Architecture](./SE%20Revision%20From%20Models%20to%20Cost%20Estimation.md#4-architectural-design-基础原则)
   - [Pattern](./SE%20Revision%20From%20Models%20to%20Cost%20Estimation.md#41-pattern)
@@ -115,6 +122,7 @@ mindmap
   - [Information Hiding](./SE%20Revision%20From%20Models%20to%20Cost%20Estimation.md#43-information-hiding-信息隐藏)
   - [Coupling vs Cohesion](./SE%20Revision%20From%20Models%20to%20Cost%20Estimation.md#44-independence-low-coupling-high-cohesion)
   - [Repository / Client-server / Layered / MVC](./SE%20Revision%20From%20Models%20to%20Cost%20Estimation.md#5-system-organization-models)
+  - [Persistency / Database mapping](./SE%20Revision%20From%20Models%20to%20Cost%20Estimation.md#58-persistency-and-database-mapping)
 - **OOD**
   - [OO vs Structured Analysis](./SE%20Revision%20From%20Models%20to%20Cost%20Estimation.md#7-oo-method-vs-structured-analysis-method)
   - [Observer Pattern](./SE%20Revision%20From%20Models%20to%20Cost%20Estimation.md#82-observer-design-pattern)
@@ -155,9 +163,9 @@ mindmap
 
 1. Lecture 2 - Software Process Models
 2. Lecture 3 - Software Requirements
-3. System Models: DFD / Activity Diagram / UML notations
+3. System Models: DFD / Activity Diagram / UML notations / OO object / OOA UML
 4. Architectural Design 基础原则
-5. System Organization Models
+5. System Organization Models / Persistency and Database Mapping
 6. Component Control
 7. OO method vs Structured Analysis method
 8. Design Patterns and Observer Pattern
@@ -646,6 +654,214 @@ State1 -- Event [Condition] / Action --> State2
 
 ---
 
+## 3.4 Lecture 5 - OO Object and Class
+
+![lec05_oo_development.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec05_oo_development.png)
+
+Lecture 5 的核心是：OO 不是先想程序语言里的 class 怎么写，而是先用 **object / class** 把 application domain 组织起来。
+
+```text
+Object-Oriented = Object + Classification + Inheritance + Communication
+```
+
+![lec05_what_is_oo.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec05_what_is_oo.png)
+
+### Object vs Class
+
+| Term | Meaning | 中文理解 |
+|---|---|---|
+| Object | an instance of a class | class 的一个具体实例 |
+| Class | a description of similar objects | 一类相似对象的抽象描述 |
+| Attribute | data/state of the class | 对象保存什么信息 |
+| Operation / Behavior | action working on its own attributes | 对象能对自己的数据做什么 |
+
+Exam boundary:
+- `Student` 是 class，`studentID = 12345 的 John` 是 object。
+- Class 不是 database table，也不是 code file；在 analysis 阶段它先表示 domain concept。
+- Operation 不是“用户能对别的东西做的动作”，而是这个 class 的对象本身应该承担的 behavior。
+
+### Class notation
+
+![lec05_class_representation.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec05_class_representation.png)
+
+UML class 通常三层：
+
+```text
+ClassName
+----------------
+attributes
+----------------
+operations
+```
+
+例子：
+
+```text
+File
+----------------
+size
+----------------
+open()
+close()
+edit()
+```
+
+判断方法：
+1. 名词通常先考虑为 class 或 attribute。
+2. 能独立存在、有 identity、有 behavior 的名词更像 class。
+3. 只是描述另一个 class 的简单值，更像 attribute。
+4. 动词不一定是 operation；要看它是不是 working on the attributes of this class。
+
+### Four features of a class
+
+![lec05_features_of_class.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec05_features_of_class.png)
+
+| Feature | One-line definition | Exam trap |
+|---|---|---|
+| Abstraction | keep essential aspects and ignore accidental properties | 不是把信息写少，而是只保留当前问题需要的关键属性 |
+| Encapsulation | hide attributes and operations from outside world | 外部通过 interface/service 使用对象，不直接碰内部数据 |
+| Inheritance | subclass reuses and specializes superclass features | 是 `is-a`，不是 `has-a` |
+| Polymorphism | same operation name can have different implementations | 关注同名 operation 的不同语义/实现 |
+
+![lec05_abstraction.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec05_abstraction.png)
+
+**Abstraction**：只抓本题需要的 essential attributes。  
+例如分析 `File` 时，当前只关心 `size` 和 `open/close/edit`，不一定关心磁盘扇区、编码细节。
+
+![lec05_encapsulation.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec05_encapsulation.png)
+
+**Encapsulation / Information Hiding**：外部对象只知道可以调用什么服务，不需要知道内部如何存储、如何实现。  
+这和架构里的 information hiding 是同一个思想在 OO class 层面的表现。
+
+![lec05_inheritance.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec05_inheritance.png)
+
+**Inheritance**：subclass 包含 superclass 的 attributes / operations，并增加或 specialization 自己的 features。  
+例如 `ppt file` 和 `Word file` 都是 `File` 的 special type，所以可以继承 `File` 的 `size/open/close/edit`。
+
+![lec05_polymorphism.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec05_polymorphism.png)
+
+**Polymorphism**：相同 operation name 可以对应不同 class 的不同实现。  
+例如不同对象都有 `insert()`，但 insert image、insert text、insert table 的实际行为不同。
+
+Common mistake:
+- 不要把 inheritance 画成 aggregation。`WordFile is a File` 是 inheritance；`Computer has a File` 才可能是 aggregation/composition。
+- 不要把所有动词都塞进某个 class 当 operation。先问：这个 operation 是否主要处理本 class 的 attributes？
+
+---
+
+## 3.5 Lecture 6 - OOA UML Introduction
+
+![lec06_uml_diagram_types.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec06_uml_diagram_types.png)
+
+**UML = Unified Modeling Language**，是 OO development 里最常见的图形化 notation。Lecture 6 的主线是：用不同 UML diagrams 从不同角度描述系统。
+
+| Diagram | Model type | What it describes |
+|---|---|---|
+| Class diagram | structure / object model | object classes and associations |
+| Sequence diagram | behavior / dynamic model | object communication over time |
+| Use case diagram | behavior / requirement model | actors and system functions |
+| Activity diagram | behavior / workflow model | activity order, branch, concurrency |
+
+### Class diagram in OOA
+
+![lec06_class_diagrams.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec06_class_diagrams.png)
+
+Class diagram 描述系统中的 object classes 以及它们之间的 stable relationship。它是 OOA 的核心图，因为它直接把 real-world entities 和 relationships 变成可分析的 model。
+
+Drawing steps:
+1. 从 requirements 里找 candidate objects/classes。
+2. 区分 class、attribute、operation。
+3. 找 stable association，不要把每个 verb 都画成 association。
+4. 加 multiplicity、role name、aggregation/composition/inheritance 等 notation。
+5. 检查每条线是否代表长期存在的信息依赖，而不是一次性的动作。
+
+### Association class
+
+![lec06_association_class.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec06_association_class.png)
+
+Association class 用在 **relationship itself has attributes or operations** 的情况。
+
+例子：
+```text
+Student -- Borrow -- Book
+
+Borrow has:
+- librarian: String
+- time: Time
+```
+
+意思是：`Borrow` 不是单纯一条线，因为借书关系本身要记录 librarian 和 time。  
+实现时它经常会变成一个 normal class，这也对应 Lecture 11 的 `Implement an Association Class as a Class`。
+
+### Multiplicity
+
+![lec06_multiplicity_examples.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec06_multiplicity_examples.png)
+
+Multiplicity 表示 association 两端的对象数量约束。
+
+| Notation | Meaning |
+|---|---|
+| `1` | exactly one |
+| `0..1` | zero or one |
+| `*` | zero or many |
+| `1..*` | one or many |
+| `0..6` | at most six, can be zero |
+
+考试判断：
+- `Student 1 -- 0..6 Book`：一个 student 最多借 6 本 book。
+- 读 multiplicity 时，从一个对象出发，问“它能对应对方多少个对象？”
+- multiplicity 是约束，不是数据流方向。
+
+### Association is not every verb
+
+![lec06_association_between_classes.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec06_association_between_classes.png)
+
+Association between classes 是因为两个 participating classes 有 **information dependency / static state relationship**，不是因为一句需求里出现了动词。
+
+判断 `User edit Document`：
+- 如果系统要记录谁 edit 了 document、什么时候 edit、edit history，那么 `Edit` 可以建成 association / association class。
+- 如果只是“用户界面上点一下编辑”，不记录 user-document 的长期关系，那么不一定需要 association。
+
+Common mistake:
+- `User can draw a Line` 不代表 `Draw` 一定属于 `User`。
+- 如果 `Line` 的核心属性是 `point1, point2`，那么 `draw()` 更可能属于 `Line` 或 drawing-related control/service，而不是因为 user 发起动作就放到 `User`。
+
+### Sequence diagram
+
+![lec06_sequence_diagram_intro.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec06_sequence_diagram_intro.png)
+
+Sequence diagram 用来描述某个 use case 中 objects 之间的 communication。
+
+```text
+horizontal = objects
+vertical = time sequence
+message = object calls another object
+```
+
+![lec06_sequence_conditions_iterations.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec06_sequence_conditions_iterations.png)
+
+Notation:
+- `[condition]` 表示条件触发。
+- `*` 表示 repeated / loop message。
+- return message 可以画虚线，也可以在简单考试图里省略。
+
+### Activity diagram
+
+![lec06_activity_diagram_intro.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec06_activity_diagram_intro.png)
+
+Activity diagram 描述 sequence constraints among use cases / activities。它可以描述 system level，也可以描述 object level。
+
+![lec06_activity_decision.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec06_activity_decision.png)
+
+考试画图时重点放在：
+1. start / end。
+2. activities。
+3. decision condition，例如 `[Renew]` / `[No renew]`。
+4. fork / join 表示并发。
+5. swimlane 表示责任归属。
+
+---
+
 # 4. Architectural Design 基础原则
 
 ## 4.1 Pattern
@@ -997,6 +1213,78 @@ Layered model 规则：高层访问低层，低层不访问高层。
 ![lec09_observer_application.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec09_observer_application.png)
 
 ![observer_or_not_screenshot.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/observer_or_not_screenshot.png)
+
+---
+
+## 5.8 Persistency and Database Mapping
+
+![lec09_identifying_persistent_data.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec09_identifying_persistent_data.png)
+
+你问的 “reconstruct / 构造数据库” 对应的不是 Lecture 5/6，而是 **Lecture 9 - Object-oriented design** 里的 persistent data / database design。
+
+更准确的英文口径：
+
+```text
+Database design includes:
+1. database schema for storing/retrieving system objects
+2. code to access the database
+```
+
+### Persistent object
+
+Persistent object 是需要长期保存的 object。  
+不是所有 object 都要进 database，只有系统重启后仍然需要保留、查询、恢复的对象才需要 persistency。
+
+判断方法：
+- `ETicket`、`Booking`、`Account` 这类业务记录通常是 persistent object。
+- 临时 UI object、一次计算中的 local object 通常不是 persistent object。
+
+### OO object to relational database
+
+如果使用 relational data model，OO design 需要把 object 映射成 table / row。
+
+```text
+Object class -> table/schema
+Object attributes -> columns
+Object instance -> row
+Association -> foreign key / association table
+```
+
+这一步不是重新做 requirements，而是把 OO model 变成可存储、可加载的数据结构。
+
+### How to load / reconstruct object
+
+![lec09_how_to_load_persistent_object.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec09_how_to_load_persistent_object.png)
+
+这里的 “reconstruct” 可以理解成：从 database 读取 persistent data，再重新构造 application 里的 object。
+
+```text
+Database row -> Mapper -> Object in memory
+```
+
+例子：
+```text
+PersistentETicket(id, departure, destination, flightNo)
+-> ETicketMapper
+-> ETicket object
+```
+
+`ETicketMapper` 的职责是隔离 database access，让 entity object 不直接关心 SQL/table 细节。  
+这和 information hiding / low coupling 是一致的。
+
+### Steps in designing a database
+
+![lec09_database_design_steps.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec09_database_design_steps.png)
+
+考试可直接写：
+1. Identify the persistent objects.
+2. Decide the storage strategies.
+3. Map objects to tables if using relational data model.
+4. Decide how to load the data.
+
+Common mistake:
+- 不要把 database design 理解成只画 ERD；在 OO design 里它还包括 object-table mapping 和 access code。
+- 不要让所有 entity classes 直接访问 database；通常用 mapper / persistency layer 降低 coupling。
 
 ---
 
@@ -1629,6 +1917,62 @@ n = input variables 数量。
 ![lec13_path_testing.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/lec13_path_testing.png)
 
 每条 path 至少执行一次。最强，但路径数量可能爆炸。
+
+### Triangle Testing Case
+
+![testing_triangle_case.png](https://raw.githubusercontent.com/computersniper/second-brain/main/Notes/Courses/Software%20Engineering/My%20SE%20Notes/SE%20Revision%20From%20Models%20to%20Cost%20Estimation/assets/testing_triangle_case.png)
+
+这个例子用来理解 **statement testing / branch testing / path testing** 的最少 test cases。
+
+Program logic:
+
+```text
+Input a, b, c
+if a <= 0 || b <= 0 || c <= 0:
+    print out of range
+    return
+else if a >= b + c || b >= a + c || c >= a + b:
+    print Not a triangle
+else:
+    print triangle
+```
+
+Control flow:
+
+```mermaid
+flowchart TD
+  Begin([Begin]) --> Input["Input a b c"]
+  Input --> D1{"a <= 0 || b <= 0 || c <= 0"}
+  D1 -- "T" --> Out["Print out of range"]
+  Out --> Return["return"]
+  Return --> End([End])
+  D1 -- "F" --> D2{"a >= b + c || b >= a + c || c >= a + b"}
+  D2 -- "T" --> NotTri["Print Not a triangle"]
+  D2 -- "F" --> Tri["Print triangle"]
+  NotTri --> End
+  Tri --> End
+```
+
+Minimum number of test cases:
+
+| Testing type | Minimum | Why |
+|---|---:|---|
+| Statement testing | 3 | 三个输出 statement 互斥：out of range / not triangle / triangle 都要至少执行一次 |
+| Branch testing | 3 | 第一个 decision 要覆盖 T/F；第二个 decision 也要覆盖 T/F，所以需要三条代表路径 |
+| Path testing | 3 | 这个简化 CFG 只有三条 feasible paths |
+
+Test cases:
+
+| Test case | Path | Expected output |
+|---|---|---|
+| `(-1, -2, 3)` | first decision = T | Print out of range |
+| `(1, 2, 3)` | first decision = F, second decision = T | Print Not a triangle |
+| `(4, 5, 6)` | first decision = F, second decision = F | Print triangle |
+
+考试快速判断：
+- 如果三个 output 是互斥的，statement testing 至少要覆盖每个 output 一次。
+- branch testing 看每个 diamond 的 T/F 有没有被覆盖。
+- path testing 看从 Begin 到 End 的完整可行路径数量；本题没有 loop，所以最少就是 3。
 
 强弱关系：
 

@@ -105,6 +105,7 @@ Rule: AGENTS should not list every SE/QF child note. Keep the vault like a tree:
 - 如果时间有限，优先更新能直接提升考场输出的笔记：QF Open-Book Exam Sheet、Exam Focus、SE Final Cram Sheet、Drawing Drill Pack。
 - QF 每章整理顺序：teacher focus -> core definition -> formula/model -> when to use -> confusion trap -> answer template -> A4 sheet candidate。
 - SE 每个主题整理顺序：English term -> one-line definition -> MCQ boundary -> drawing steps -> common mistake。
+- Drill / 练习题笔记格式：先给题目和 self-check，不要把答案直接放在题目下面；最后集中给 Answer Key。涉及图的答案必须用 Mermaid 展示，方便 Obsidian 和 GitHub 两端复习。
 - 每次整理后都要给出下一步最小行动，避免只总结不推进。
 - 已完成笔记不做格式、标签、措辞上的无关优化；需要改进时优先新增复盘、任务、索引或“待改建议”，不要直接动正文。
 
