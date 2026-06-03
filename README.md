@@ -20,7 +20,7 @@
 
 ## What This Is
 
-This vault is not just a place to store notes. It is a working second brain for 蔡杰超:
+This vault is not just a place to store notes. It is a working second brain for me:
 
 - to turn Software Engineering review into fast diagram recall and MCQ concept boundaries;
 - to compress Quantum Finance into one A4 open-book exam sheet;

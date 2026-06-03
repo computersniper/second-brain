@@ -18,6 +18,8 @@ HEIGHT = 860
 MARGIN = 110
 FRAMES = 36
 SEED = 20260603
+LABEL_PADDING_X = 5
+LABEL_PADDING_Y = 3
 
 
 def load_data():
@@ -123,6 +125,81 @@ def radius_for(node):
     return max(8, min(22, 7 + math.sqrt(max(1, node.get("degree", 1))) * 2.2))
 
 
+def shorten_title(text, max_length=32):
+    if len(text) <= max_length:
+        return text
+    return text[: max_length - 3] + "..."
+
+
+def intersects(a, b):
+    return not (a[2] < b[0] or b[2] < a[0] or a[3] < b[1] or b[3] < a[1])
+
+
+def prepare_labels(nodes):
+    canvas = Image.new("RGB", (10, 10))
+    draw = ImageDraw.Draw(canvas)
+    label_font = font(18)
+    small_font = font(14)
+    occupied = [
+        (0, 0, WIDTH, 122),
+        (0, HEIGHT - 76, WIDTH, HEIGHT),
+    ]
+
+    ordered = sorted(
+        nodes,
+        key=lambda node: (node.get("degree", 0), len(node.get("title", ""))),
+        reverse=True,
+    )
+
+    for node in ordered:
+        text = shorten_title(node["title"], 34 if node.get("degree", 0) >= 3 else 28)
+        text_font = label_font if node.get("degree", 0) >= 3 else small_font
+        radius = radius_for(node)
+        text_box = draw.textbbox((0, 0), text, font=text_font)
+        width = text_box[2] - text_box[0] + LABEL_PADDING_X * 2
+        height = text_box[3] - text_box[1] + LABEL_PADDING_Y * 2
+        gap = radius + 10
+        candidates = [
+            (gap, -height / 2),
+            (-gap - width, -height / 2),
+            (-width / 2, gap),
+            (-width / 2, -gap - height),
+            (gap, gap * 0.45),
+            (gap, -gap - height * 0.45),
+            (-gap - width, gap * 0.45),
+            (-gap - width, -gap - height * 0.45),
+            (radius + 28, -height / 2),
+            (-radius - 28 - width, -height / 2),
+        ]
+
+        best = None
+        for dx, dy in candidates:
+            left = min(WIDTH - MARGIN, max(MARGIN * 0.32, node["x"] + dx))
+            top = min(HEIGHT - MARGIN * 0.36, max(122, node["y"] + dy))
+            box = (left - 3, top - 3, left + width + 3, top + height + 3)
+            if not any(intersects(box, used) for used in occupied):
+                best = (left - node["x"], top - node["y"], box, text, text_font, width, height)
+                occupied.append(box)
+                break
+
+        if best is None:
+            dx, dy = candidates[stable_hash(node["id"]) % len(candidates)]
+            left = min(WIDTH - MARGIN, max(MARGIN * 0.32, node["x"] + dx))
+            top = min(HEIGHT - MARGIN * 0.36, max(122, node["y"] + dy))
+            box = (left - 3, top - 3, left + width + 3, top + height + 3)
+            best = (left - node["x"], top - node["y"], box, text, text_font, width, height)
+            occupied.append(box)
+
+        node["label"] = {
+            "dx": best[0],
+            "dy": best[1],
+            "text": best[3],
+            "font": best[4],
+            "width": best[5],
+            "height": best[6],
+        }
+
+
 def draw_frame(data, frame_index):
     nodes = data["nodes"]
     node_by_id = {node["id"]: node for node in nodes}
@@ -140,7 +217,6 @@ def draw_frame(data, frame_index):
 
     title_font = font(34, bold=True)
     meta_font = font(17)
-    label_font = font(19)
     small_font = font(16)
 
     draw.text((54, 38), "My Brain", font=title_font, fill=(245, 245, 245, 235))
@@ -158,9 +234,6 @@ def draw_frame(data, frame_index):
         width = 2 if a.get("degree", 0) > 7 or b.get("degree", 0) > 7 else 1
         draw.line([(ax, ay), (bx, by)], fill=(210, 210, 210, 42), width=width)
 
-    important = sorted(nodes, key=lambda node: node.get("degree", 0), reverse=True)[:24]
-    important_ids = {node["id"] for node in important}
-
     for node in sorted(nodes, key=lambda item: item.get("degree", 0)):
         wobble_x = math.sin(phase + (stable_hash(node["id"]) % 100) * 0.07) * 6
         wobble_y = math.cos(phase + (stable_hash(node["title"]) % 100) * 0.05) * 5
@@ -172,16 +245,32 @@ def draw_frame(data, frame_index):
         draw.ellipse((x - radius - 8, y - radius - 8, x + radius + 8, y + radius + 8), fill=(*color, glow))
         draw.ellipse((x - radius, y - radius, x + radius, y + radius), fill=(*color, 235), outline=(245, 245, 245, 170), width=2)
 
-        if node["id"] in important_ids:
-            text = node["title"]
-            if len(text) > 34:
-                text = text[:31] + "..."
-            text_font = label_font if node.get("degree", 0) >= 4 else small_font
-            label_x = x + radius + 10
-            label_y = y - 12
-            bbox = draw.textbbox((label_x, label_y), text, font=text_font)
-            draw.rounded_rectangle((bbox[0] - 5, bbox[1] - 3, bbox[2] + 5, bbox[3] + 3), radius=4, fill=(23, 23, 23, 145))
-            draw.text((label_x, label_y), text, font=text_font, fill=(235, 235, 235, 225))
+    for node in sorted(nodes, key=lambda item: item.get("degree", 0), reverse=True):
+        label = node.get("label")
+        if not label:
+            continue
+        wobble_x = math.sin(phase + (stable_hash(node["id"]) % 100) * 0.07) * 6
+        wobble_y = math.cos(phase + (stable_hash(node["title"]) % 100) * 0.05) * 5
+        node_x = node["x"] + wobble_x
+        node_y = node["y"] + wobble_y
+        label_x = node_x + label["dx"]
+        label_y = node_y + label["dy"]
+        label_w = label["width"]
+        label_h = label["height"]
+        color = hex_to_rgb(tag_colors.get(node.get("primaryTag"), "#bdbdbd"))
+        box = (label_x, label_y, label_x + label_w, label_y + label_h)
+        draw.line(
+            [(node_x, node_y), (label_x + label_w / 2, label_y + label_h / 2)],
+            fill=(*color, 66),
+            width=1,
+        )
+        draw.rounded_rectangle(box, radius=4, fill=(23, 23, 23, 160), outline=(*color, 88), width=1)
+        draw.text(
+            (label_x + LABEL_PADDING_X, label_y + LABEL_PADDING_Y - 1),
+            label["text"],
+            font=label["font"],
+            fill=(238, 238, 238, 228),
+        )
 
     tags = data.get("tags", [])[:8]
     x = 54
@@ -201,6 +290,7 @@ def main():
     data["nodes"] = nodes
     initial_layout(nodes)
     simulate(nodes, data.get("edges", []))
+    prepare_labels(nodes)
     OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
     frames = [draw_frame(data, index) for index in range(FRAMES)]
     frames[0].save(
